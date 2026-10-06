@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCare & Wellness Center</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contact.css" />
+
+  <link rel="icon" href="./assets/logo.webp" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Top Announcement / Emergency Bar -->
+  <aside class="top-bar">
+    <div class="container flex-between">
+      <div class="top-bar-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>24/7 Pet Emergency Hotline: <strong>+1 (800) 555-VETS</strong></span>
+      </div>
+      <div class="top-bar-item top-bar-hours">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container flex-between header-wrapper">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo" aria-label="VetCare Home">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="our.html" class="nav-link">Our Vets</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="auth.html" class="btn btn-outline-primary btn-sm" id="openSignInBtn">Sign In</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Visit</a>
+
+        <!-- Hamburger Button (Mobile / Tablet) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Mobile Slide Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <a href="index.html" class="logo">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="our.html" class="mobile-nav-link">Our Vets</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <a href="auth.html" class="btn btn-outline-primary" id="mobileSignInBtn">Sign In</a>
+      <a href="contact.html" class="btn btn-primary mobile-book-btn">Book Appointment</a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <p class="emergency-tag">24/7 Emergency Line</p>
+      <a href="error.html" class="emergency-number">+1 (800) 555-VETS</a>
+    </div>
+  </aside>
+
+
+
+
+
+
+  <!-- Contact Page Hero: Clinical Concierge & Emergency Triage Dispatch -->
+  <section class="section contact-hero-section" id="contactHero">
+
+    <!-- Ambient Orbital Constellation & Radar Canvas -->
+    <div class="contact-hero-backdrop" aria-hidden="true">
+      <div class="contact-ambient-orb orb-teal"></div>
+      <div class="contact-ambient-orb orb-amber"></div>
+
+      <!-- Concentric Compass/Radar Rings -->
+      <div class="contact-radar-ring ring-1"></div>
+      <div class="contact-radar-ring ring-2"></div>
+      <div class="contact-radar-ring ring-3"></div>
+
+      <!-- Drifting Constellation Dots (GSAP animated) -->
+      <div class="constellation-layer" id="contactConstellation">
+        <span class="c-dot dot-1"></span>
+        <span class="c-dot dot-2"></span>
+        <span class="c-dot dot-3"></span>
+        <span class="c-dot dot-4"></span>
+        <span class="c-dot dot-5"></span>
+        <span class="c-dot dot-6"></span>
+      </div>
+
+      <div class="contact-grid-mesh"></div>
+    </div>
+
+    <div class="container contact-hero-container">
+      <div class="contact-hero-grid">
+
+        <!-- Left Column: Navigation, Narrative & Instant Channels -->
+        <div class="contact-hero-narrative">
+
+          <div class="contact-breadcrumbs gsap-contact-hero">
+            <a href="index.html" class="crumb-link"><i class="fa-solid fa-house-chimney"></i> Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-current">Patient Concierge &amp; Triage</span>
+          </div>
+
+          <div class="triage-status-pill gsap-contact-hero">
+            <span class="status-pulse-dot"></span>
+            <span>Admissions Desk &amp; ER Triage Active</span>
+          </div>
+
+          <h1 class="contact-hero-headline gsap-contact-hero">
+            Direct Access To World-Class Veterinary Care
+          </h1>
+
+          <p class="contact-hero-lead gsap-contact-hero">
+            Whether you are booking a routine Fear-Free physical, transferring specialized surgical diagnostics, or
+            arriving for acute emergency care, our clinical reception is ready 24/7.
+          </p>
+
+          <!-- 3 Quick Triage Communication Pods -->
+          <div class="triage-channels-row gsap-contact-hero">
+
+            <a href="contact.html" class="triage-channel-chip chip-emergency">
+              <div class="channel-icon-wrap bg-coral-pulse">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div class="channel-details">
+                <span class="channel-caption">24/7 Emergency Dispatch</span>
+                <strong class="channel-main-val">+1 (800) 555-VETS</strong>
+              </div>
+            </a>
+
+            <a href="contact.html" class="triage-channel-chip">
+              <div class="channel-icon-wrap bg-mint-box">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div class="channel-details">
+                <span class="channel-caption">Direct Clinical Records</span>
+                <strong class="channel-main-val">care@vetcarehospital.com</strong>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Live Hospital Operating Console & Map Anchor Card -->
+        <div class="contact-hero-visual gsap-contact-visual">
+          <div class="hospital-dispatch-card card-glass-dark">
+
+            <div class="dispatch-header flex-between">
+              <div class="facility-badge">
+                <i class="fa-solid fa-hospital"></i>
+                <span>CENTRAL MEDICAL CAMPUS</span>
+              </div>
+              <span class="dispatch-live-tag">
+                <span class="dispatch-beacon"></span> OPEN 24/7/365
+              </span>
+            </div>
+
+            <!-- Hospital Address & Parking Details -->
+            <div class="dispatch-location-block">
+              <h3 class="facility-name">VetCare Specialty Hospital &amp; ER</h3>
+              <p class="facility-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>742 Evergreen Medical Way, Suite 100<br>Portland, OR 97201</span>
+              </p>
+              <div class="facility-sub-detail">
+                <span><i class="fa-solid fa-square-parking"></i> Reserved Emergency Parking Bay 1–4</span>
+                <span><i class="fa-solid fa-wheelchair"></i> Full ADA Barrier-Free Ramp</span>
+              </div>
+            </div>
+
+            <!-- Ward Operating Hours Matrix -->
+            <div class="dispatch-hours-grid">
+              <div class="hours-cell">
+                <span class="hours-dept">Emergency ICU</span>
+                <strong>Open 24 Hours</strong>
+              </div>
+              <div class="hours-cell">
+                <span class="hours-dept">Specialist Consults</span>
+                <strong>Mon–Sat: 8AM – 7PM</strong>
+              </div>
+              <div class="hours-cell">
+                <span class="hours-dept">Diagnostic Labs</span>
+                <strong>Mon–Sun: 7AM – 9PM</strong>
+              </div>
+              <div class="hours-cell">
+                <span class="hours-dept">Pharmacy Pickup</span>
+                <strong>Daily: 8AM – 8PM</strong>
+              </div>
+            </div>
+
+            <!-- Direct GPS Launch Action -->
+            <div class="dispatch-actions">
+              <a href="error.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary dispatch-btn">
+                <i class="fa-solid fa-diamond-turn-right"></i>
+                <span>Open In Google Maps / GPS</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Interactive Booking Concierge & Clinical Intake Section -->
+  <section class="section booking-concierge-section" id="bookingConcierge">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header text-center gsap-intake-header">
+        <span class="badge badge-primary">Direct Digital Intake</span>
+        <h2 class="stack-main-title">Schedule An Examination Or Clinical Consult</h2>
+        <p class="stack-subtitle">
+          Reserve an unhurried 45-minute consultation with our resident specialists. Zero wait times, pre-warmed suites,
+          and Fear-Free handling guaranteed.
+        </p>
+      </div>
+
+      <!-- 2-Column Master Booking Console -->
+      <div class="intake-console-grid">
+
+        <!-- Left Column: The Interactive 3-Step Form Deck -->
+        <div class="intake-form-column gsap-intake-card">
+          <div class="intake-card card">
+
+            <!-- Step Indicators Bar -->
+            <div class="intake-steps-bar flex-between">
+              <div class="step-indicator active" data-step="1">
+                <span class="step-num">01</span>
+                <span class="step-text">Care Level</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step-indicator" data-step="2">
+                <span class="step-num">02</span>
+                <span class="step-text">Schedule & Wing</span>
+              </div>
+              <div class="step-line"></div>
+              <div class="step-indicator" data-step="3">
+                <span class="step-num">03</span>
+                <span class="step-text">Patient Details</span>
+              </div>
+            </div>
+
+            <form id="clinicalIntakeForm" class="intake-form" novalidate>
+
+              <!-- STEP 1: Care Tier & Animal Selection -->
+              <div class="intake-step-pane active" id="intakeStep1">
+
+                <div class="form-group-block">
+                  <label class="intake-label">Select Patient Companion</label>
+                  <div class="companion-selector-grid">
+                    <label class="companion-card active">
+                      <input type="radio" name="patientSpecies" value="canine" checked>
+                      <div class="comp-icon"><i class="fa-solid fa-dog"></i></div>
+                      <span class="comp-name">Canine</span>
+                      <span class="comp-sub">Heated suites</span>
+                    </label>
+                    <label class="companion-card">
+                      <input type="radio" name="patientSpecies" value="feline">
+                      <div class="comp-icon"><i class="fa-solid fa-cat"></i></div>
+                      <span class="comp-name">Feline</span>
+                      <span class="comp-sub">Acoustic haven</span>
+                    </label>
+                    <label class="companion-card">
+                      <input type="radio" name="patientSpecies" value="exotic">
+                      <div class="comp-icon"><i class="fa-solid fa-dove"></i></div>
+                      <span class="comp-name">Exotic / Avian</span>
+                      <span class="comp-sub">Avian specialists</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group-block">
+                  <label class="intake-label">Select Clinical Discipline</label>
+                  <div class="discipline-selector-grid">
+                    <label class="discipline-card active">
+                      <input type="radio" name="clinicalTier" value="wellness" checked>
+                      <div class="discipline-top flex-between">
+                        <span class="disc-pill">Routine Care</span>
+                        <span class="disc-time">45 Min</span>
+                      </div>
+                      <strong class="disc-title">Comprehensive Physical</strong>
+                      <p class="disc-desc">15-point head-to-tail wellness, micro-vaccines & baseline biometrics.</p>
+                    </label>
+
+                    <label class="discipline-card">
+                      <input type="radio" name="clinicalTier" value="surgery">
+                      <div class="discipline-top flex-between">
+                        <span class="disc-pill pill-amber">Surgery & Ortho</span>
+                        <span class="disc-time">60 Min</span>
+                      </div>
+                      <strong class="disc-title">Surgical / TPLO Consult</strong>
+                      <p class="disc-desc">Evaluation with Dr. Amanda Vance, digital radiographs & anesthetic planning.
+                      </p>
+                    </label>
+
+                    <label class="discipline-card">
+                      <input type="radio" name="clinicalTier" value="cardio">
+                      <div class="discipline-top flex-between">
+                        <span class="disc-pill">Cardiology</span>
+                        <span class="disc-time">50 Min</span>
+                      </div>
+                      <strong class="disc-title">4D Echocardiogram & Murmur</strong>
+                      <p class="disc-desc">Non-invasive ultrasound scan and cardiac consultation with Dr. Marcus Thorne.
+                      </p>
+                    </label>
+
+                    <label class="discipline-card">
+                      <input type="radio" name="clinicalTier" value="urgent">
+                      <div class="discipline-top flex-between">
+                        <span class="disc-pill pill-danger">Same-Day Triage</span>
+                        <span class="disc-time">Immediate</span>
+                      </div>
+                      <strong class="disc-title">Acute Illness & Urgent Care</strong>
+                      <p class="disc-desc">Rapid blood chemistry, IV fluid stabilization, and priority bay allocation.
+                      </p>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="intake-step-nav">
+                  <button type="button" class="btn btn-primary step-btn-next" onclick="navigateIntakeStep(2)">
+                    <span>Continue to Timing & Wing</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- STEP 2: Date, Time & Preferences -->
+              <div class="intake-step-pane" id="intakeStep2">
+
+                <div class="form-row-grid">
+                  <div class="form-group flex-1">
+                    <label class="intake-label">Preferred Date</label>
+                    <input type="date" class="form-control intake-field" id="bookingDateInput" required>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label class="intake-label">Preferred Time Slot</label>
+                    <select class="form-control intake-field" id="bookingTimeSelect">
+                      <option value="morning">Morning (08:30 AM – 11:30 AM)</option>
+                      <option value="midday">Midday (12:00 PM – 03:00 PM)</option>
+                      <option value="evening">Late Afternoon (03:30 PM – 06:30 PM)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group-block">
+                  <label class="intake-label">Fear-Free Comfort Amenities</label>
+                  <div class="amenities-checkbox-grid">
+                    <label class="amenity-check-chip active">
+                      <input type="checkbox" name="amenity" value="treats" checked>
+                      <i class="fa-solid fa-cookie-bite"></i>
+                      <span>Hypoallergenic Treat Mat</span>
+                    </label>
+                    <label class="amenity-check-chip active">
+                      <input type="checkbox" name="amenity" value="phero" checked>
+                      <i class="fa-solid fa-spray-can-sparkles"></i>
+                      <span>Pheromone Micro-Mist Suite</span>
+                    </label>
+                    <label class="amenity-check-chip">
+                      <input type="checkbox" name="amenity" value="quiet">
+                      <i class="fa-solid fa-volume-xmark"></i>
+                      <span>Direct-To-Room (Zero Waiting Room)</span>
+                    </label>
+                    <label class="amenity-check-chip">
+                      <input type="checkbox" name="amenity" value="heated">
+                      <i class="fa-solid fa-temperature-arrow-up"></i>
+                      <span>Heated Memory-Foam Table</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="intake-step-nav flex-between">
+                  <button type="button" class="btn btn-outline-primary" onclick="navigateIntakeStep(1)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back</span>
+                  </button>
+                  <button type="button" class="btn btn-primary" onclick="navigateIntakeStep(3)">
+                    <span>Patient Information</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- STEP 3: Owner & Patient Contact Information -->
+              <div class="intake-step-pane" id="intakeStep3">
+
+                <div class="form-row-grid">
+                  <div class="form-group flex-1">
+                    <label class="intake-label">Pet Name</label>
+                    <input type="text" class="form-control intake-field" id="summaryPetName" placeholder="e.g. Luna"
+                      required>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label class="intake-label">Breed & Approx Age</label>
+                    <input type="text" class="form-control intake-field" placeholder="e.g. Golden Retriever, 4 Yrs">
+                  </div>
+                </div>
+
+                <div class="form-row-grid">
+                  <div class="form-group flex-1">
+                    <label class="intake-label">Guardian Full Name</label>
+                    <input type="text" class="form-control intake-field" placeholder="e.g. Sarah Jenkins" required>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label class="intake-label">Direct Phone Number</label>
+                    <input type="tel" class="form-control intake-field" placeholder="+1 (555) 000-0000" required>
+                  </div>
+                </div>
+
+                <div class="form-group-block">
+                  <label class="intake-label">Primary Symptoms, Notes or History</label>
+                  <textarea class="form-control intake-field intake-textarea" rows="3"
+                    placeholder="Briefly describe reasons for visit, prior diagnoses, or behavioral sensitivities..."></textarea>
+                </div>
+
+                <div class="intake-step-nav flex-between">
+                  <button type="button" class="btn btn-outline-primary" onclick="navigateIntakeStep(2)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back</span>
+                  </button>
+                  <button type="submit" class="btn btn-secondary">
+                    <span>Confirm Reservation</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                  </button>
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Live Clinical Reservation Summary Sidebar -->
+        <div class="intake-summary-column gsap-intake-card">
+          <div class="summary-card card">
+
+            <div class="summary-topbar flex-between">
+              <span class="summary-code">RESERVATION SUMMARY</span>
+              <span class="summary-status-pill">
+                <span class="live-dot"></span> Active Session
+              </span>
+            </div>
+
+            <div class="summary-highlight-box">
+              <div class="summary-icon-box" id="sumIcon">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div>
+                <span class="summary-type-tag" id="sumTypeTag">Routine Physical</span>
+                <h3 class="summary-headline" id="sumHeadline">Comprehensive Physical Exam</h3>
+              </div>
+            </div>
+
+            <div class="summary-specs-list">
+              <div class="summary-row">
+                <span class="sum-label"><i class="fa-solid fa-paw"></i> Companion</span>
+                <strong class="sum-val" id="sumCompanion">Canine (Heated Suite)</strong>
+              </div>
+              <div class="summary-row">
+                <span class="sum-label"><i class="fa-solid fa-clock"></i> Duration</span>
+                <strong class="sum-val" id="sumDuration">45 Minutes Unhurried</strong>
+              </div>
+              <div class="summary-row">
+                <span class="sum-label"><i class="fa-solid fa-user-doctor"></i> Attending</span>
+                <strong class="sum-val" id="sumDoctor">Faculty General Clinician</strong>
+              </div>
+              <div class="summary-row">
+                <span class="sum-label"><i class="fa-solid fa-door-open"></i> Arrival Suite</span>
+                <strong class="sum-val" id="sumWing">Direct-To-Room Assigned</strong>
+              </div>
+            </div>
+
+            <!-- Fear-Free Clinical Guarantees -->
+            <div class="summary-guarantees">
+              <div class="guarantee-row">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Zero Waiting Room Anxiety</span>
+              </div>
+              <div class="guarantee-row">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Itemized Transparent Pricing</span>
+              </div>
+              <div class="guarantee-row">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Same-Day Lab Results in Mobile Portal</span>
+              </div>
+            </div>
+
+            <div class="summary-help-box">
+              <div class="help-bubble"><i class="fa-solid fa-phone-volume"></i></div>
+              <div class="help-text">
+                <span>Have an urgent clinical question?</span>
+                <a href="error.html" class="help-link">+1 (800) 555-VETS</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Interactive Campus Wayfinding & Emergency Bay Navigation -->
+  <section class="section campus-transit-section" id="campusTransit">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header text-center gsap-transit-header">
+        <span class="badge badge-primary">Campus Navigation</span>
+        <h2 class="stack-main-title">Arriving At Our Central Medical Facility</h2>
+        <p class="stack-subtitle">
+          Whether arriving for acute midnight trauma stabilization or a scheduled fear-free feline consult, explore
+          dedicated vehicle bays, barrier-free entrances, and transit access points.
+        </p>
+      </div>
+
+      <!-- Master Transit Navigation Console -->
+      <div class="transit-console-grid">
+
+        <!-- Left Column: Interactive Access Route Switcher -->
+        <div class="transit-routes-col gsap-transit-card">
+          <div class="routes-card card">
+            <div class="routes-header flex-between">
+              <span class="routes-eyebrow"><i class="fa-solid fa-diamond-turn-right"></i> Select Arrival Path</span>
+              <span class="routes-live-pill"><span class="route-beacon"></span> Gate Open</span>
+            </div>
+
+            <!-- 3 Route Selectors -->
+            <div class="route-cards-stack" id="arrivalRouteStack">
+
+              <!-- Route 1: Emergency Red Drop-Off (Active) -->
+              <button type="button" class="route-select-card active" data-route="emergency">
+                <div class="route-icon bg-coral-pulse">
+                  <i class="fa-solid fa-truck-medical"></i>
+                </div>
+                <div class="route-meta">
+                  <div class="route-meta-top flex-between">
+                    <span class="route-tag tag-urgent">Trauma / ER Only</span>
+                    <span class="route-lane">BAYS 01–04</span>
+                  </div>
+                  <strong class="route-name">North Ambulance &amp; Critical Bay</strong>
+                  <p class="route-desc">Zero-stop automated gate with direct heated gurney ramp to resuscitation suite.
+                  </p>
+                </div>
+              </button>
+
+              <!-- Route 2: Feline Quiet Haven -->
+              <button type="button" class="route-select-card" data-route="feline">
+                <div class="route-icon bg-mint-box">
+                  <i class="fa-solid fa-shield-cat"></i>
+                </div>
+                <div class="route-meta">
+                  <div class="route-meta-top flex-between">
+                    <span class="route-tag">Cat Sanctuary</span>
+                    <span class="route-lane">GATE WEST</span>
+                  </div>
+                  <strong class="route-name">Acoustic Feline Private Entry</strong>
+                  <p class="route-desc">Direct exterior side access bypassing the main canine lobby with dedicated cat
+                    parking.</p>
+                </div>
+              </button>
+
+              <!-- Route 3: Outpatient / General Consults -->
+              <button type="button" class="route-select-card" data-route="outpatient">
+                <div class="route-icon bg-amber-box">
+                  <i class="fa-solid fa-square-parking"></i>
+                </div>
+                <div class="route-meta">
+                  <div class="route-meta-top flex-between">
+                    <span class="route-tag tag-amber">Scheduled Visits</span>
+                    <span class="route-lane">LEVEL 1 LOT</span>
+                  </div>
+                  <strong class="route-name">Main Plaza &amp; Covered Parking</strong>
+                  <p class="route-desc">Complimentary validation, EV charging stalls, and wheelchair-accessible entrance
+                    concourse.</p>
+                </div>
+              </button>
+
+            </div>
+
+            <!-- Parking Telemetry Strip -->
+            <div class="transit-parking-metrics">
+              <div class="parking-metric-item">
+                <span class="p-label">ER Bays Free</span>
+                <strong class="p-value" id="statErBays">03 / 04</strong>
+              </div>
+              <div class="p-divider"></div>
+              <div class="parking-metric-item">
+                <span class="p-label">Main Plaza Stalls</span>
+                <strong class="p-value">42 Available</strong>
+              </div>
+              <div class="p-divider"></div>
+              <div class="parking-metric-item">
+                <span class="p-label">EV Chargers</span>
+                <strong class="p-value">04 Active</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Dynamic Campus Deck & Route Guidance Card -->
+        <div class="transit-display-col gsap-transit-card">
+          <div class="transit-deck-card card">
+
+            <div class="deck-top-bar flex-between">
+              <div class="deck-code-group">
+                <span class="deck-code" id="deckRouteCode">GATE_01 // NORTH TRAUMA</span>
+                <span class="deck-clearance">CLEARANCE: 12' 6"</span>
+              </div>
+              <span class="deck-status-badge" id="deckStatusBadge">
+                <i class="fa-solid fa-circle-check"></i> IMMEDIATE ADMISSION
+              </span>
+            </div>
+
+            <!-- Illustrated Wayfinding Visual Pod -->
+            <div class="deck-visual-stage">
+              <div class="wayfinding-vector-backdrop">
+                <div class="campus-grid-lines"></div>
+                <div class="campus-radar-sweep"></div>
+              </div>
+
+              <!-- Dynamic Route Guidance Content -->
+              <div class="deck-instruction-content">
+                <div class="instruction-badge-row">
+                  <span class="instruction-step" id="deckStepTag">CRITICAL ARRIVAL PROTOCOL</span>
+                </div>
+                <h3 class="instruction-title" id="deckTitle">Proceed To North Ambulance Bay (Bay 01)</h3>
+                <p class="instruction-text" id="deckText">
+                  Enter through Medical Center Boulevard. Follow red illuminated perimeter pavement markers directly to
+                  the overhead heated ambulance port. An emergency triage technician will receive the patient at your
+                  vehicle.
+                </p>
+
+                <!-- Checkpoints Checklist -->
+                <div class="deck-checkpoints-list" id="deckCheckpoints">
+                  <div class="checkpoint-item">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Follow Red Reflective Pavement Markings</span>
+                  </div>
+                  <div class="checkpoint-item">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Zero Barrier Automated License Scanner</span>
+                  </div>
+                  <div class="checkpoint-item">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <span>Emergency Nurse Dispatch Button At Gate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Direct GPS Action Dock -->
+            <div class="deck-action-dock flex-between">
+              <div class="gps-coords">
+                <span class="coords-label">COORDINATES</span>
+                <span class="coords-val">45.5152° N, 122.6784° W</span>
+              </div>
+              <div class="gps-buttons flex-center">
+                <a href="error.html" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-outline-primary btn-sm">
+                  <i class="fa-brands fa-apple"></i>
+                  <span>Apple Maps</span>
+                </a>
+                <a href="error.html" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-secondary btn-sm">
+                  <i class="fa-brands fa-google"></i>
+                  <span>Google Maps</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Emergency Dispatch & Surgical Triage Hotline Showcase -->
+  <section class="section contact-triage-hero-showcase" id="triageDispatch">
+
+    <!-- Atmospheric Cinematic Media Backdrop with Overlays -->
+    <div class="triage-hero-media-wrap" aria-hidden="true">
+      <img src="./assets/img 9.webp"
+        alt="Emergency veterinary surgery and intensive care suite" class="triage-backdrop-img" loading="lazy" />
+      <!-- Luxury Dual Layer Radial & Linear Gradients -->
+      <div class="triage-linear-overlay"></div>
+      <div class="triage-radial-glow"></div>
+      <div class="triage-mesh-grid"></div>
+    </div>
+
+    <div class="container triage-hero-container">
+      <div class="triage-hero-inner-pod gsap-triage-hero">
+
+        <!-- Top Clinical Status Beacon Strip -->
+        <div class="triage-beacon-bar flex-between">
+          <div class="triage-live-tag">
+            <span class="beacon-circle-pulse"></span>
+            <span>Trauma ICU Bays 01–04 • Surgeons On Standby</span>
+          </div>
+          <div class="triage-code-pill">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <span>PRIORITY DISPATCH SYSTEM</span>
+          </div>
+        </div>
+
+        <!-- Main Headline & Narrative Copy with Text Gradients -->
+        <div class="triage-narrative-block">
+          <span class="badge badge-secondary triage-pill-badge">Immediate Life Support Protocol</span>
+          <h2 class="triage-showcase-title">
+            Critical Emergency Triage &amp; Continuous Trauma Telemetry
+          </h2>
+          <p class="triage-showcase-desc">
+            When seconds matter, do not wait for standard clinic hours. Our positive-pressure operating theaters, heated
+            hyperbaric oxygen chambers, and emergency canine &amp; feline blood banks are staffed 24/7/365.
+          </p>
+        </div>
+
+        <!-- Two Core High-Impact Action Channels -->
+        <div class="triage-channels-grid">
+
+          <!-- Emergency Direct Hotline Channel -->
+          <div class="triage-action-card card-emergency-glow">
+            <div class="action-card-top flex-between">
+              <div class="action-icon-circle bg-amber-pulse">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <span class="action-time-tag">AVERAGE ANSWER: 12 SEC</span>
+            </div>
+            <div class="action-card-body">
+              <span class="action-eyebrow">Direct Emergency Hotline</span>
+              <strong class="action-headline">+1 (800) 555-VETS</strong>
+              <p class="action-subtext">Direct patch to our chief on-duty ER triage nurse for immediate bedside
+                instructions.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary action-btn-wide">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call Immediate Emergency Line</span>
+            </a>
+          </div>
+
+          <!-- Rapid Digital In-Transit Notification Channel -->
+          <div class="triage-action-card card-intransit-glass">
+            <div class="action-card-top flex-between">
+              <div class="action-icon-circle bg-mint-box">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <span class="action-time-tag">INSTANT ADMISSION PREP</span>
+            </div>
+            <div class="action-card-body">
+              <span class="action-eyebrow">En-Route Inbound Alert</span>
+              <strong class="action-headline">Notify ER Team Arrival</strong>
+              <p class="action-subtext">Tell us you are driving in so trauma nurses can prep the resuscitation gurney at
+                the gate.</p>
+            </div>
+            <a href="error.html" class="btn btn-outline-hero action-btn-wide">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>Send Inbound Transit Alert</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Bottom Reassurance Metrics Strip -->
+        <div class="triage-metrics-strip flex-between">
+          <div class="triage-metric-item">
+            <i class="fa-solid fa-stopwatch"></i>
+            <div>
+              <strong>&lt; 3 Minutes</strong>
+              <span>Arrival to Vitals Stabilization</span>
+            </div>
+          </div>
+          <div class="triage-metric-divider"></div>
+          <div class="triage-metric-item">
+            <i class="fa-solid fa-vial-virus"></i>
+            <div>
+              <strong>In-House Blood Bank</strong>
+              <span>Fresh Plasma &amp; Whole Blood Stored</span>
+            </div>
+          </div>
+          <div class="triage-metric-divider"></div>
+          <div class="triage-metric-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <strong>AAHA Level 1 Trauma</strong>
+              <span>Verified 24/7 Critical Facility</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Interactive Pre-Arrival Checklist & Patient Preparation Matrix -->
+  <section class="section visit-prep-section" id="visitPreparation">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-prep-header">
+        <span class="badge badge-primary">Smooth Admissions</span>
+        <h2 class="stack-main-title">Preparing For Your Companion's Visit</h2>
+        <p class="stack-subtitle">
+          A calm clinic experience begins at home. Select your scheduled appointment type below to view specialized
+          fasting windows, carrier acclimation guides, and diagnostic preparation steps.
+        </p>
+      </div>
+
+      <!-- Master Interactive Checklist Console -->
+      <div class="prep-console-grid">
+
+        <!-- Left Column: Interactive Mode Selector & Progress Track -->
+        <div class="prep-sidebar-col gsap-prep-card">
+          <div class="prep-sidebar-card card">
+
+            <div class="sidebar-top flex-between">
+              <span class="sidebar-tag"><i class="fa-solid fa-clipboard-check"></i> PREP GUIDES</span>
+              <span class="sidebar-pill">FEAR-FREE APPROVED</span>
+            </div>
+
+            <!-- 3 Clinical Visit Type Tabs -->
+            <div class="prep-mode-stack" id="prepModeStack">
+
+              <button type="button" class="prep-mode-btn active" data-mode="surgery">
+                <div class="mode-icon bg-amber-box">
+                  <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div class="mode-info">
+                  <span class="mode-caption">ANESTHESIA &amp; ORTHO</span>
+                  <strong class="mode-title">Surgery &amp; Procedures</strong>
+                  <p class="mode-sub">Fasting timelines &amp; morning intake rules</p>
+                </div>
+                <i class="fa-solid fa-chevron-right mode-arrow"></i>
+              </button>
+
+              <button type="button" class="prep-mode-btn" data-mode="feline">
+                <div class="mode-icon bg-mint-box">
+                  <i class="fa-solid fa-shield-cat"></i>
+                </div>
+                <div class="mode-info">
+                  <span class="mode-caption">LOW-STRESS TRAVEL</span>
+                  <strong class="mode-title">Feline Carrier Calm</strong>
+                  <p class="mode-sub">Pheromone sprays &amp; car transit setup</p>
+                </div>
+                <i class="fa-solid fa-chevron-right mode-arrow"></i>
+              </button>
+
+              <button type="button" class="prep-mode-btn" data-mode="diagnostics">
+                <div class="mode-icon bg-mint-box">
+                  <i class="fa-solid fa-microscope"></i>
+                </div>
+                <div class="mode-info">
+                  <span class="mode-caption">BLOODWORK &amp; SCANS</span>
+                  <strong class="mode-title">Diagnostic Lab Tests</strong>
+                  <p class="mode-sub">Urine collection, fasting &amp; records</p>
+                </div>
+                <i class="fa-solid fa-chevron-right mode-arrow"></i>
+              </button>
+
+            </div>
+
+            <!-- Dynamic Checklist Progress Card -->
+            <div class="prep-progress-card">
+              <div class="progress-info flex-between">
+                <span class="progress-label">READINESS TRACKER</span>
+                <strong class="progress-count" id="prepProgressText">0 OF 4 READY</strong>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="prepProgressFill" style="width: 0%;"></div>
+              </div>
+              <p class="progress-tip">Check off items on the right as you complete them at home.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Dynamic Interactive Checklist Deck -->
+        <div class="prep-deck-col gsap-prep-card">
+          <div class="prep-deck-card card">
+
+            <div class="deck-header flex-between">
+              <div>
+                <span class="deck-category" id="deckCategory">SURGICAL PRE-OP GUIDELINE</span>
+                <h3 class="deck-main-head" id="deckMainHead">Pre-Anesthetic Fasting &amp; Admission Protocol</h3>
+              </div>
+              <span class="deck-timer-chip" id="deckTimerChip">
+                <i class="fa-solid fa-clock"></i> 8:00 AM INTAKE
+              </span>
+            </div>
+
+            <p class="deck-summary-text" id="deckSummaryText">
+              Proper pre-operative fasting prevents aspiration during anesthesia while keeping blood sugar stable.
+              Please adhere strictly to the following parameters prior to dropping off your patient.
+            </p>
+
+            <!-- Interactive Actionable Checklist -->
+            <div class="actionable-checklist" id="prepChecklistContainer">
+              <!-- Dynamically populated via JavaScript -->
+            </div>
+
+            <!-- Bottom Clinical Advisory Dock -->
+            <div class="prep-advisory-dock flex-between">
+              <div class="advisory-message">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span id="deckAdvisoryText">If your pet accidentally ate breakfast, call our surgical coordinator
+                  immediately.</span>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm advisory-action">
+                <i class="fa-solid fa-phone"></i>
+                <span>Nurse Hotline</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Final Contact Pre-Footer CTA: Immediate Care Dispatch & Concierge -->
+  <section class="section contact-final-cta-section" id="contactFinalCta">
+    <!-- Ambient Atmospheric Radiant Stage -->
+    <div class="cta-ambient-backdrop" aria-hidden="true">
+      <div class="cta-radiant-orb orb-teal"></div>
+      <div class="cta-radiant-orb orb-amber"></div>
+      <div class="cta-mesh-pattern"></div>
+    </div>
+
+    <div class="container cta-final-container">
+      <div class="cta-elevated-dock card-glass-dark gsap-final-cta">
+
+        <!-- Top Priority Status Strip -->
+        <div class="cta-dock-topbar flex-between">
+          <div class="cta-live-beacon">
+            <span class="pulse-beacon-dot"></span>
+            <span>Central Emergency Bay Open • Resident Surgeons On-Duty</span>
+          </div>
+          <div class="cta-cert-code">
+            <i class="fa-solid fa-award"></i>
+            <span>AAHA Accredited Level-1 Care</span>
+          </div>
+        </div>
+
+        <!-- Core Narrative Block -->
+        <div class="cta-narrative-center text-center">
+          <span class="badge badge-secondary cta-badge">24/7 Veterinary Excellence</span>
+          <h2 class="cta-hero-title">
+            Compassionate Healing Begins With A Single Conversation
+          </h2>
+          <p class="cta-hero-desc">
+            Whether you are facing an urgent midnight health crisis, preparing for specialized orthopedic surgery, or
+            seeking a second clinical opinion, our attending physicians are ready to protect your pet.
+          </p>
+        </div>
+
+        <!-- Dual High-Impact Action Channels -->
+        <div class="cta-action-dock-grid">
+
+          <!-- Action 1: Instant Emergency Triage Call -->
+          <div class="cta-action-tile tile-emergency">
+            <div class="tile-icon-box bg-amber-pulse">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag tag-urgent">Urgent / Acute Illness</span>
+              <h3 class="tile-heading">Call Clinical Triage</h3>
+              <p class="tile-subtext">Immediate telephone patch with an on-duty ICU triage nurse in under 30 seconds.
+              </p>
+            </div>
+            <a href="error.html" class="btn btn-secondary tile-action-btn">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (800) 555-VETS</span>
+            </a>
+          </div>
+
+          <!-- Action 2: Digital Online Appointment Reservation -->
+          <div class="cta-action-tile tile-digital">
+            <div class="tile-icon-box bg-mint-box">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Scheduled &amp; Specialty</span>
+              <h3 class="tile-heading">Book Direct Visit</h3>
+              <p class="tile-subtext">Choose your preferred doctor, time slot, and Fear-Free amenities online.</p>
+            </div>
+            <a href="error.html" class="btn btn-outline-hero tile-action-btn">
+              <span>Reserve Appointment</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Bottom Trust Metrics Bar -->
+        <div class="cta-dock-footer flex-between">
+          <div class="dock-trust-item">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>100% Certified Fear-Free Protocols</span>
+          </div>
+          <div class="dock-trust-divider"></div>
+          <div class="dock-trust-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Direct Pet Insurance Claim Filing</span>
+          </div>
+          <div class="dock-trust-divider"></div>
+          <div class="dock-trust-item">
+            <i class="fa-solid fa-square-parking"></i>
+            <span>Complimentary Covered Patient Parking</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand Info & Socials -->
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="footer-logo" aria-label="VetCare Home">
+              <img src="./assets/logo 20.webp" alt="VetCare Logo" width="150" height="50">
+            </a>
+            <p class="footer-desc">
+              Providing compassionate, state-of-the-art veterinary medicine, wellness checkups, and 24/7
+              emergency critical care for your beloved animal companions.
+            </p>
+            <div class="footer-socials">
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Twitter X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Highlighted dynamically based on current page) -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-nav-link">Home</a></li>
+              <li><a href="service.html" class="footer-nav-link">Services</a></li>
+              <li><a href="about.html" class="footer-nav-link">About Us</a></li>
+              <li><a href="our.html" class="footer-nav-link">Our Vets</a></li>
+              <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Medical Services -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Pet Services</h4>
+            <ul class="footer-links">
+              <li><a href="service.html">Preventive Wellness</a></li>
+              <li><a href="service.html">Dental Cleaning</a></li>
+              <li><a href="service.html">Diagnostic Ultrasound</a></li>
+              <li><a href="service.html">Surgical Care</a></li>
+              <li><a href="service.html">Microchipping & Vaccines</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Emergency Contacts & Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-heading">24/7 Emergency</h4>
+            <div class="emergency-badge">
+              <i class="fa-solid fa-phone-volume"></i>
+              <div>
+                <span class="emergency-badge-title">Direct Clinic Hotline</span>
+                <a href="tel:18005558387" class="emergency-badge-num">+1 (800) 555-VETS</a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h5 class="newsletter-title">Pet Health Newsletter</h5>
+              <p class="newsletter-desc">Monthly seasonal care tips and vaccine schedules.</p>
+              <form class="newsletter-form" id="newsletterForm" novalidate>
+                <input type="email" id="newsletterEmail" class="form-control newsletter-input"
+                  placeholder="Your email address" required>
+                <button type="submit" class="btn btn-secondary newsletter-btn" aria-label="Subscribe to newsletter">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+              <!-- Small inline feedback message container -->
+              <span id="newsletterError" class="newsletter-error-msg"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Legal & Copyright -->
+    <div class="footer-bottom">
+      <div class="container flex-between footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 VetCare Animal Hospital. All rights reserved.
+        </p>
+        <ul class="footer-legal-links">
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms of Service</a></li>
+          <li><a href="error.html">Emergency Protocols</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+
+</body>
+
+</html>

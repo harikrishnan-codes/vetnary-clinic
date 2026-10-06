@@ -1,0 +1,342 @@
+:root {
+  /* Brand / Primary - Trustworthy Teal & Fresh Mint */
+  --primary: #0e8388;
+  --primary-hover: #0b696d;
+  --primary-light: #e6f5f5;
+
+  /* Secondary / Accent - Warm Amber / Pet Care Accent */
+  --secondary: #f4a261;
+  --secondary-hover: #e76f51;
+  --secondary-light: #fef5ee;
+
+  /* Neutrals & Backgrounds */
+  --bg-main: #fbfdfc;
+  --bg-surface: #ffffff;
+  --bg-muted: #f0f4f4;
+
+  /* Text & Typography */
+  --text-main: #264653;
+  --text-muted: #6b7c85;
+  --text-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --border-color: #dce7e7;
+  --border-focus: #0e8388;
+
+  /* Status Colors */
+  --success: #2a9d8f;
+  --warning: #e9c46a;
+  --danger: #e63946;
+  --info: #457b9d;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(38, 70, 83, 0.05);
+  --shadow-md: 0 4px 12px rgba(38, 70, 83, 0.08);
+  --shadow-lg: 0 10px 24px rgba(38, 70, 83, 0.12);
+}
+
+
+/* ===================================================
+   1. RESET & BASE
+   =================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* ===================================================
+   2. LAYOUT CONTAINERS & GRIDS
+   =================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===================================================
+   3. BUTTON SYSTEM
+   =================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.85rem 1.6rem;
+  border-radius: 50px; /* Friendly rounded look for vet/pet care */
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(14, 131, 136, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 18px rgba(14, 131, 136, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button (Warm Amber Accent) */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(244, 162, 97, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+  box-shadow: 0 6px 18px rgba(231, 111, 81, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Outline Variants */
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--secondary-light);
+  color: var(--secondary-hover);
+}
+
+/* Soft / Light Button */
+.btn-soft {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.btn-soft:hover {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 1.1rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+/* ===================================================
+   4. CARDS & SURFACES
+   =================================================== */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(14, 131, 136, 0.2);
+}
+
+/* Glassmorphism Surface for Overlays/Hero badges */
+.card-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+/* ===================================================
+   5. BADGES & PILLS
+   =================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 30px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-primary {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-secondary {
+  background-color: var(--secondary-light);
+  color: var(--secondary-hover);
+}
+
+.badge-success {
+  background-color: #e6f7f4;
+  color: var(--success);
+}
+
+/* ===================================================
+   6. FORM INPUTS & APPOINTMENT FIELDS
+   =================================================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.form-control:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(14, 131, 136, 0.15);
+}
+
+/* ===================================================
+   7. RESPONSIVE BREAKPOINTS (Mobile & Tablet)
+   =================================================== */
+@media (max-width: 992px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: 3.5rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding-inline: 1rem;
+  }
+}

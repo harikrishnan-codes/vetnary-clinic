@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Wandered Off | VetCare Hospital</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Base Theme Stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+    <!-- 404 Page Custom Styles -->
+    <link rel="stylesheet" href="error.css"/>
+
+        <link rel="icon" href="./assets/logo.webp"/>
+
+</head>
+
+<body class="error-page-body">
+
+    <!-- Floating Ambient Pet & Medical Icons (GSAP Animated) -->
+    <div class="ambient-decorations" aria-hidden="true">
+        <div class="ambient-icon icon-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="ambient-icon icon-2"><i class="fa-solid fa-bone"></i></div>
+        <div class="ambient-icon icon-3"><i class="fa-solid fa-stethoscope"></i></div>
+        <div class="ambient-icon icon-4"><i class="fa-solid fa-shield-cat"></i></div>
+        <div class="ambient-icon icon-5"><i class="fa-solid fa-heart-pulse"></i></div>
+    </div>
+
+    <main class="error-wrapper">
+        <div class="container flex-center">
+
+            <!-- Main Premium Error Showcase Card -->
+            <div class="error-card card-glass" id="errorCard">
+
+                <!-- Header Badge -->
+                <div class="error-top-pill">
+                    <span class="badge badge-secondary gsap-elem">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        404 Lost Track
+                    </span>
+
+
+                </div>
+                <header class="error-top-nav">
+                    <div class="container flex-between">
+                        <div class="logo">
+                            <a href="index.html" aria-label="VetCare Home">
+                                <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+                            </a>
+                        </div>
+
+                        <!-- Functional Go Back Button -->
+                        <button type="button" class="btn btn-outline-primary btn-sm error-back-btn" id="goBackBtn" onclick="history.back()">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>Go Back</span>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- 404 Hero Visual with Animated Paws -->
+                <div class="error-digits-stage gsap-elem">
+                    <span class="digit digit-left">4</span>
+
+                    <!-- Animated Center Paw Compass -->
+                    <div class="digit-center-badge" id="pawCenter">
+                        <div class="paw-ring-pulse"></div>
+                        <i class="fa-solid fa-paw paw-symbol"></i>
+                    </div>
+
+                    <span class="digit digit-right">4</span>
+                </div>
+
+
+
+                <!-- Walking Paw Trail (GSAP Sequenced) -->
+                <div class="paw-trail" aria-hidden="true">
+                    <i class="fa-solid fa-paw paw-step step-1"></i>
+                    <i class="fa-solid fa-paw paw-step step-2"></i>
+                    <i class="fa-solid fa-paw paw-step step-3"></i>
+                    <i class="fa-solid fa-paw paw-step step-4"></i>
+                </div>
+
+                <!-- Headline & Story Copy -->
+                <h1 class="error-title gsap-elem">Oops! This Patient Wandered Off</h1>
+                <p class="error-description gsap-elem">
+                    Even the keenest scent hounds lose the trail sometimes. The clinic room or resource you are looking
+                    for has been relocated, retired, or never existed.
+                </p>
+
+                <!-- Quick Search Bar to reorient the user -->
+                <!-- <form class="error-search-box gsap-elem" onsubmit="event.preventDefault(); window.location.href='service.html';">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="form-control" placeholder="Search treatments, pet wellness, vaccinations..." />
+          <button type="submit" class="btn btn-primary btn-sm">Find</button>
+        </form> -->
+
+                <!-- Premium Action Buttons -->
+                <div class="error-btn-group gsap-elem">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fa-solid fa-house-chimney"></i> Return Home
+                    </a>
+                    <a href="service.html" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-notes-medical"></i> View Services
+                    </a>
+                    <a href="contact.html" class="btn btn-soft">
+                        <i class="fa-solid fa-headset"></i> Support Desk
+                    </a>
+                </div>
+
+                <!-- Clinic Emergency Hotline Footnote -->
+                <div class="error-footer-note gsap-elem">
+                    <span>Immediate pet medical emergency?</span>
+                    <a href="error.html" class="error-hotline">
+                        <i class="fa-solid fa-phone"></i> +1 (800) 555-VETS
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Error Page Script -->
+    <script src="error.js">
+
+
+
+    </script>
+</body>
+
+</html>

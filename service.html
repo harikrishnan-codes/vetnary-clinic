@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCare & Wellness Center</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="service.css" />
+
+  <link rel="icon" href="./assets/logo.webp" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Top Announcement / Emergency Bar -->
+  <aside class="top-bar">
+    <div class="container flex-between">
+      <div class="top-bar-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>24/7 Pet Emergency Hotline: <strong>+1 (800) 555-VETS</strong></span>
+      </div>
+      <div class="top-bar-item top-bar-hours">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container flex-between header-wrapper">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo" aria-label="VetCare Home">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="our.html" class="nav-link">Our Vets</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="auth.html" class="btn btn-outline-primary btn-sm" id="openSignInBtn">Sign In</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Visit</a>
+
+        <!-- Hamburger Button (Mobile / Tablet) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Mobile Slide Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <a href="index.html" class="logo">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="our.html" class="mobile-nav-link">Our Vets</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <a href="auth.html" class="btn btn-outline-primary" id="mobileSignInBtn">Sign In</a>
+      <a href="contact.html" class="btn btn-primary mobile-book-btn">Book Appointment</a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <p class="emergency-tag">24/7 Emergency Line</p>
+      <a href="error.html" class="emergency-number">+1 (800) 555-VETS</a>
+    </div>
+  </aside>
+
+
+
+
+
+
+
+  <!-- Service Page Classy Hero / Intro Section -->
+  <section class="section service-hero-section" id="serviceHero">
+    <!-- Ambient Atmospheric Backdrops & Gradients -->
+    <div class="service-hero-ambient" aria-hidden="true">
+      <div class="service-orb orb-teal"></div>
+      <div class="service-orb orb-amber"></div>
+      <div class="service-grid-overlay"></div>
+    </div>
+
+    <div class="container service-hero-container">
+      <div class="service-hero-grid">
+
+        <!-- Left Column: Breadcrumb, Headlines & Quick Action Filters -->
+        <div class="service-hero-content">
+
+          <!-- Breadcrumb & Status Pill -->
+          <div class="service-breadcrumbs gsap-srv-hero">
+            <a href="index.html" class="crumb-link"><i class="fa-solid fa-house-chimney"></i> Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-current">Clinical Specialties</span>
+          </div>
+
+          <div class="service-hero-badge gsap-srv-hero">
+            <span class="badge badge-secondary">
+              <i class="fa-solid fa-notes-medical"></i> Certified Veterinary Medicine
+            </span>
+          </div>
+
+          <h1 class="service-hero-title gsap-srv-hero">
+            Advanced Clinical Care & Diagnostic Excellence
+          </h1>
+
+          <p class="service-hero-desc gsap-srv-hero">
+            From painless preventive wellness checkups and digital high-frequency imaging to sterile orthopedic surgery,
+            every medical program is conducted under strict Fear-Free certified protocols.
+          </p>
+
+          <!-- Quick Jump Filter Chips -->
+          <div class="service-filter-tags gsap-srv-hero">
+            <a href="error.html" class="filter-chip active"><i class="fa-solid fa-shield-heart"></i> Preventive</a>
+            <a href="error.html" class="filter-chip"><i class="fa-solid fa-microscope"></i> Diagnostics</a>
+            <a href="error.html" class="filter-chip"><i class="fa-solid fa-scissors"></i> Surgery</a>
+            <a href="error.html" class="filter-chip"><i class="fa-solid fa-tooth"></i> Dental Care</a>
+            <a href="error.html" class="filter-chip chip-emergency"><i class="fa-solid fa-truck-medical"></i> 24/7
+              ICU</a>
+          </div>
+
+          <!-- Metric Badges Row -->
+          <div class="service-quick-metrics gsap-srv-hero">
+            <div class="srv-metric-box">
+              <span class="srv-metric-val">100%</span>
+              <span class="srv-metric-label">Fear-Free Certified</span>
+            </div>
+            <div class="srv-metric-divider"></div>
+            <div class="srv-metric-box">
+              <span class="srv-metric-val">15 Min</span>
+              <span class="srv-metric-label">In-House Lab Results</span>
+            </div>
+            <div class="srv-metric-divider"></div>
+            <div class="srv-metric-box">
+              <span class="srv-metric-val">24/7</span>
+              <span class="srv-metric-label">Surgeon On Duty</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: 3D Visual Card with Floating Holographic Glass Badges -->
+        <div class="service-hero-visual gsap-srv-visual">
+          <div class="service-card-canvas">
+
+            <!-- Master Visual Image -->
+            <div class="service-main-image-wrap">
+              <img src="./assets/img 14.webp" alt="Veterinarian examining dog with modern diagnostics"
+                class="service-hero-img" loading="lazy" />
+              <div class="service-img-vignette"></div>
+
+              <div class="service-img-overlay-caption">
+                <span class="caption-tag">ISO 9001:2026 Facility</span>
+                <p class="caption-text">HEPA-Filtered Surgical Theatres & Digital Imaging Suites</p>
+              </div>
+            </div>
+
+            <!-- Floating Floating Glass Pill 1: Surgical Purity -->
+            <div class="srv-glass-pill pill-top-right">
+              <div class="glass-icon-circle bg-mint">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <div class="glass-pill-text">
+                <strong>Zero-Pain Protocol</strong>
+                <span>Pre & Post-Op Anesthesia Telemetry</span>
+              </div>
+            </div>
+
+            <!-- Floating Glass Pill 2: In-House Labs -->
+            <div class="srv-glass-pill pill-bottom-left">
+              <div class="glass-icon-circle bg-amber">
+                <i class="fa-solid fa-vial-virus"></i>
+              </div>
+              <div class="glass-pill-text">
+                <strong>Instant Blood Chemistry</strong>
+                <span>Complete Hematology in 15 mins</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Aurora / Holographic Gradients: Specialized Clinical Pathways -->
+  <section class="section aurora-pathways-section" id="auroraPathways">
+    <!-- Dynamic Aurora Holographic Mesh Fluid (Subtle pastel light-mode glow) -->
+    <div class="aurora-ambient-canvas" aria-hidden="true">
+      <div class="aurora-stream stream-teal"></div>
+      <div class="aurora-stream stream-amber"></div>
+      <div class="aurora-stream stream-mint"></div>
+    </div>
+
+    <div class="container aurora-container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-aurora-header">
+        <span class="badge badge-primary">Multidisciplinary Medicine</span>
+        <h2 class="stack-main-title">Precision Clinical Pathways</h2>
+        <p class="stack-subtitle">
+          Every medical case follows an individualized diagnostic track, blending non-invasive telemetry, rapid in-house
+          pathology, and targeted therapeutic recovery.
+        </p>
+      </div>
+
+      <!-- 3-Column Holographic Prism Card Grid -->
+      <div class="aurora-cards-grid">
+
+        <!-- Prism Card 1: Preventive Cardiology -->
+        <article class="holo-card gsap-aurora-card" data-holo>
+          <div class="holo-sheen-layer"></div>
+          <div class="holo-card-inner">
+            <div class="holo-top-row">
+              <div class="holo-icon-orb orb-teal-tint">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <span class="holo-pill">PATHWAY 01</span>
+            </div>
+
+            <h3 class="holo-card-title">Cardiology & Doppler Ultrasound</h3>
+            <p class="holo-card-desc">
+              Early detection of congenital heart defects, murmurs, and vascular hypertension using color Doppler
+              ultrasound and resting ECG telemetry.
+            </p>
+
+            <ul class="holo-checklist">
+              <li><i class="fa-solid fa-circle-check"></i> High-definition 4D echocardiograms</li>
+              <li><i class="fa-solid fa-circle-check"></i> Blood pressure and Holter monitoring</li>
+              <li><i class="fa-solid fa-circle-check"></i> Cardiac pharmacotherapy planning</li>
+            </ul>
+
+            <div class="holo-card-action">
+              <a href="contact.html" class="btn btn-outline-primary btn-sm holo-btn">
+                <span>Schedule Heart Check</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prism Card 2: In-House Pathology Lab -->
+        <article class="holo-card gsap-aurora-card" data-holo>
+          <div class="holo-sheen-layer"></div>
+          <div class="holo-card-inner">
+            <div class="holo-top-row">
+              <div class="holo-icon-orb orb-amber-tint">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <span class="holo-pill pill-amber">PATHWAY 02</span>
+            </div>
+
+            <h3 class="holo-card-title">15-Minute Laboratory Diagnostics</h3>
+            <p class="holo-card-desc">
+              On-site automated hematology, serum electrolytes, urinalysis, and microscopic cytologies delivering
+              lab-grade results while you wait.
+            </p>
+
+            <ul class="holo-checklist">
+              <li><i class="fa-solid fa-circle-check"></i> Complete CBC & organ chemistry panels</li>
+              <li><i class="fa-solid fa-circle-check"></i> Point-of-care infectious disease PCR</li>
+              <li><i class="fa-solid fa-circle-check"></i> Digital cytology with specialist consult</li>
+            </ul>
+
+            <div class="holo-card-action">
+              <a href="contact.html" class="btn btn-secondary btn-sm holo-btn">
+                <span>View Lab Capabilities</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prism Card 3: Orthopedic & Joint Restoration -->
+        <article class="holo-card gsap-aurora-card" data-holo>
+          <div class="holo-sheen-layer"></div>
+          <div class="holo-card-inner">
+            <div class="holo-top-row">
+              <div class="holo-icon-orb orb-teal-tint">
+                <i class="fa-solid fa-bone"></i>
+              </div>
+              <span class="holo-pill">PATHWAY 03</span>
+            </div>
+
+            <h3 class="holo-card-title">Orthopedics & Joint Mobilization</h3>
+            <p class="holo-card-desc">
+              Restoring pain-free mobility through cruciate ligament repair (TPLO), fracture fixation, and cold-laser
+              anti-inflammatory therapy.
+            </p>
+
+            <ul class="holo-checklist">
+              <li><i class="fa-solid fa-circle-check"></i> Cruciate & patella stabilization</li>
+              <li><i class="fa-solid fa-circle-check"></i> Class IV therapeutic deep tissue laser</li>
+              <li><i class="fa-solid fa-circle-check"></i> Post-operative physiotherapy plans</li>
+            </ul>
+
+            <div class="holo-card-action">
+              <a href="contact.html" class="btn btn-outline-primary btn-sm holo-btn">
+                <span>Consult Orthopedic Vet</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Holographic Diagnostic Banner -->
+      <div class="aurora-summary-banner gsap-aurora-card">
+        <div class="summary-left">
+          <div class="summary-icon-spark">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <h4 class="summary-title">Not Sure Which Pathway Your Pet Requires?</h4>
+            <p class="summary-text">Our triage nurses evaluate symptoms and match you with the appropriate medical
+              clinic within minutes.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-secondary summary-cta">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>Speak to Triage Nurse</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Micro-Interactive / Motion-Driven UI: Treatment & Biometric Diagnostic Console -->
+  <section class="section motion-service-section" id="interactiveCare">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-motion-header">
+        <span class="badge badge-secondary">Precision Protocol Engine</span>
+        <h2 class="stack-main-title">Personalized Treatment Blueprint</h2>
+        <p class="stack-subtitle">
+          Every breed, age tier, and biological stage demands custom medical attention. Adjust your pet's profile below
+          to generate an immediate diagnostic protocol.
+        </p>
+      </div>
+
+      <!-- Main Interactive Console Stage -->
+      <div class="motion-console-card card gsap-motion-card">
+        <div class="console-grid">
+
+          <!-- Left Panel: Interactive Inputs & Switches -->
+          <div class="console-controls-pane">
+            <div class="console-header-strip">
+              <span class="step-indicator"><i class="fa-solid fa-sliders"></i> Parameter Controls</span>
+              <span class="live-pulse-badge">
+                <span class="ping-circle"></span> Live Sync
+              </span>
+            </div>
+
+            <!-- Parameter 1: Species Selection Radio Chips -->
+            <div class="control-block">
+              <label class="control-label">1. Companion Species</label>
+              <div class="motion-toggle-group" id="speciesToggle">
+                <button type="button" class="motion-pill-btn active" data-species="canine">
+                  <i class="fa-solid fa-dog"></i>
+                  <span>Canine</span>
+                </button>
+                <button type="button" class="motion-pill-btn" data-species="feline">
+                  <i class="fa-solid fa-cat"></i>
+                  <span>Feline</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Parameter 2: Age Life-Stage Selector -->
+            <div class="control-block">
+              <label class="control-label">2. Biological Life Stage</label>
+              <div class="motion-stage-tabs" id="stageTabs">
+                <button type="button" class="stage-tab" data-stage="junior">
+                  <span class="stage-title">Junior</span>
+                  <span class="stage-sub">&lt; 1 Year</span>
+                </button>
+                <button type="button" class="stage-tab active" data-stage="adult">
+                  <span class="stage-title">Adult</span>
+                  <span class="stage-sub">1 - 7 Years</span>
+                </button>
+                <button type="button" class="stage-tab" data-stage="senior">
+                  <span class="stage-title">Senior</span>
+                  <span class="stage-sub">7+ Years</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Parameter 3: Weight Interactive Range Slider -->
+            <div class="control-block">
+              <div class="flex-between slider-label-row">
+                <label class="control-label">3. Approximate Weight</label>
+                <span class="weight-display" id="weightDisplay">22 kg</span>
+              </div>
+              <div class="range-container">
+                <input type="range" class="motion-range-slider" id="weightSlider" min="2" max="60" value="22" step="1">
+                <div class="range-ticks">
+                  <span>Toy (2kg)</span>
+                  <span>Medium (25kg)</span>
+                  <span>Giant (60kg)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Parameter 4: Priority Treatment Focus Tags -->
+            <div class="control-block">
+              <label class="control-label">4. Clinical Priority Target</label>
+              <div class="tag-selector-pool" id="priorityTags">
+                <span class="motion-tag active" data-tag="wellness"><i class="fa-solid fa-shield-heart"></i>
+                  Comprehensive Physical</span>
+                <span class="motion-tag" data-tag="dental"><i class="fa-solid fa-tooth"></i> Dental Radiography</span>
+                <span class="motion-tag" data-tag="cardio"><i class="fa-solid fa-heart-pulse"></i> Echocardiogram</span>
+                <span class="motion-tag" data-tag="labs"><i class="fa-solid fa-vial-circle-check"></i> Organ Function
+                  Labs</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Panel: Live Motion-Driven Output Blueprint -->
+          <div class="console-output-pane">
+            <div class="blueprint-card">
+
+              <!-- Output Header & Telemetry Code -->
+              <div class="blueprint-top-bar flex-between">
+                <div>
+                  <span class="blueprint-tag">DIAGNOSTIC BLUEPRINT</span>
+                  <h3 class="blueprint-code" id="blueprintCode">CAN-ADULT-W22</h3>
+                </div>
+                <div class="blueprint-status-chip">
+                  <i class="fa-solid fa-circle-check"></i> Protocol Active
+                </div>
+              </div>
+
+              <!-- Dynamic Diagnostic Metric Readouts -->
+              <div class="blueprint-metrics-grid">
+                <div class="blueprint-metric-box">
+                  <span class="b-metric-label">Estimated Visit Time</span>
+                  <div class="b-metric-val-row">
+                    <i class="fa-solid fa-clock"></i>
+                    <span class="b-metric-val" id="timeEstimate">45 Mins</span>
+                  </div>
+                </div>
+
+                <div class="blueprint-metric-box">
+                  <span class="b-metric-label">Recommended Frequency</span>
+                  <div class="b-metric-val-row">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="b-metric-val" id="freqEstimate">Annual (1x/yr)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Diagnostic Checklist Output -->
+              <div class="blueprint-plan-box">
+                <h4 class="plan-heading">Target Clinical Inclusions</h4>
+                <ul class="plan-item-list" id="planItemList">
+                  <li><i class="fa-solid fa-circle-check"></i> 15-Point head-to-tail musculoskeletal physical</li>
+                  <li><i class="fa-solid fa-circle-check"></i> Standard core boosters (DHPP + Rabies protocol)</li>
+                  <li><i class="fa-solid fa-circle-check"></i> Heartworm antigen & intestinal parasite screen</li>
+                  <li><i class="fa-solid fa-circle-check"></i> Nutrition & body condition index score</li>
+                </ul>
+              </div>
+
+              <!-- Direct Booking Trigger for this configured protocol -->
+              <div class="blueprint-footer">
+                <div class="blueprint-pricing-row flex-between">
+                  <div>
+                    <span class="estimate-caption">Standard Care Tier</span>
+                    <span class="estimate-price" id="estimatePrice">$120 - $165</span>
+                  </div>
+                  <a href="contact.html" class="btn btn-secondary btn-sm blueprint-cta">
+                    <span>Lock Protocol & Book</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Specialized Surgical Theatres & Telemetry Suite Section -->
+  <section class="section surgical-telemetry-section" id="surgicalSuites">
+
+    <!-- Live Interactive Background Animation Canvas -->
+    <div class="telemetry-ambient-stage" aria-hidden="true" id="telemetryStage">
+      <!-- Shifting Gradient Mesh Layer -->
+      <div class="ambient-gradient-mesh"></div>
+
+      <!-- Orbiting Glowing Plasma Orbs -->
+      <div class="orbiting-orb orb-primary" id="orb1"></div>
+      <div class="orbiting-orb orb-secondary" id="orb2"></div>
+
+      <!-- Rotating Radar Scope & Laser Sweeper -->
+      <div class="radar-scan-line"></div>
+      <div class="radar-ring ring-inner"></div>
+      <div class="radar-ring ring-outer"></div>
+
+      <!-- Floating Micro-Particle System (Driven by GSAP) -->
+      <div class="particles-container" id="telemetryParticles">
+        <span class="particle p-1"></span>
+        <span class="particle p-2"></span>
+        <span class="particle p-3"></span>
+        <span class="particle p-4"></span>
+        <span class="particle p-5"></span>
+        <span class="particle p-6"></span>
+        <span class="particle p-7"></span>
+        <span class="particle p-8"></span>
+      </div>
+    </div>
+
+    <div class="container telemetry-container">
+
+      <!-- Dark Surface Section Header -->
+      <div class="section-header text-center section-header-dark gsap-tele-header">
+        <span class="badge badge-secondary">Sterile Surgical Suites</span>
+        <h2 class="stack-main-title">HEPA-Filtered Surgical Theatres</h2>
+        <p class="stack-subtitle">
+          Engineered for zero infection risk, our positive-pressure operating suites integrate continuous vitals
+          telemetry, targeted sevoflurane anesthesia, and heated recovery pods.
+        </p>
+      </div>
+
+      <!-- 3-Column Glassmorphic Diagnostic Pods -->
+      <div class="telemetry-pods-grid">
+
+        <!-- Pod 1: Soft-Tissue & Laparoscopy -->
+        <article class="tele-pod-card card-glass-dark gsap-tele-card">
+          <div class="pod-ambient-sheen"></div>
+          <div class="pod-top-strip flex-between">
+            <div class="tele-icon-circle bg-mint-tint">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <span class="tele-status-pill">THEATRE 01</span>
+          </div>
+
+          <h3 class="pod-heading">Minimally Invasive Laparoscopy</h3>
+          <p class="pod-narrative">
+            Micro-incision cameras reduce post-operative recovery pain by 65% and allow same-day discharge for spays,
+            biopsies, and gastropexy procedures.
+          </p>
+
+          <div class="pod-specs-list">
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-wind"></i> Positive Airflow</span>
+              <span class="spec-value">HEPA-14 Cleanroom</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-heart-pulse"></i> Vital Telemetry</span>
+              <span class="spec-value">6-Lead ECG Stream</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-bed"></i> Recovery Protocol</span>
+              <span class="spec-value">Infrared Heated Pods</span>
+            </div>
+          </div>
+
+          <div class="pod-footer-action">
+            <a href="contact.html" class="btn btn-outline-hero btn-sm tele-btn">
+              <span>Surgical Inquiry</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Pod 2: Orthopedic Joint & Bone Center (Featured) -->
+        <article class="tele-pod-card card-glass-dark featured-tele-pod gsap-tele-card">
+          <div class="pod-glow-accent"></div>
+          <div class="pod-ambient-sheen"></div>
+          <div class="pod-top-strip flex-between">
+            <div class="tele-icon-circle bg-amber-tint">
+              <i class="fa-solid fa-bone"></i>
+            </div>
+            <span class="tele-status-pill pill-highlight">CHIEF SUITE 02</span>
+          </div>
+
+          <h3 class="pod-heading">Advanced Orthopedic Reconstruction</h3>
+          <p class="pod-narrative">
+            Certified veterinary surgeons performing TPLO cruciate ligament repair, locking plate fracture fixation, and
+            hip preservation.
+          </p>
+
+          <div class="pod-specs-list">
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-microchip"></i> Fixation Hardware</span>
+              <span class="spec-value">Medical Grade Titanium</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-shield-halved"></i> Anesthesia Safety</span>
+              <span class="spec-value">Targeted Sevoflurane</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-user-nurse"></i> Nursing Ratio</span>
+              <span class="spec-value">1:1 Patient Telemetry</span>
+            </div>
+          </div>
+
+          <div class="pod-footer-action">
+            <a href="contact.html" class="btn btn-secondary btn-sm tele-btn">
+              <span>Book Surgical Consult</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Pod 3: Ultrasound & Color Doppler Unit -->
+        <article class="tele-pod-card card-glass-dark gsap-tele-card">
+          <div class="pod-ambient-sheen"></div>
+          <div class="pod-top-strip flex-between">
+            <div class="tele-icon-circle bg-mint-tint">
+              <i class="fa-solid fa-wave-square"></i>
+            </div>
+            <span class="tele-status-pill">THEATRE 03</span>
+          </div>
+
+          <h3 class="pod-heading">Echocardiography & Doppler Imaging</h3>
+          <p class="pod-narrative">
+            Real-time color Doppler evaluations assess heart chamber wall thickness, valve insufficiency, vascular
+            hemodynamics, and tumor staging.
+          </p>
+
+          <div class="pod-specs-list">
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-tv"></i> Imaging Resolution</span>
+              <span class="spec-value">High-Frequency 4D</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-stopwatch"></i> Scan Duration</span>
+              <span class="spec-value">25-30 Mins Non-Invasive</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label"><i class="fa-solid fa-notes-medical"></i> Diagnostic Report</span>
+              <span class="spec-value">Same-Day Digital PDF</span>
+            </div>
+          </div>
+
+          <div class="pod-footer-action">
+            <a href="contact.html" class="btn btn-outline-hero btn-sm tele-btn">
+              <span>Explore Imaging</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Live Telemetry Monitor Console Bar -->
+      <div class="telemetry-live-console card-glass-dark gsap-tele-card">
+        <div class="console-left">
+          <div class="live-pulse-radar">
+            <span class="radar-dot"></span>
+            <span class="radar-circle"></span>
+          </div>
+          <div class="console-meta">
+            <span class="console-title">Hospital ICU Telemetry Status: OPTIMAL</span>
+            <p class="console-sub">All positive-pressure air curtains, HEPA filters, and sevoflurane units operational.
+            </p>
+          </div>
+        </div>
+        <div class="console-right">
+          <a href="contact.html" class="btn btn-secondary btn-sm console-hotline">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Emergency Triage: +1 (800) 555-VETS</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- Bento Grid: Modern Clinical Care Ecosystem -->
+  <section class="section bento-services-section" id="bentoEcosystem">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-bento-header">
+        <span class="badge badge-primary">Comprehensive Infrastructure</span>
+        <h2 class="stack-main-title">A Closer Look At Our Care Ecosystem</h2>
+        <p class="stack-subtitle">
+          Purpose-built diagnostic wings, sterile surgical suites, and specialized therapy lounges architected for
+          painless comfort and instant clinical recovery.
+        </p>
+      </div>
+
+      <!-- Master Bento Grid Container -->
+      <div class="bento-grid">
+
+        <!-- BENTO ITEM 1: Major Feature Card (Span 2 Cols, Span 2 Rows) -->
+        <article class="bento-card bento-hero gsap-bento-item">
+          <div class="bento-media-cover">
+            <img src="./assets/img 8.webp"
+              alt="Advanced veterinary examination and diagnostics" loading="lazy" />
+            <div class="bento-gradient-overlay"></div>
+          </div>
+
+          <div class="bento-card-content">
+            <div class="bento-chip-row">
+              <span class="badge badge-secondary">Core Foundation</span>
+              <span class="bento-indicator"><span class="bento-ping"></span> AAHA Gold Certified</span>
+            </div>
+
+            <h3 class="bento-title-lg">Integrated Comprehensive Diagnostics & Preventative Medicine</h3>
+            <p class="bento-desc-lg">
+              Every clinical consult integrates 15-point physical exams, low-stress biometrics, and immediate in-clinic
+              blood panels ensuring problems are caught years before symptoms develop.
+            </p>
+
+            <div class="bento-tags-cluster">
+              <span class="bento-micro-pill"><i class="fa-solid fa-heart-pulse"></i> Cardiac Telemetry</span>
+              <span class="bento-micro-pill"><i class="fa-solid fa-dna"></i> Genetic Screening</span>
+              <span class="bento-micro-pill"><i class="fa-solid fa-syringe"></i> Micro-Dose Vaccines</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- BENTO ITEM 2: Vertical Tower Card (Span 1 Col, Span 2 Rows) -->
+        <article class="bento-card bento-tower gsap-bento-item">
+          <div class="bento-inner-content">
+            <div class="bento-icon-box bg-coral-tint">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <span class="badge badge-primary">Always On</span>
+            <h3 class="bento-title-md">24/7 Trauma & Critical ICU Unit</h3>
+            <p class="bento-desc-sm">
+              Continuous heated oxygen therapy enclosures, trauma stabilization bays, and instant canine & feline blood
+              bank supplies ready at any hour.
+            </p>
+
+            <div class="bento-stat-callout">
+              <span class="stat-number">&lt; 3m</span>
+              <span class="stat-text">Average emergency bay admission to vitals stabilization</span>
+            </div>
+
+            <div class="bento-tower-footer">
+              <a href="contact.html" class="btn btn-secondary btn-sm bento-action-btn">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Emergency Dispatch</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BENTO ITEM 3: Ultrasonic Dental Wing (Span 1 Col, Span 1 Row) -->
+        <article class="bento-card bento-standard gsap-bento-item">
+          <div class="bento-inner-content">
+            <div class="bento-top-row">
+              <div class="bento-icon-box bg-mint-tint">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+              <span class="bento-code-tag">WING_02</span>
+            </div>
+
+            <h3 class="bento-title-sm">Ultrasonic Oral Surgery</h3>
+            <p class="bento-desc-sm">
+              Subgingival piezo-scaling, high-magnification intraoral radiography, and enamel barrier sealing.
+            </p>
+
+            <div class="bento-footer-link">
+              <a href="service.html" class="link-arrow">
+                <span>Oral Care Details</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BENTO ITEM 4: Quiet Cat Haven (Span 1 Col, Span 1 Row) -->
+        <article class="bento-card bento-standard gsap-bento-item">
+          <div class="bento-inner-content">
+            <div class="bento-top-row">
+              <div class="bento-icon-box bg-amber-tint">
+                <i class="fa-solid fa-shield-cat"></i>
+              </div>
+              <span class="bento-code-tag">WING_03</span>
+            </div>
+
+            <h3 class="bento-title-sm">Quiet Feline Sanctuary</h3>
+            <p class="bento-desc-sm">
+              Acoustically isolated suites, natural feline pheromone vaporizers, and canine-free corridors.
+            </p>
+
+            <div class="bento-footer-link">
+              <a href="about.html" class="link-arrow">
+                <span>Fear-Free Specs</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BENTO ITEM 5: Wide Horizontal Summary Banner (Span 3 Cols, Span 1 Row) -->
+        <article class="bento-card bento-wide gsap-bento-item">
+          <div class="bento-wide-content">
+            <div class="wide-left">
+              <div class="bento-icon-box bg-mint-tint">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div>
+                <h3 class="bento-title-sm">Direct Digital Parent Telemetry & Health Records</h3>
+                <p class="bento-desc-sm">Access bloodwork reports, ultrasound videography, and surgeon notes via our
+                  secure mobile patient portal.</p>
+              </div>
+            </div>
+            <div class="wide-right">
+              <a href="contact.html" class="btn btn-outline-primary btn-sm">Portal Inquiries</a>
+              <a href="contact.html" class="btn btn-primary btn-sm">Schedule Visit</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Classy Service Pre-Footer CTA: Priority Triage & Care Reservation Dock -->
+  <section class="section service-cta-section" id="serviceCta">
+    <!-- Ambient Atmospheric Radiant Glows -->
+    <div class="service-cta-ambient" aria-hidden="true">
+      <div class="cta-glow-orb orb-primary-glow"></div>
+      <div class="cta-glow-orb orb-amber-glow"></div>
+      <div class="cta-geometric-grid"></div>
+    </div>
+
+    <div class="container service-cta-container">
+      <div class="service-cta-pod card-glass-dark gsap-srv-cta">
+
+        <!-- Top Priority Status Strip -->
+        <div class="cta-priority-bar flex-between">
+          <div class="live-dispatch-badge">
+            <span class="live-beacon-pulse"></span>
+            <span>Duty Surgeons & Intensive Care On-Site</span>
+          </div>
+          <span class="accreditation-pill">
+            <i class="fa-solid fa-award"></i> AAHA Accredited Hospital
+          </span>
+        </div>
+
+        <!-- Main Headline & Subtitle -->
+        <div class="cta-narrative-wrap text-center">
+          <h2 class="service-cta-title">
+            Ready to Prioritize Your Pet's Long-Term Health?
+          </h2>
+          <p class="service-cta-subtitle">
+            Whether you need a proactive wellness examination, advanced ultrasonic diagnostics, or immediate surgical
+            triage, our dedicated clinicians provide unhurried, gentle, Fear-Free care.
+          </p>
+        </div>
+
+        <!-- Two-Pronged Action Channels -->
+        <div class="cta-channels-grid">
+
+          <!-- Channel 1: Scheduled Care -->
+          <div class="cta-channel-card">
+            <div class="channel-icon-circle bg-mint-box">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="channel-info">
+              <span class="channel-tag">Routine & Specialized Care</span>
+              <h3 class="channel-title">Schedule A Clinic Visit</h3>
+              <p class="channel-desc">Choose your preferred doctor, clinical specialty, and time slot online.</p>
+            </div>
+            <a href="contact.html" class="btn btn-secondary cta-channel-btn">
+              <span>Book Online</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Channel 2: 24/7 Urgent Dispatch -->
+          <div class="cta-channel-card card-urgent">
+            <div class="channel-icon-circle bg-amber-box">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <div class="channel-info">
+              <span class="channel-tag tag-urgent">Immediate Critical Response</span>
+              <h3 class="channel-title">24/7 Emergency Triage</h3>
+              <p class="channel-desc">Direct hotline connects you instantly with our trauma bay floor team.</p>
+            </div>
+            <a href="contact.html" class="btn btn-outline-hero cta-channel-btn btn-urgent-call">
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>+1 (800) 555-VETS</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Bottom Trust Metrics Strip -->
+        <div class="cta-guarantees-strip flex-between">
+          <div class="guarantee-item">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>100% Fear-Free Protocol</span>
+          </div>
+          <div class="guarantee-divider"></div>
+          <div class="guarantee-item">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Same-Day Diagnostic Results</span>
+          </div>
+          <div class="guarantee-divider"></div>
+          <div class="guarantee-item">
+            <i class="fa-solid fa-file-shield"></i>
+            <span>Direct Pet Insurance Processing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand Info & Socials -->
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="footer-logo" aria-label="VetCare Home">
+              <img src="./assets/logo 20.webp" alt="VetCare Logo" width="150" height="50">
+            </a>
+            <p class="footer-desc">
+              Providing compassionate, state-of-the-art veterinary medicine, wellness checkups, and 24/7
+              emergency critical care for your beloved animal companions.
+            </p>
+            <div class="footer-socials">
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Twitter X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Highlighted dynamically based on current page) -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-nav-link">Home</a></li>
+              <li><a href="service.html" class="footer-nav-link">Services</a></li>
+              <li><a href="about.html" class="footer-nav-link">About Us</a></li>
+              <li><a href="our.html" class="footer-nav-link">Our Vets</a></li>
+              <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Medical Services -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Pet Services</h4>
+            <ul class="footer-links">
+              <li><a href="service.html">Preventive Wellness</a></li>
+              <li><a href="service.html">Dental Cleaning</a></li>
+              <li><a href="service.html">Diagnostic Ultrasound</a></li>
+              <li><a href="service.html">Surgical Care</a></li>
+              <li><a href="service.html">Microchipping & Vaccines</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Emergency Contacts & Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-heading">24/7 Emergency</h4>
+            <div class="emergency-badge">
+              <i class="fa-solid fa-phone-volume"></i>
+              <div>
+                <span class="emergency-badge-title">Direct Clinic Hotline</span>
+                <a href="error.html" class="emergency-badge-num">+1 (800) 555-VETS</a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h5 class="newsletter-title">Pet Health Newsletter</h5>
+              <p class="newsletter-desc">Monthly seasonal care tips and vaccine schedules.</p>
+              <form class="newsletter-form" id="newsletterForm" novalidate>
+                <input type="email" id="newsletterEmail" class="form-control newsletter-input"
+                  placeholder="Your email address" required>
+                <button type="submit" class="btn btn-secondary newsletter-btn" aria-label="Subscribe to newsletter">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+              <!-- Small inline feedback message container -->
+              <span id="newsletterError" class="newsletter-error-msg"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Legal & Copyright -->
+    <div class="footer-bottom">
+      <div class="container flex-between footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 VetCare Animal Hospital. All rights reserved.
+        </p>
+        <ul class="footer-legal-links">
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms of Service</a></li>
+          <li><a href="error.html">Emergency Protocols</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <script src="service.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+
+
+</body>
+
+</html>

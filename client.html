@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCare | Pet Guardian Health Portal</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="client.css"/>
+
+
+</head>
+<body class="dashboard-body">
+
+  <!-- Mobile Backdrop Overlay for Background Scroll Lock -->
+  <div class="dash-backdrop-overlay" id="dashBackdrop" aria-hidden="true"></div>
+
+  <div class="dash-layout-wrapper">
+    
+    <!-- ==============================================
+         SIDEBAR NAVIGATION (DRAWER ON MOBILE <= 992px)
+         ============================================== -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-strip flex-between">
+        <a href="index.html" class="sidebar-logo">
+          <span class="logo-icon"><i class="fa-solid fa-shield-heart"></i></span>
+          <span class="logo-text">Vet<span>Care</span></span>
+        </a>
+        <button type="button" class="sidebar-close-btn" id="dashCloseBtn" aria-label="Close Navigation">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Authenticated Pet Guardian Profile Dock -->
+      <div class="sidebar-user-dock">
+        <div class="user-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Client Guardian" class="user-avatar" />
+          <span class="avatar-status-dot"></span>
+        </div>
+        <div class="user-meta-info">
+          <strong class="user-display-name user-name-truncate">Verified Pet Parent</strong>
+          <span class="user-display-email user-email-truncate">loading...</span>
+          <span class="user-role-badge"><i class="fa-solid fa-paw"></i> Patient: Luna (Golden)</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs (Exact Admin Styling) -->
+      <nav class="sidebar-nav-menu" role="tablist">
+        <span class="nav-section-title">PATIENT TELEMETRY</span>
+        
+        <button type="button" class="dash-nav-link active" data-target="view-overview" role="tab">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span>Companion Vitals</span>
+          <span class="nav-count-badge">Live</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-appointments" role="tab">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Care Appointments</span>
+          <span class="nav-count-badge badge-warning">01</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-labs" role="tab">
+          <i class="fa-solid fa-microscope"></i>
+          <span>Diagnostic Labs</span>
+          <span class="nav-count-badge">New</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-prescriptions" role="tab">
+          <i class="fa-solid fa-pills"></i>
+          <span>Prescriptions &amp; Meds</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-messages" role="tab">
+          <i class="fa-solid fa-comments"></i>
+          <span>Doctor Messaging</span>
+        </button>
+
+        <span class="nav-section-title">HOSPITAL CONCIERGE</span>
+
+        <a href="error.html" class="dash-nav-link">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span>Insurance &amp; Billing</span>
+        </a>
+
+        <a href="error.html" class="dash-nav-link">
+          <i class="fa-solid fa-shield-cat"></i>
+          <span>Fear-Free Home Prep</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer Dock -->
+      <div class="sidebar-footer-dock">
+        <a href="error.html" class="btn btn-outline-hero btn-sm sidebar-logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Sign Out Session</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==============================================
+         MAIN DASHBOARD BODY CONTENT
+         ============================================== -->
+    <div class="dash-main-area">
+      
+      <!-- Top Clinical Command Bar -->
+      <header class="dash-top-header flex-between">
+        <div class="header-left flex-center">
+          <button type="button" class="dash-hamburger-btn" id="dashHamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </button>
+          
+          <div class="header-titles">
+            <h1 class="header-page-title" id="currentViewTitle">Companion Vitals &amp; Recovery</h1>
+            <span class="header-system-tag">
+              <span class="pulse-beacon-dot"></span> Patient Profile: Luna (Golden Retriever • 4 Yrs)
+            </span>
+          </div>
+        </div>
+
+        <!-- Top Right Actions & Email Monitor -->
+        <div class="header-right flex-center">
+          <div class="header-email-pill">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="user-display-email">guardian@vetcarehospital.com</span>
+          </div>
+
+          <a href="error.html" class="btn btn-secondary btn-sm header-action-btn">
+            <i class="fa-solid fa-calendar-plus"></i>
+            <span>Book Visit</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- ==============================================
+           DYNAMIC TAB VIEW PANELS
+           ============================================== -->
+      <main class="dash-content-container">
+
+        <!-- VIEW 1: COMPANION VITALS (DEFAULT ACTIVE) -->
+        <section class="dash-view-panel active" id="view-overview">
+          
+          <!-- Primary Pet Status Card -->
+          <div class="dash-banner-card card flex-between">
+            <div class="dash-banner-left flex-center">
+              <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=240&auto=format&fit=crop" alt="Luna Patient" class="dash-banner-avatar" />
+              <div>
+                <div class="dash-pill-row">
+                  <span class="status-badge badge-success"><span class="badge-dot"></span> Post-Op Day 06</span>
+                  <span class="dash-chip-code">Microchip: #984-201-992</span>
+                </div>
+                <h2 class="dash-banner-name">Luna (Golden Retriever)</h2>
+                <p class="dash-banner-sub">Attending Surgeon: Dr. Amanda Vance, DACVS • Laparoscopic Gastropexy Suite</p>
+              </div>
+            </div>
+            <div class="dash-banner-actions">
+              <a href="error.html" class="btn btn-outline-hero btn-sm">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Download Biometrics Log</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4 Core Metric Counter Pods -->
+          <div class="dash-stats-grid">
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">RESTING HEART RATE</span>
+                <div class="metric-icon bg-mint-box"><i class="fa-solid fa-heart-pulse"></i></div>
+              </div>
+              <strong class="metric-big-num">72 BPM</strong>
+              <div class="metric-bottom-trend text-success">
+                <i class="fa-solid fa-circle-check"></i> Normal canine resting baseline
+              </div>
+            </div>
+
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">BODY TEMPERATURE</span>
+                <div class="metric-icon bg-amber-box"><i class="fa-solid fa-temperature-half"></i></div>
+              </div>
+              <strong class="metric-big-num">38.4°C</strong>
+              <div class="metric-bottom-trend text-success">
+                <i class="fa-solid fa-shield-heart"></i> Perfect normothermic range
+              </div>
+            </div>
+
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">RECOVERY MOBILITY INDEX</span>
+                <div class="metric-icon bg-mint-box"><i class="fa-solid fa-person-walking"></i></div>
+              </div>
+              <strong class="metric-big-num">88%</strong>
+              <div class="metric-bottom-trend text-primary">
+                <i class="fa-solid fa-arrow-trend-up"></i> +12% improvement since yesterday
+              </div>
+            </div>
+
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">NEXT MEDICATION DUE</span>
+                <div class="metric-icon bg-coral-pulse"><i class="fa-solid fa-clock"></i></div>
+              </div>
+              <strong class="metric-big-num">02:30 PM</strong>
+              <div class="metric-bottom-trend text-warning">
+                <i class="fa-solid fa-pills"></i> Carprofen (Anti-inflammatory)
+              </div>
+            </div>
+          </div>
+
+          <!-- Recovery Progress & Timeline -->
+          <div class="dash-table-card card">
+            <div class="table-card-header flex-between">
+              <div>
+                <h3 class="table-title">Post-Op Incision &amp; Activity Progress</h3>
+                <p class="table-subtitle">Daily milestones verified by Dr. Vance's surgical nursing team.</p>
+              </div>
+              <a href="error.html" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-camera"></i> <span>Upload Incision Photo</span>
+              </a>
+            </div>
+
+            <div class="dark-recovery-timeline">
+              <div class="dark-timeline-step completed">
+                <span class="timeline-step-icon"><i class="fa-solid fa-check"></i></span>
+                <div class="timeline-step-body">
+                  <strong>Day 1–2: In-Hospital ICU Warm Recovery</strong>
+                  <p>Discharged with stable ECG biometrics and zero surgical cold shock.</p>
+                </div>
+              </div>
+
+              <div class="dark-timeline-step completed">
+                <span class="timeline-step-icon"><i class="fa-solid fa-check"></i></span>
+                <div class="timeline-step-body">
+                  <strong>Day 3–5: Leash-Only Light Mobilization</strong>
+                  <p>Incision dry and intact. No licking behaviors noted with comfortable soft collar.</p>
+                </div>
+              </div>
+
+              <div class="dark-timeline-step active">
+                <span class="timeline-step-icon"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                <div class="timeline-step-body">
+                  <strong>Day 6–10: Gentle Yard Exercise &amp; Suture Check</strong>
+                  <p>Scheduled suture line clinical checkup on Friday at 10:30 AM.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 2: CARE APPOINTMENTS -->
+        <section class="dash-view-panel" id="view-appointments">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Upcoming Clinical Visits &amp; Consultations</h3>
+              <p class="banner-sub">Pre-assigned direct suites, attending doctor bios, and zero-wait check-ins.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Schedule New Visit</a>
+          </div>
+
+          <div class="appointment-cards-stack">
+            <div class="dash-table-card card flex-between appt-dark-card">
+              <div class="appt-date-pod">
+                <span class="appt-month">OCT</span>
+                <strong class="appt-day">09</strong>
+                <span class="appt-time">10:30 AM</span>
+              </div>
+              <div class="appt-details-wrap flex-1">
+                <span class="status-badge badge-warning">CONFIRMED APPOINTMENT</span>
+                <h4 class="appt-dark-title">Post-Op Laparoscopy Surgical Suture Examination</h4>
+                <div class="appt-meta-row">
+                  <span><i class="fa-solid fa-user-doctor"></i> Dr. Amanda Vance, DACVS</span>
+                  <span><i class="fa-solid fa-door-open"></i> Surgical Suite 01 (Direct Room)</span>
+                </div>
+              </div>
+              <div class="appt-actions-dock">
+                <a href="error.html" class="btn btn-outline-hero btn-sm">Reschedule</a>
+                <a href="error.html" class="btn btn-secondary btn-sm">Check-In Early</a>
+              </div>
+            </div>
+
+            <div class="dash-table-card card flex-between appt-dark-card">
+              <div class="appt-date-pod date-muted">
+                <span class="appt-month">NOV</span>
+                <strong class="appt-day">14</strong>
+                <span class="appt-time">02:00 PM</span>
+              </div>
+              <div class="appt-details-wrap flex-1">
+                <span class="status-badge badge-success">ROUTINE WELLNESS</span>
+                <h4 class="appt-dark-title">Annual 15-Point Physical &amp; Heartworm Prevention</h4>
+                <div class="appt-meta-row">
+                  <span><i class="fa-solid fa-user-doctor"></i> Faculty General Clinician</span>
+                  <span><i class="fa-solid fa-door-open"></i> Canine Quiet Room 02</span>
+                </div>
+              </div>
+              <div class="appt-actions-dock">
+                <a href="error.html" class="btn btn-outline-hero btn-sm">Modify Details</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 3: DIAGNOSTIC LABS -->
+        <section class="dash-view-panel" id="view-labs">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Diagnostic Pathology &amp; Imaging Reports</h3>
+              <p class="banner-sub">View in-house 15-minute hematology charts, digital radiographs, and ultrasound files.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Request Chart Forwarding</a>
+          </div>
+
+          <div class="reports-list-stack">
+            <div class="report-row card flex-between">
+              <div class="report-meta flex-center">
+                <div class="rep-icon bg-mint-box"><i class="fa-solid fa-file-pdf"></i></div>
+                <div>
+                  <strong>Pre-Anesthetic_Comprehensive_Blood_Panel.pdf</strong>
+                  <span class="rep-sub">CBC, Liver &amp; Kidney Renal Markers • All Values Within Normal Limits</span>
+                </div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm">Download PDF</a>
+            </div>
+
+            <div class="report-row card flex-between">
+              <div class="report-meta flex-center">
+                <div class="rep-icon bg-amber-box"><i class="fa-solid fa-file-waveform"></i></div>
+                <div>
+                  <strong>Pre-Op_Abdominal_Ultrasound_HighRes.dcm</strong>
+                  <span class="rep-sub">4D Organ Scan by Dr. Marcus Thorne • Normal Gastric Positioning</span>
+                </div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm">Download Scan</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 4: PRESCRIPTIONS & MEDS -->
+        <section class="dash-view-panel" id="view-prescriptions">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Active Pharmaceuticals &amp; Refills</h3>
+              <p class="banner-sub">Manage dosages, medication reminders, and direct home pharmacy deliveries.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Request 1-Click Refill</a>
+          </div>
+
+          <div class="theatres-grid">
+            <div class="theatre-pod card">
+              <div class="theatre-head flex-between">
+                <span class="status-badge badge-success">ACTIVE TREATMENT</span>
+                <span class="theatre-num">REFILLS: 02</span>
+              </div>
+              <h4 class="theatre-name">Carprofen Chewable (75mg)</h4>
+              <p class="theatre-desc"><i class="fa-solid fa-bell"></i> 1 Tablet every 12 hours with meals for post-op inflammation.</p>
+              <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Log Dose Given</a>
+            </div>
+
+            <div class="theatre-pod card">
+              <div class="theatre-head flex-between">
+                <span class="status-badge badge-warning">ACTIVE TREATMENT</span>
+                <span class="theatre-num">REFILLS: 01</span>
+              </div>
+              <h4 class="theatre-name">Gabapentin Capsules (100mg)</h4>
+              <p class="theatre-desc"><i class="fa-solid fa-bell"></i> 1 Capsule every 8 hours for biological nerve comfort.</p>
+              <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Log Dose Given</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 5: DOCTOR MESSAGING -->
+        <section class="dash-view-panel" id="view-messages">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Direct Veterinary Messaging Line</h3>
+              <p class="banner-sub">Non-emergency correspondence with Dr. Amanda Vance's clinical team.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">New Secure Message</a>
+          </div>
+
+          <div class="dash-table-card card client-message-card">
+            <div class="dark-msg-bubble bubble-doctor">
+              <div class="msg-bubble-top flex-between">
+                <strong>Dr. Amanda Vance, DACVS</strong>
+                <span class="msg-time">Yesterday, 04:15 PM</span>
+              </div>
+              <p>Hello! Luna's continuous ECG and incision telemetry are looking fantastic. Make sure to keep her restricted from high jumping until Friday's suture checkup.</p>
+            </div>
+
+            <div class="dark-msg-bubble bubble-guardian">
+              <div class="msg-bubble-top flex-between">
+                <strong class="user-display-name">You (Pet Guardian)</strong>
+                <span class="msg-time">Yesterday, 05:20 PM</span>
+              </div>
+              <p>Thank you Dr. Vance! She ate her full dinner with the Carprofen without any stomach upset. Looking forward to our Friday appointment.</p>
+            </div>
+
+            <div class="dark-msg-input-dock flex-between">
+              <input type="text" class="dark-dash-input" placeholder="Type a message to Dr. Vance's team..." />
+              <a href="error.html" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- GSAP Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Site Scripts -->
+  <script>
+
+// ===================================================
+// UNIFIED DASHBOARD CONTROLLER (ADMIN & CLIENT)
+// ===================================================
+function initDashboardPlatform() {
+  const dashSidebar = document.getElementById('dashSidebar');
+  const dashHamburgerBtn = document.getElementById('dashHamburgerBtn');
+  const dashCloseBtn = document.getElementById('dashCloseBtn');
+  const dashBackdrop = document.getElementById('dashBackdrop');
+  const navLinks = document.querySelectorAll('.dash-sidebar .dash-nav-link[data-target]');
+  const viewPanels = document.querySelectorAll('.dash-main-area .dash-view-panel');
+  const currentViewTitle = document.getElementById('currentViewTitle');
+
+  // 1. DYNAMICALLY BIND LOGGED-IN EMAIL FROM LOGIN SESSION
+  const activeEmail = sessionStorage.getItem('auth_user_email') || 'sarah.jenkins@gmail.com';
+  const activeName = sessionStorage.getItem('auth_user_name') || 'Sarah Jenkins';
+
+  document.querySelectorAll('.user-display-email').forEach(el => {
+    el.textContent = activeEmail;
+  });
+  document.querySelectorAll('.user-display-name').forEach(el => {
+    el.textContent = activeName;
+  });
+
+  if (!dashSidebar || !dashHamburgerBtn) return;
+
+  // 2. HAMBURGER OPEN & CLOSE WITH BACKGROUND SCROLL LOCK
+  function openMobileNav() {
+    dashSidebar.classList.add('active');
+    dashBackdrop.classList.add('active');
+    dashHamburgerBtn.classList.add('active');
+    dashHamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('dash-scroll-locked'); // Lock background scroll completely
+  }
+
+  function closeMobileNav() {
+    dashSidebar.classList.remove('active');
+    dashBackdrop.classList.remove('active');
+    dashHamburgerBtn.classList.remove('active');
+    dashHamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('dash-scroll-locked'); // Restore background scroll
+  }
+
+  dashHamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (dashSidebar.classList.contains('active')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
+
+  dashCloseBtn?.addEventListener('click', closeMobileNav);
+  dashBackdrop?.addEventListener('click', closeMobileNav);
+
+  // 3. SECTION SWITCHING & AUTO-CLOSE ON NAVLINK CLICK
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const targetId = link.getAttribute('data-target');
+      const targetPanel = document.getElementById(targetId);
+
+      if (!targetPanel) return;
+
+      // Update Active Navigation Button
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      // Update Header Title
+      if (currentViewTitle) {
+        const titleSpan = link.querySelector('span');
+        if (titleSpan) currentViewTitle.textContent = titleSpan.textContent;
+      }
+
+      // Smooth Switch Tab Panel with GSAP
+      viewPanels.forEach(panel => {
+        if (panel.classList.contains('active')) {
+          if (typeof gsap !== 'undefined') {
+            gsap.to(panel, {
+              opacity: 0,
+              y: -8,
+              duration: 0.2,
+              ease: 'power2.in',
+              onComplete: () => {
+                panel.classList.remove('active');
+                panel.style.display = 'none';
+
+                targetPanel.style.display = 'block';
+                targetPanel.classList.add('active');
+                gsap.fromTo(
+                  targetPanel,
+                  { opacity: 0, y: 12 },
+                  { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+                );
+              }
+            });
+          } else {
+            panel.classList.remove('active');
+            targetPanel.classList.add('active');
+          }
+        }
+      });
+
+      // Auto-close mobile drawer and release background scroll lock
+      if (window.innerWidth <= 992) {
+        closeMobileNav();
+      }
+    });
+  });
+}
+
+// Call on load
+document.addEventListener('DOMContentLoaded', () => {
+  initDashboardPlatform();
+});
+
+  </script>
+
+
+
+</body>
+</html>

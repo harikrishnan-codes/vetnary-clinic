@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCare & Wellness Center</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./assets/logo.webp" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Top Announcement / Emergency Bar -->
+  <aside class="top-bar">
+    <div class="container flex-between">
+      <div class="top-bar-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>24/7 Pet Emergency Hotline: <strong>+1 (800) 555-VETS</strong></span>
+      </div>
+      <div class="top-bar-item top-bar-hours">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container flex-between header-wrapper">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo" aria-label="VetCare Home">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="our.html" class="nav-link">Our Vets</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="auth.html" class="btn btn-outline-primary btn-sm" id="openSignInBtn">Sign In</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Visit</a>
+
+        <!-- Hamburger Button (Mobile / Tablet) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Mobile Slide Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <a href="index.html" class="logo">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="our.html" class="mobile-nav-link">Our Vets</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <a href="auth.html" class="btn btn-outline-primary" id="mobileSignInBtn">Sign In</a>
+      <a href="contact.html" class="btn btn-primary mobile-book-btn">Book Appointment</a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <p class="emergency-tag">24/7 Emergency Line</p>
+      <a href="error.html" class="emergency-number">+1 (800) 555-VETS</a>
+    </div>
+  </aside>
+
+
+
+
+
+
+
+
+  <!-- Premium Classy Dark Teal Hero Section with Dynamic Background Slider -->
+  <section class="hero-section" id="hero">
+
+    <!-- Automated Zoom-In/Zoom-Out Background Slider -->
+    <div class="hero-bg-slider" aria-hidden="true">
+      <div class="hero-bg-slide active"
+        style="background-image: url('./assets/img\ 1.webp');">
+      </div>
+      <div class="hero-bg-slide"
+        style="background-image: url('./assets/img\ 2.webp');">
+      </div>
+      <div class="hero-bg-slide"
+        style="background-image: url('./assets/img\ 3.webp');">
+      </div>
+      <div class="hero-bg-slide"
+        style="background-image: url('./assets/img\ 5.webp');">
+      </div>
+    </div>
+
+    <!-- Deep Gradient Tint Overlay for Contrast & Footer Color Harmony -->
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="hero-ambient-glow" aria-hidden="true">
+      <div class="glow-orb orb-teal"></div>
+      <div class="glow-orb orb-amber"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-grid">
+
+        <!-- Hero Left: Content -->
+        <div class="hero-content">
+          <div class="hero-badge-wrapper gsap-hero-reveal">
+            <div class="status-indicator">
+              <span class="pulse-dot"></span>
+              <span class="status-text">Clinical Emergency & Surgery Available 24/7</span>
+            </div>
+          </div>
+
+          <h1 class="hero-title gsap-hero-reveal">
+            World-Class Medical Excellence For The
+            <span class="text-accent-gradient">Pets You Love</span>
+          </h1>
+
+          <p class="hero-subtitle gsap-hero-reveal">
+            VetCare delivers certified veterinary surgery, preventative cardiology, digital ultrasonic diagnostics, and
+            painless wellness care in an accredited, fear-free environment.
+          </p>
+
+          <div class="hero-cta-group gsap-hero-reveal">
+            <a href="contact.html" class="btn btn-secondary btn-lg hero-cta-btn">
+              <span>Book Appointment</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="service.html" class="btn btn-outline-hero btn-lg">
+              <i class="fa-solid fa-circle-play"></i>
+              <span>Explore Services</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics gsap-hero-reveal">
+            <div class="metric-item">
+              <h3 class="metric-number" data-count="99.4">0%</h3>
+              <p class="metric-label">Treatment Success</p>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <h3 class="metric-number" data-count="18">0+</h3>
+              <p class="metric-label">Years of Care</p>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <h3 class="metric-number" data-count="24000">0+</h3>
+              <p class="metric-label">Happy Patients</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Interactive 3D Card Visuals -->
+        <div class="hero-visual gsap-hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-main-card">
+              <img src="./assets/img 6.webp"
+                alt="Veterinary Examination" class="hero-img" loading="lazy" />
+              <div class="hero-img-gradient-overlay"></div>
+              <div class="hero-card-footer">
+                <div class="doctor-badge">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  <div>
+                    <span class="doc-title">Dr. Amanda Vance, DVM</span>
+                    <span class="doc-role">Chief of Veterinary Surgery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Glass Pill 1 -->
+            <div class="glass-float-card float-top-right">
+              <div class="float-icon-box bg-mint">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div class="float-info">
+                <span class="float-title">Fear-Free Certified</span>
+                <span class="float-meta">ISO accredited clinic</span>
+              </div>
+            </div>
+
+            <!-- Glass Pill 2 -->
+            <div class="glass-float-card float-bottom-left hang">
+              <div class="float-icon-box bg-amber">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <div class="float-info">
+                <span class="float-title">Instant Vet Helpline</span>
+                <span class="float-meta">+1 (800) 555-VETS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Infinite Veterinary Marquee Stream / Brand Credibility Ticker -->
+  <section class="marquee-section" aria-label="Clinic Accreditations and Highlights">
+    <div class="marquee-track-wrapper">
+      <!-- Marquee Track (Double content for seamless 100% infinite scroll) -->
+      <div class="marquee-track" id="marqueeTrack">
+
+        <!-- Set 1 -->
+        <div class="marquee-group">
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-award"></i> AAHA Accredited</span>
+            <span class="ticker-text">Top 12% Animal Hospital Standards</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-shield-cat"></i> Fear-Free Certified</span>
+            <span class="ticker-text">Zero-Stress Clinical Environment</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-truck-medical"></i> 24/7 Trauma Care</span>
+            <span class="ticker-text">Dedicated Critical Care Ambulances</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-microscope"></i> In-House Labs</span>
+            <span class="ticker-text">Instant 15-Minute Blood Diagnostics</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-tooth"></i> Ultrasonic Dental</span>
+            <span class="ticker-text">Digital Oral Radiography</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-heart-pulse"></i> Vet Cardiology</span>
+            <span class="ticker-text">Color Doppler Ultrasound</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <!-- Set 2 (Exact duplicate for seamless infinite loop without jumps) -->
+        <div class="marquee-group" aria-hidden="true">
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-award"></i> AAHA Accredited</span>
+            <span class="ticker-text">Top 12% Animal Hospital Standards</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-shield-cat"></i> Fear-Free Certified</span>
+            <span class="ticker-text">Zero-Stress Clinical Environment</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-truck-medical"></i> 24/7 Trauma Care</span>
+            <span class="ticker-text">Dedicated Critical Care Ambulances</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-microscope"></i> In-House Labs</span>
+            <span class="ticker-text">Instant 15-Minute Blood Diagnostics</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-tooth"></i> Ultrasonic Dental</span>
+            <span class="ticker-text">Digital Oral Radiography</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="marquee-item">
+            <span class="ticker-badge"><i class="fa-solid fa-heart-pulse"></i> Vet Cardiology</span>
+            <span class="ticker-text">Color Doppler Ultrasound</span>
+          </div>
+          <div class="marquee-divider"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Kinetic Stacking / Overlapping Cards Section -->
+  <section class="section kinetic-stack-section" id="kineticStack">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header text-center gsap-stack-header">
+        <span class="badge badge-primary">Comprehensive Patient Care</span>
+        <h2 class="stack-main-title">Modern Veterinary Medicine Designed Around Comfort</h2>
+        <p class="stack-subtitle">
+          Every treatment tier at VetCare integrates surgical precision with low-stress protocols, ensuring swift
+          recovery and trusted diagnostic transparency.
+        </p>
+      </div>
+
+      <!-- Kinetic Card Stacking Canvas -->
+      <div class="kinetic-stack-wrapper">
+
+        <!-- Card 1: Preventive & Wellness -->
+        <article class="stack-card card" id="stackCard1" data-index="1">
+          <div class="stack-card-inner">
+            <div class="stack-card-content">
+              <div class="stack-badge-row">
+                <span class="card-step">01</span>
+                <span class="badge badge-primary">Foundation</span>
+              </div>
+              <h3 class="stack-title">Preventive Wellness & Biometric Profiling</h3>
+              <p class="stack-text">
+                Comprehensive physical assessments, targeted core immunizations, weight & metabolic nutrition tracking,
+                and early detection blood chemistry screening.
+              </p>
+              <ul class="stack-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> 15-Point head-to-tail wellness examination</li>
+                <li><i class="fa-solid fa-circle-check"></i> Customized canine & feline vaccination regimens</li>
+                <li><i class="fa-solid fa-circle-check"></i> Microchip implantation with lifetime registry</li>
+              </ul>
+              <div class="stack-action-row">
+                <a href="service.html" class="btn btn-outline-primary btn-sm">Explore Protocol</a>
+              </div>
+            </div>
+            <div class="stack-card-media">
+              <img src="./assets/img 7.webp"
+                alt="Preventive pet wellness check" loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Advanced Diagnostics -->
+        <article class="stack-card card" id="stackCard2" data-index="2">
+          <div class="stack-card-inner">
+            <div class="stack-card-content">
+              <div class="stack-badge-row">
+                <span class="card-step">02</span>
+                <span class="badge badge-secondary">Precision</span>
+              </div>
+              <h3 class="stack-title">Advanced Imaging & In-House Diagnostics</h3>
+              <p class="stack-text">
+                Rapid on-site digital radiography, color Doppler abdominal ultrasound, and pathology laboratory testing
+                providing actionable diagnoses in minutes.
+              </p>
+              <ul class="stack-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> Low-radiation high-resolution digital X-rays</li>
+                <li><i class="fa-solid fa-circle-check"></i> 15-Minute in-clinic comprehensive blood panels</li>
+                <li><i class="fa-solid fa-circle-check"></i> Non-invasive ultrasonic cardiology evaluations</li>
+              </ul>
+              <div class="stack-action-row">
+                <a href="service.html" class="btn btn-secondary btn-sm">View Diagnostics</a>
+              </div>
+            </div>
+            <div class="stack-card-media">
+              <img src="./assets/img 8.webp"
+                alt="Veterinary diagnostic imaging" loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Surgery & Critical Care -->
+        <article class="stack-card card" id="stackCard3" data-index="3">
+          <div class="stack-card-inner">
+            <div class="stack-card-content">
+              <div class="stack-badge-row">
+                <span class="card-step">03</span>
+                <span class="badge badge-primary">Emergency</span>
+              </div>
+              <h3 class="stack-title">Sterile Surgery & 24/7 Intensive Care</h3>
+              <p class="stack-text">
+                Equipped with HEPA-filtered surgical suites, heated patient recovery suites, continuous multi-parameter
+                vital telemetry, and dedicated anesthesia nurses.
+              </p>
+              <ul class="stack-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> Soft tissue, orthopedic, and emergency surgeries</li>
+                <li><i class="fa-solid fa-circle-check"></i> Multi-parameter ECG, SpO2, and ETCO2 monitoring</li>
+                <li><i class="fa-solid fa-circle-check"></i> Round-the-clock ICU critical care doctors</li>
+              </ul>
+              <div class="stack-action-row">
+                <a href="contact.html" class="btn btn-primary btn-sm">Emergency Info</a>
+              </div>
+            </div>
+            <div class="stack-card-media">
+              <img src="./assets/img 2.webp"
+                alt="Veterinary surgery suite" loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Ultrasonic Dental & Restorative -->
+        <article class="stack-card card" id="stackCard4" data-index="4">
+          <div class="stack-card-inner">
+            <div class="stack-card-content">
+              <div class="stack-badge-row">
+                <span class="card-step">04</span>
+                <span class="badge badge-secondary">Restorative</span>
+              </div>
+              <h3 class="stack-title">Ultrasonic Dental Care & Oral Surgery</h3>
+              <p class="stack-text">
+                Prevent periodontal diseases and systemic cardiac damage through subgingival ultrasonic scaling, tooth
+                polishing, and digital intraoral dental X-rays.
+              </p>
+              <ul class="stack-feature-list">
+                <li><i class="fa-solid fa-circle-check"></i> Full-mouth dental charting and radiograph scans</li>
+                <li><i class="fa-solid fa-circle-check"></i> Pain-managed extractions and enamel sealant therapy</li>
+                <li><i class="fa-solid fa-circle-check"></i> Home hygiene counseling and tartar prevention kits</li>
+              </ul>
+              <div class="stack-action-row">
+                <a href="service.html" class="btn btn-outline-secondary btn-sm">Dental Details</a>
+              </div>
+            </div>
+            <div class="stack-card-media">
+              <img src="./assets/img 9.webp"
+                alt="Veterinary dental care" loading="lazy" />
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Expanding Flex Cards / Specialized Medical Wings Section -->
+  <section class="section expand-cards-section" id="specializedWings">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-expand-header">
+        <span class="badge badge-secondary">Specialized Medical Wings</span>
+        <h2 class="stack-main-title">Comprehensive Hospital Care Centers</h2>
+        <p class="stack-subtitle">
+          Explore our purpose-built clinical departments, each equipped with dedicated specialists, advanced medical
+          equipment, and tailored treatment environments.
+        </p>
+      </div>
+
+      <!-- Expanding Flex Deck Container -->
+      <div class="expand-deck-wrapper" id="expandDeck">
+
+        <!-- Card 1: Emergency & Critical ICU (Active by Default) -->
+        <article class="expand-card active" data-index="1">
+          <div class="card-bg-media">
+            <img src="./assets/img 10.webp"
+              alt="Emergency Surgery & ICU Unit" loading="lazy" />
+            <div class="card-tint-overlay"></div>
+          </div>
+
+          <!-- Vertical Closed Pill Label (Visible when column is contracted) -->
+          <div class="collapsed-label">
+            <span class="collapsed-number">01</span>
+            <span class="collapsed-text">Trauma & ICU Center</span>
+            <i class="fa-solid fa-truck-medical collapsed-icon"></i>
+          </div>
+
+          <!-- Expanded Dynamic Body Content -->
+          <div class="expanded-content">
+            <div class="expand-top-row">
+              <span class="badge badge-secondary">24/7 Rapid Response</span>
+              <span class="expand-serial">WING 01</span>
+            </div>
+
+            <h3 class="expand-title">Emergency Trauma & Intensive Care ICU</h3>
+            <p class="expand-desc">
+              Equipped with oxygenation therapy pods, instant cross-matching blood transfusions, emergency cardiac
+              resuscitation, and continuous multi-parameter telemetry.
+            </p>
+
+            <div class="expand-perks">
+              <span class="perk-tag"><i class="fa-solid fa-bed-pulse"></i> Heated ICU Incubators</span>
+              <span class="perk-tag"><i class="fa-solid fa-bolt"></i> Instant Trauma Prep</span>
+              <span class="perk-tag"><i class="fa-solid fa-stethoscope"></i> On-Site Surgeon</span>
+            </div>
+
+            <div class="expand-cta">
+              <a href="contact.html" class="btn btn-secondary btn-sm">Direct Hotline Access</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Diagnostic Imaging & Lab -->
+        <article class="expand-card" data-index="2">
+          <div class="card-bg-media">
+            <img src="./assets/img 11.webp"
+              alt="Digital Radiography and Ultrasound Suite" loading="lazy" />
+            <div class="card-tint-overlay"></div>
+          </div>
+
+          <div class="collapsed-label">
+            <span class="collapsed-number">02</span>
+            <span class="collapsed-text">Diagnostic Imaging Suite</span>
+            <i class="fa-solid fa-microscope collapsed-icon"></i>
+          </div>
+
+          <div class="expanded-content">
+            <div class="expand-top-row">
+              <span class="badge badge-primary">High Precision</span>
+              <span class="expand-serial">WING 02</span>
+            </div>
+
+            <h3 class="expand-title">Digital Radiography & In-House Labs</h3>
+            <p class="expand-desc">
+              Direct-capture high-frequency X-rays and color Doppler ultrasound delivering pinpoint anatomical clarity
+              for swift, decisive surgical decisions.
+            </p>
+
+            <div class="expand-perks">
+              <span class="perk-tag"><i class="fa-solid fa-circle-radiation"></i> Low-Dose Digital X-Ray</span>
+              <span class="perk-tag"><i class="fa-solid fa-vial-virus"></i> 15-Min Blood Chemistry</span>
+              <span class="perk-tag"><i class="fa-solid fa-heart-pulse"></i> Echocardiography</span>
+            </div>
+
+            <div class="expand-cta">
+              <a href="service.html" class="btn btn-primary btn-sm">Explore Labs</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Sterile Surgical Center -->
+        <article class="expand-card" data-index="3">
+          <div class="card-bg-media">
+            <img src="./assets/img 12.webp"
+              alt="Sterile Veterinary Surgical Suite" loading="lazy" />
+            <div class="card-tint-overlay"></div>
+          </div>
+
+          <div class="collapsed-label">
+            <span class="collapsed-number">03</span>
+            <span class="collapsed-text">Surgical Center</span>
+            <i class="fa-solid fa-scissors collapsed-icon"></i>
+          </div>
+
+          <div class="expanded-content">
+            <div class="expand-top-row">
+              <span class="badge badge-primary">ISO Accredited</span>
+              <span class="expand-serial">WING 03</span>
+            </div>
+
+            <h3 class="expand-title">Advanced Orthopedic & Soft Tissue Surgery</h3>
+            <p class="expand-desc">
+              Positive-pressure air-purified operating theatres, sevoflurane vaporizers, and pain-management protocols
+              ensuring zero-stress recovery.
+            </p>
+
+            <div class="expand-perks">
+              <span class="perk-tag"><i class="fa-solid fa-bone"></i> Bone Fracture Repairs</span>
+              <span class="perk-tag"><i class="fa-solid fa-wind"></i> HEPA Filtration</span>
+              <span class="perk-tag"><i class="fa-solid fa-pump-medical"></i> Targeted IV Anesthesia</span>
+            </div>
+
+            <div class="expand-cta">
+              <a href="service.html" class="btn btn-outline-primary btn-sm">Surgical Standards</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Feline & Fear-Free Care -->
+        <article class="expand-card" data-index="4">
+          <div class="card-bg-media">
+            <img src="./assets/img 1.webp"
+              alt="Feline & Fear-Free Quiet Recovery Rooms" loading="lazy" />
+            <div class="card-tint-overlay"></div>
+          </div>
+
+          <div class="collapsed-label">
+            <span class="collapsed-number">04</span>
+            <span class="collapsed-text">Quiet Recovery Sanctuary</span>
+            <i class="fa-solid fa-cat collapsed-icon"></i>
+          </div>
+
+          <div class="expanded-content">
+            <div class="expand-top-row">
+              <span class="badge badge-secondary">Fear-Free Certified</span>
+              <span class="expand-serial">WING 04</span>
+            </div>
+
+            <h3 class="expand-title">Canine & Feline Calm Recovery Haven</h3>
+            <p class="expand-desc">
+              Acoustically isolated suites, natural pheromone diffusers, dimmed circadian lighting, and gentle handling
+              to keep stress hormone levels at baseline.
+            </p>
+
+            <div class="expand-perks">
+              <span class="perk-tag"><i class="fa-solid fa-shield-cat"></i> Cat-Only Exam Areas</span>
+              <span class="perk-tag"><i class="fa-solid fa-volume-xmark"></i> Soundproof Kennels</span>
+              <span class="perk-tag"><i class="fa-solid fa-spa"></i> Pheromone Therapy</span>
+            </div>
+
+            <div class="expand-cta">
+              <a href="about.html" class="btn btn-secondary btn-sm">Fear-Free Philosophy</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- 24/7 Emergency & Surgical Command Center (Hero Dark Palette) -->
+  <section class="section emergency-command-section" id="emergencyCommand">
+    <!-- Ambient Radiance & Holographic Mesh -->
+
+
+    <!-- NEW: Background Image Layer -->
+    <div class="emergency-bg-media" aria-hidden="true">
+      <img src="./assets/img 10.webp"
+        alt="Veterinary Emergency Surgery Suite Background" class="emergency-bg-img" loading="lazy" />
+    </div>
+
+    <!-- Deep Gradient Tint Overlay (Ensures WCAG text contrast & keeps hero theme color) -->
+    <div class="emergency-bg-overlay" aria-hidden="true"></div>
+
+    <!-- Ambient Radiance & Holographic Mesh -->
+    <div class="emergency-ambient-mesh" aria-hidden="true">
+      <div class="mesh-flare flare-primary"></div>
+      <div class="mesh-flare flare-amber"></div>
+    </div>
+
+
+    <div class="emergency-ambient-mesh" aria-hidden="true">
+      <div class="mesh-flare flare-primary"></div>
+      <div class="mesh-flare flare-amber"></div>
+    </div>
+
+    <div class="container">
+
+      <!-- Dark Surface Section Header -->
+      <div class="section-header text-center section-header-dark gsap-emerg-header">
+        <span class="badge badge-secondary">Critical Trauma & Surgery</span>
+        <h2 class="stack-main-title">24/7 Rapid Emergency Command Center</h2>
+        <p class="stack-subtitle">
+          When seconds matter most, VetCare’s dedicated intensive triage unit, mobile trauma fleet, and board-certified
+          veterinary surgeons are continuously on duty.
+        </p>
+      </div>
+
+      <!-- Command Center Interactive Dashboard Layout -->
+      <div class="command-dashboard-grid">
+
+        <!-- Left: Interactive Live Telemetry Card -->
+        <div class="command-card card-glass-dark gsap-emerg-card">
+          <div class="card-status-strip">
+            <div class="telemetry-live-badge">
+              <span class="live-radar-ping"></span>
+              <span class="live-radar-text">ICU TRIAGE ACTIVE</span>
+            </div>
+            <span class="command-code">CODE BLUE READY</span>
+          </div>
+
+          <h3 class="command-card-title">Instant Response Protocol</h3>
+          <p class="command-card-desc">
+            Direct line priority triage bypasses waiting queues for cardiac distress, vehicular accidents, toxin
+            ingestions, and acute trauma.
+          </p>
+
+          <!-- Command Telemetry Metrics Grid -->
+          <div class="telemetry-metrics-grid">
+            <div class="metric-box">
+              <div class="metric-top">
+                <i class="fa-solid fa-stopwatch-20"></i>
+                <span class="metric-val">&lt; 3 Min</span>
+              </div>
+              <span class="metric-desc">Triage Stabilization</span>
+            </div>
+
+            <div class="metric-box">
+              <div class="metric-top">
+                <i class="fa-solid fa-temperature-arrow-up"></i>
+                <span class="metric-val">100%</span>
+              </div>
+              <span class="metric-desc">Heated Oxygen Pods</span>
+            </div>
+
+            <div class="metric-box">
+              <div class="metric-top">
+                <i class="fa-solid fa-droplet"></i>
+                <span class="metric-val">In-Stock</span>
+              </div>
+              <span class="metric-desc">Canine/Feline Blood Bank</span>
+            </div>
+
+            <div class="metric-box">
+              <div class="metric-top">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <span class="metric-val">24/7/365</span>
+              </div>
+              <span class="metric-desc">Surgeon In-Facility</span>
+            </div>
+          </div>
+
+          <!-- Emergency Direct Hotline Callout -->
+          <div class="hotline-broadcast-bar">
+            <div class="broadcast-icon">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div class="broadcast-content">
+              <span class="broadcast-label">Urgent Patient Inbound Notification</span>
+              <a href="contact.html" class="broadcast-number">+1 (800) 555-VETS</a>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm broadcast-action">Call Now</a>
+          </div>
+        </div>
+
+        <!-- Right: Surgical Suites & Diagnostic Pods Grid -->
+        <div class="command-features-stack">
+
+          <!-- Feature Pod 1 -->
+          <div class="feature-pod card-glass-dark gsap-emerg-pod">
+            <div class="pod-icon-box bg-mint-accent">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div class="pod-details">
+              <h4 class="pod-title">Continuous Cardiac & SpO2 Telemetry</h4>
+              <p class="pod-text">Real-time vital transmission from admission to post-op recovery suites with automated
+                distress alerting.</p>
+            </div>
+          </div>
+
+          <!-- Feature Pod 2 -->
+          <div class="feature-pod card-glass-dark gsap-emerg-pod">
+            <div class="pod-icon-box bg-amber-accent">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <div class="pod-details">
+              <h4 class="pod-title">Positive-Pressure Sterile Operating Suites</h4>
+              <p class="pod-text">HEPA-14 medical filtration creating ultra-pure surgical atmospheres that minimize
+                infection risk by 99.8%.</p>
+            </div>
+          </div>
+
+          <!-- Feature Pod 3 -->
+          <div class="feature-pod card-glass-dark gsap-emerg-pod">
+            <div class="pod-icon-box bg-mint-accent">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <div class="pod-details">
+              <h4 class="pod-title">Mobile Intensive Care Transport</h4>
+              <p class="pod-text">Fully equipped climate-controlled pet ambulances available for critical patient
+                transfers and on-road stabilization.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Claymorphism: Patient Care Perks & Amenities Section -->
+  <section class="section clay-perks-section" id="clayPerks">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-clay-header">
+        <span class="badge badge-primary">Painless & Joyful Visits</span>
+        <h2 class="stack-main-title">Crafted for Pure Pet Comfort</h2>
+        <p class="stack-subtitle">
+          Every square inch of VetCare is designed using sensory calm cues, tactile warmth, and playful treats to
+          transform hospital visits into positive experiences.
+        </p>
+      </div>
+
+      <!-- 4-Column Claymorphic Grid -->
+      <div class="clay-grid">
+
+        <!-- Clay Card 1: Teal Accent -->
+        <div class="clay-card clay-teal gsap-clay-card" data-tilt>
+          <div class="clay-icon-bubble">
+            <i class="fa-solid fa-bone"></i>
+          </div>
+          <div class="clay-badge-pill">Gourmet Corner</div>
+          <h3 class="clay-card-title">Organic Reward Treats</h3>
+          <p class="clay-card-text">
+            Hypoallergenic, freeze-dried liver and peanut-butter distractors during all routine examinations and shots.
+          </p>
+          <div class="clay-footer-perk">
+            <i class="fa-solid fa-sparkles"></i> 100% Grain-Free
+          </div>
+        </div>
+
+        <!-- Clay Card 2: Amber Accent -->
+        <div class="clay-card clay-amber gsap-clay-card" data-tilt>
+          <div class="clay-icon-bubble">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <div class="clay-badge-pill">Acoustic Shield</div>
+          <h3 class="clay-card-title">Quiet Waiting Zones</h3>
+          <p class="clay-card-text">
+            Acoustically insulated partition lounges separating anxious cats from eager dogs with low-frequency soothing
+            audio.
+          </p>
+          <div class="clay-footer-perk">
+            <i class="fa-solid fa-volume-xmark"></i> Zero Stress
+          </div>
+        </div>
+
+        <!-- Clay Card 3: Soft Mint -->
+        <div class="clay-card clay-mint gsap-clay-card" data-tilt>
+          <div class="clay-icon-bubble">
+            <i class="fa-solid fa-temperature-half"></i>
+          </div>
+          <div class="clay-badge-pill">Thermal Lounges</div>
+          <h3 class="clay-card-title">Heated Exam Tables</h3>
+          <p class="clay-card-text">
+            No cold stainless steel surfaces. Therapeutic warm foam cushions maintain body temperature and soothe stiff
+            joints.
+          </p>
+          <div class="clay-footer-perk">
+            <i class="fa-solid fa-sun"></i> Gentle Warmth
+          </div>
+        </div>
+
+        <!-- Clay Card 4: Coral Accent -->
+        <div class="clay-card clay-coral gsap-clay-card" data-tilt>
+          <div class="clay-icon-bubble">
+            <i class="fa-solid fa-spray-can-sparkles"></i>
+          </div>
+          <div class="clay-badge-pill">Sensory Therapy</div>
+          <h3 class="clay-card-title">Pheromone Diffusers</h3>
+          <p class="clay-card-text">
+            Hospital-wide Adaptil & Feliway ultrasonic micro-diffusers that naturally reduce heart rates and
+            post-surgical tension.
+          </p>
+          <div class="clay-footer-perk">
+            <i class="fa-solid fa-heart"></i> Clinically Proven
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Clay Bottom Banner -->
+      <div class="clay-banner card gsap-clay-card">
+        <div class="clay-banner-content">
+          <div class="clay-banner-icon">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <div>
+            <h4 class="clay-banner-title">Need a Special Accommodation For An Anxious Pet?</h4>
+            <p class="clay-banner-desc">Let our concierge arrange curbside greeting, direct private exam entry, or
+              low-lighting rooms.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-secondary clay-banner-btn">Request Accommodation</a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Rich & Classy Testimonials / Pet Parent Stories Section -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-testi-header">
+        <span class="badge badge-secondary">Real Patient Journeys</span>
+        <h2 class="stack-main-title">Trusted By Families Across The Region</h2>
+        <p class="stack-subtitle">
+          Discover how our fear-free protocols, round-the-clock emergency team, and specialized surgical suites have
+          restored joy and health to over 24,000 beloved pets.
+        </p>
+      </div>
+
+      <!-- Main Testimonials Stage -->
+      <div class="testi-stage-grid">
+
+        <!-- Left: Trust & Aggregate Rating Card -->
+        <aside class="testi-trust-card card gsap-testi-card">
+          <div class="trust-badge-pill">
+            <i class="fa-solid fa-certificate"></i> Verified Clinical Excellence
+          </div>
+
+          <div class="trust-score-block">
+            <span class="trust-score-num">4.9</span>
+            <div class="trust-score-meta">
+              <div class="trust-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="trust-review-count">Based on 1,850+ Google & PetParent Reviews</span>
+            </div>
+          </div>
+
+          <div class="trust-highlight-list">
+            <div class="trust-highlight-item">
+              <div class="trust-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <div>
+                <strong>Fear-Free Certified Hospital</strong>
+                <p>Specialized calm handling for anxious companions.</p>
+              </div>
+            </div>
+            <div class="trust-highlight-item">
+              <div class="trust-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div>
+                <strong>Instant Digital Telemetry</strong>
+                <p>Real-time post-op vitals shared with families.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini Avatar Stack of Happy Patients -->
+          <div class="trust-avatar-strip">
+            <div class="avatar-group">
+              <img src="./assets/img 1.webp"
+                alt="Happy dog patient" class="trust-mini-avatar">
+              <img src="./assets/img 4.webp"
+                alt="Recovered cat patient" class="trust-mini-avatar">
+              <img src="./assets/img 7.webp"
+                alt="Active golden retriever patient" class="trust-mini-avatar">
+              <img src="./assets/img 12.webp"
+                alt="Tabby cat patient" class="trust-mini-avatar">
+            </div>
+            <span class="avatar-strip-caption">99.4% Patient Recovery Rate</span>
+          </div>
+        </aside>
+
+        <!-- Right: Interactive Featured Story Slider -->
+        <div class="testi-slider-wrapper gsap-testi-card">
+
+          <!-- Testimonial Slide 1 (Active) -->
+          <article class="testi-slide active" data-slide="0">
+            <div class="testi-quote-mark" aria-hidden="true">
+              <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+            <div class="testi-treatment-tag">
+              <i class="fa-solid fa-bolt-lightning"></i> Emergency Orthopedic Surgery
+            </div>
+
+            <p class="testi-body-text">
+              “When our golden retriever Bailey fractured his hip late on a Sunday evening, the VetCare emergency
+              surgical unit was ready before we even pulled up to the bay. Within 45 minutes, Dr. Vance had him
+              stabilized, scheduled for minimally invasive pinning, and sent us live recovery metrics via their parent
+              portal. Today, Bailey is running freely again without a limp.”
+            </p>
+
+            <div class="testi-author-pane">
+              <div class="author-avatar-box">
+                <img src="./assets/girl 12.webp"
+                  alt="Elena Rostova and Bailey" class="author-img">
+                <div class="pet-type-badge"><i class="fa-solid fa-dog"></i></div>
+              </div>
+              <div class="author-details">
+                <h4 class="author-name">Elena Rostova</h4>
+                <p class="author-role">Parent of Bailey (Golden Retriever, 4 yrs)</p>
+                <div class="author-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span class="verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Visit</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial Slide 2 -->
+          <article class="testi-slide" data-slide="1">
+            <div class="testi-quote-mark" aria-hidden="true">
+              <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+            <div class="testi-treatment-tag">
+              <i class="fa-solid fa-shield-cat"></i> Feline Cardiology & Ultrasound
+            </div>
+
+            <p class="testi-body-text">
+              “Taking our rescue cat Mochi to a vet was always traumatic due to his extreme travel anxiety. The
+              certified fear-free protocol at VetCare was a total revelation. They welcomed us into a dedicated
+              pheromone-infused cat wing with dim lighting. The color Doppler echocardiogram confirmed his heart murmur
+              was benign. Truly five-star clinical empathy.”
+            </p>
+
+            <div class="testi-author-pane">
+              <div class="author-avatar-box">
+                <img src="./assets/boy 16.webp"
+                  alt="Marcus Sterling and Mochi" class="author-img">
+                <div class="pet-type-badge"><i class="fa-solid fa-cat"></i></div>
+              </div>
+              <div class="author-details">
+                <h4 class="author-name">Marcus Sterling</h4>
+                <p class="author-role">Parent of Mochi (Domestic Shorthair, 6 yrs)</p>
+                <div class="author-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span class="verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Visit</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial Slide 3 -->
+          <article class="testi-slide" data-slide="2">
+            <div class="testi-quote-mark" aria-hidden="true">
+              <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+            <div class="testi-treatment-tag">
+              <i class="fa-solid fa-tooth"></i> Ultrasonic Oral Restoration
+            </div>
+
+            <p class="testi-body-text">
+              “Our senior French Bulldog was struggling to eat and losing weight rapidly due to deep periodontal
+              inflammation. VetCare’s oral surgical team performed full intraoral digital X-rays and gentle ultrasonic
+              scaling under safe, monitored anesthesia. Within two days, his energy rebounded completely. You gave us
+              our happy dog back!”
+            </p>
+
+            <div class="testi-author-pane">
+              <div class="author-avatar-box">
+                <img src="./assets/girl 25.webp"
+                  alt="Dr. Priya Patel and Cooper" class="author-img">
+                <div class="pet-type-badge"><i class="fa-solid fa-dog"></i></div>
+              </div>
+              <div class="author-details">
+                <h4 class="author-name">Dr. Priya Patel</h4>
+                <p class="author-role">Parent of Cooper (French Bulldog, 9 yrs)</p>
+                <div class="author-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span class="verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Visit</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slider Controls: Progress Indicators & Arrow Buttons -->
+          <div class="testi-nav-bar">
+            <div class="testi-dots" id="testiDots">
+              <button class="testi-dot active" aria-label="Slide 1" data-index="0"></button>
+              <button class="testi-dot" aria-label="Slide 2" data-index="1"></button>
+              <button class="testi-dot" aria-label="Slide 3" data-index="2"></button>
+            </div>
+            <div class="testi-arrows">
+              <button class="testi-arrow-btn" id="prevTesti" aria-label="Previous testimonial">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button class="testi-arrow-btn" id="nextTesti" aria-label="Next testimonial">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- Classy FAQ / Pet Parent Help Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-faq-header">
+        <span class="badge badge-primary">Clear Answers</span>
+        <h2 class="stack-main-title">Frequently Asked Questions</h2>
+        <p class="stack-subtitle">
+          Everything you need to know about preparing for your pet's appointment, emergency admissions, surgical
+          recovery, and payment plans.
+        </p>
+      </div>
+
+      <!-- Main FAQ Grid -->
+      <div class="faq-grid">
+
+        <!-- Left Column: Quick Support & Contact Card -->
+        <aside class="faq-sidebar gsap-faq-sidebar">
+          <div class="card faq-contact-card">
+            <div class="faq-card-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="faq-card-title">Still have questions?</h3>
+            <p class="faq-card-text">
+              Our veterinary reception team and triage nurses are available around the clock to assist you with medical
+              queries or booking schedules.
+            </p>
+
+            <div class="faq-contact-channels">
+              <div class="channel-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <span class="channel-label">Direct Clinic Line</span>
+                  <a href="contact.html" class="channel-value">+1 (800) 555-VETS</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <span class="channel-label">Email Inquiries</span>
+                  <a href="error.html" class="channel-value">care@vetcaredomain.com</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="contact.html" class="btn btn-primary btn-sm faq-cta-btn">
+              <span>Send Direct Message</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </aside>
+
+        <!-- Right Column: Animated Accordion Items -->
+        <div class="faq-accordion-group gsap-faq-accordion">
+
+          <!-- FAQ Item 1 (Open by Default) -->
+          <article class="faq-item active">
+            <button class="faq-trigger" aria-expanded="true">
+              <span class="faq-question">What should I do if my pet experiences a medical emergency?</span>
+              <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                <p>
+                  Please call our 24/7 emergency hotline at <strong>+1 (800) 555-VETS</strong> immediately so our
+                  surgical trauma staff can prepare the emergency bay before your arrival. If possible, keep your pet
+                  calm, wrap them gently in a warm blanket, and avoid giving any human medications, food, or water
+                  before evaluation.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- FAQ Item 2 -->
+          <article class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">What is a "Fear-Free" certified clinic visit?</span>
+              <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                <p>
+                  Our hospital is accredited in Fear-Free practices, which means our team is trained to identify and
+                  eliminate emotional stress triggers. We provide separate dog and cat examination wings, utilize
+                  species-specific pheromones (Adaptil & Feliway), use warm non-slip exam tables, and offer gentle
+                  handling paired with organic reward treats throughout the visit.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- FAQ Item 3 -->
+          <article class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">How do I prepare my pet for an upcoming surgery or anesthesia?</span>
+              <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                <p>
+                  Standard procedures require withholding food starting at 10:00 PM the evening before surgery, while
+                  fresh water can usually remain accessible until early morning. Our surgical nurse will contact you the
+                  day prior to confirm pre-operative blood screening, drop-off times, and medication guidelines.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- FAQ Item 4 -->
+          <article class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">Do you accept pet insurance and offer monthly payment plans?</span>
+              <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                <p>
+                  Yes! We work directly with all major pet insurance providers (such as Trupanion, Nationwide, and
+                  Healthy Paws) and can process direct claims on eligible policies. For unplanned procedures, we also
+                  offer zero-interest and extended financing options through CareCredit and Scratchpay.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- FAQ Item 5 -->
+          <article class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">How frequently should adult dogs and cats receive wellness exams?</span>
+              <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-content-inner">
+                <p>
+                  We recommend full comprehensive physical examinations once a year for healthy adult dogs and cats
+                  (aged 1 to 7 years). For puppies, kittens, and senior pets (over 7 years) or those managing chronic
+                  conditions, bi-annual (every 6 months) checkups ensure timely preventive care and metabolic screening.
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Light Canvas Classy CTA: Patient Care Fast-Track Dock -->
+  <section class="section light-cta-section" id="bookingCta">
+    <!-- Subtle Ambient Background Decor -->
+    <div class="light-cta-bg-blobs" aria-hidden="true">
+      <div class="cta-soft-blob blob-teal"></div>
+      <div class="cta-soft-blob blob-amber"></div>
+    </div>
+
+    <div class="container">
+      <div class="light-cta-pedestal gsap-light-cta">
+
+        <!-- Top Decorative Bar & Live Dispatch Indicator -->
+        <div class="pedestal-top-bar flex-between">
+          <div class="pedestal-status-tag">
+            <span class="pulse-ring"></span>
+            <span class="status-copy">Direct Triage Reception Available Now</span>
+          </div>
+          <div class="pedestal-code">
+            <i class="fa-solid fa-shield-cat"></i> ISO & AAHA Accredited
+          </div>
+        </div>
+
+        <div class="pedestal-grid">
+
+          <!-- Left: Clinical Value, Surgeon Badges & Emergency Connect -->
+          <div class="pedestal-info-col">
+            <span class="badge badge-primary">Fast-Track Pet Check-In</span>
+
+            <h2 class="pedestal-headline">
+              Experience Gentle, Stress-Free Veterinary Excellence
+            </h2>
+
+            <p class="pedestal-narrative">
+              Skip long clinical reception queues. Reserve your pet's dedicated examination suite or consultation slot
+              with our certified clinicians and surgical staff today.
+            </p>
+
+            <!-- Interactive Active Duty Staff Pod -->
+            <div class="pedestal-vet-pill">
+              <div class="vet-avatar-stack">
+                <img src="./assets/boy 22.webp"
+                  alt="Dr. Amanda Vance" class="vet-mini-img">
+                <img src="./assets/girl 29.webp"
+                  alt="Dr. Julian Thorne" class="vet-mini-img">
+              </div>
+              <div class="vet-pill-meta">
+                <strong>Doctors On-Shift Right Now</strong>
+                <p>Trauma surgeon, general practitioner & feline specialist</p>
+              </div>
+            </div>
+
+            <!-- Hotline Direct Dial Strip -->
+            <div class="pedestal-emergency-row">
+              <div class="emergency-icon-circle">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <span class="urgency-label">Immediate Trauma or Critical Question?</span>
+                <a href="contact.html" class="urgency-phone">+1 (800) 555-VETS</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive VIP Care Pass & Fast-Track Access Box (No Form) -->
+          <div class="pedestal-action-col">
+            <div class="concierge-pass-card">
+
+              <!-- Top Pass Header -->
+              <div class="pass-header flex-between">
+                <div class="pass-badge">
+                  <i class="fa-solid fa-id-card-clip"></i>
+                  <span>Express Care Pass</span>
+                </div>
+                <span class="pass-serial">PASS #VET-2026</span>
+              </div>
+
+              <h3 class="pass-title">Instant Hospital Concierge</h3>
+              <p class="pass-desc">Choose your preferred pathway for immediate admission or effortless scheduling.</p>
+
+              <!-- Interactive Pathway Action Tiles -->
+              <div class="pass-tiles-grid">
+
+                <!-- Pathway 1: Online Scheduling -->
+                <a href="contact.html" class="pass-tile-item">
+                  <div class="tile-icon-box bg-mint-box">
+                    <i class="fa-solid fa-calendar-check"></i>
+                  </div>
+                  <div class="tile-text">
+                    <span class="tile-label">Direct Visit</span>
+                    <h4 class="tile-heading">Book Online Now</h4>
+                    <p class="tile-sub">Select your doctor & time slot</p>
+                  </div>
+                  <i class="fa-solid fa-arrow-right tile-arrow"></i>
+                </a>
+
+                <!-- Pathway 2: Urgent 24/7 Helpline -->
+                <a href="contact.html" class="pass-tile-item urgent-tile">
+                  <div class="tile-icon-box bg-amber-box">
+                    <i class="fa-solid fa-truck-medical"></i>
+                  </div>
+                  <div class="tile-text">
+                    <span class="tile-label label-urgent">Immediate Triage</span>
+                    <h4 class="tile-heading">Call Critical Care</h4>
+                    <p class="tile-sub">+1 (800) 555-VETS • Always open</p>
+                  </div>
+                  <i class="fa-solid fa-phone-flip tile-arrow"></i>
+                </a>
+
+                <!-- Pathway 3: Pet Parent Digital Portal -->
+                <a href="auth.html" class="pass-tile-item">
+                  <div class="tile-icon-box bg-teal-box">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                  </div>
+                  <div class="tile-text">
+                    <span class="tile-label">Pet Parent Hub</span>
+                    <h4 class="tile-heading">Patient Portal Login</h4>
+                    <p class="tile-sub">Access vaccine records & test charts</p>
+                  </div>
+                  <i class="fa-solid fa-arrow-right tile-arrow"></i>
+                </a>
+
+              </div>
+
+              <!-- Bottom Hospital Guarantee Footnote -->
+              <div class="pass-footer flex-between">
+                <div class="pass-guarantee">
+                  <i class="fa-solid fa-shield-check"></i>
+                  <span>100% Fear-Free Protocol</span>
+                </div>
+                <div class="pass-guarantee">
+                  <i class="fa-solid fa-clock"></i>
+                  <span>Zero Wait Arrival</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand Info & Socials -->
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="footer-logo" aria-label="VetCare Home">
+              <img src="./assets/logo 20.webp" alt="VetCare Logo" width="150" height="50">
+            </a>
+            <p class="footer-desc">
+              Providing compassionate, state-of-the-art veterinary medicine, wellness checkups, and 24/7
+              emergency critical care for your beloved animal companions.
+            </p>
+            <div class="footer-socials">
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Twitter X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Highlighted dynamically based on current page) -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-nav-link">Home</a></li>
+              <li><a href="service.html" class="footer-nav-link">Services</a></li>
+              <li><a href="about.html" class="footer-nav-link">About Us</a></li>
+              <li><a href="our.html" class="footer-nav-link">Our Vets</a></li>
+              <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Medical Services -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Pet Services</h4>
+            <ul class="footer-links">
+              <li><a href="service.html">Preventive Wellness</a></li>
+              <li><a href="service.html">Dental Cleaning</a></li>
+              <li><a href="service.html">Diagnostic Ultrasound</a></li>
+              <li><a href="service.html">Surgical Care</a></li>
+              <li><a href="service.html">Microchipping & Vaccines</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Emergency Contacts & Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-heading">24/7 Emergency</h4>
+            <div class="emergency-badge">
+              <i class="fa-solid fa-phone-volume"></i>
+              <div>
+                <span class="emergency-badge-title">Direct Clinic Hotline</span>
+                <a href="error.html" class="emergency-badge-num">+1 (800) 555-VETS</a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h5 class="newsletter-title">Pet Health Newsletter</h5>
+              <p class="newsletter-desc">Monthly seasonal care tips and vaccine schedules.</p>
+              <form class="newsletter-form" id="newsletterForm" novalidate>
+                <input type="email" id="newsletterEmail" class="form-control newsletter-input"
+                  placeholder="Your email address" required>
+                <button type="submit" class="btn btn-secondary newsletter-btn" aria-label="Subscribe to newsletter">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+              <!-- Small inline feedback message container -->
+              <span id="newsletterError" class="newsletter-error-msg"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Legal & Copyright -->
+    <div class="footer-bottom">
+      <div class="container flex-between footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 VetCare Animal Hospital. All rights reserved.
+        </p>
+        <ul class="footer-legal-links">
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms of Service</a></li>
+          <li><a href="error.html">Emergency Protocols</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+</body>
+
+</html>

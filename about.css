@@ -1,0 +1,2339 @@
+/* ===================================================
+   ABOUT PAGE HERO: TOPOGRAPHIC & ORGANIC LIQUID MESH
+   Hero Palette: --text-main #264653 | Accent: #0e8388 & #f4a261
+   =================================================== */
+
+.about-hero-section {
+  position: relative;
+  background-color: var(--text-main);
+  /* #264653 */
+  color: var(--text-inverse);
+  padding-block: 6rem 7rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(220, 231, 231, 0.12);
+}
+
+/* ---------------------------------------------------
+   1. ORGANIC LIQUID & TOPOGRAPHIC BACKDROP
+   --------------------------------------------------- */
+.about-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Drifting Liquid Blobs */
+.liquid-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  will-change: transform;
+}
+
+.orb-sage {
+  width: 580px;
+  height: 580px;
+  background: var(--primary);
+  /* #0e8388 */
+  top: -140px;
+  left: -120px;
+  opacity: 0.38;
+  animation: liquidDrift1 16s ease-in-out infinite alternate;
+}
+
+.orb-coral {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary);
+  /* #f4a261 */
+  bottom: -120px;
+  right: -80px;
+  opacity: 0.32;
+  animation: liquidDrift2 18s ease-in-out infinite alternate;
+}
+
+@keyframes liquidDrift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(120px, 80px) scale(1.15);
+  }
+
+  100% {
+    transform: translate(-40px, 60px) scale(0.95);
+  }
+}
+
+@keyframes liquidDrift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-100px, -70px) scale(1.12);
+  }
+
+  100% {
+    transform: translate(50px, -40px) scale(0.92);
+  }
+}
+
+/* Topographic Contour SVG */
+.topographic-mesh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+.about-grain-texture {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.6;
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------
+   2. ASYMMETRIC GRID & CONTENT STYLING
+   --------------------------------------------------- */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Breadcrumbs */
+.about-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #a4bcc4;
+  margin-bottom: 1rem;
+}
+
+.crumb-link {
+  color: #c4d7dc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.crumb-link:hover {
+  color: var(--secondary);
+}
+
+.crumb-sep {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.crumb-current {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* Eyebrow Tag */
+.about-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #72efdd;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.heritage-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 8px #72efdd;
+}
+
+/* Headlines */
+.about-hero-headline {
+  font-size: 3.1rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.about-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #c4d7dc;
+  margin-bottom: 2.25rem;
+  max-width: 620px;
+}
+
+/* Credo Pillars */
+.about-pillars-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.credo-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.credo-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.credo-pillar strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-inverse);
+  margin-bottom: 0.2rem;
+}
+
+.credo-pillar p {
+  font-size: 0.85rem;
+  color: #a4bcc4;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Metrics Bar */
+.about-metrics-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.abt-metric-num {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.abt-metric-tag {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a4bcc4;
+  font-weight: 600;
+}
+
+.abt-metric-divider {
+  width: 1px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------------------------------------------
+   3. ASYMMETRIC HERITAGE MOSAIC & BADGES
+   --------------------------------------------------- */
+.about-hero-mosaic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mosaic-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Main Doctor Frame */
+.mosaic-main-frame {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.8;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.38);
+}
+
+.mosaic-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mosaic-main-frame:hover .mosaic-hero-img {
+  transform: scale(1.05);
+}
+
+.mosaic-img-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(38, 70, 83, 0.95) 100%);
+}
+
+.mosaic-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+}
+
+.caption-lead {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--secondary);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.caption-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-inverse);
+  margin: 0;
+}
+
+/* Overlapping Inset Frame */
+.mosaic-inset-frame {
+  position: absolute;
+  bottom: -25px;
+  right: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--text-main);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.inset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating Glass Accreditation Pills */
+.about-glass-pill {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  color: var(--text-main);
+  z-index: 4;
+}
+
+.pill-cert {
+  top: 8%;
+  left: -12%;
+}
+
+.pill-hours {
+  top: 55%;
+  right: -10%;
+}
+
+.pill-icon-square {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.bg-mint-pill {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.bg-amber-pill {
+  background-color: var(--secondary-light);
+  color: var(--secondary-hover);
+}
+
+.pill-meta strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.pill-meta span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-hero-narrative {
+    text-align: center;
+  }
+
+  .about-breadcrumbs {
+    justify-content: center;
+  }
+
+  .about-pillars-row {
+    text-align: left;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .about-metrics-bar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    padding-block: 4rem 4.5rem;
+  }
+
+  .about-hero-headline {
+    font-size: 2.1rem;
+    line-height: 1.22;
+  }
+
+  .about-hero-lead {
+    font-size: 0.96rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .about-pillars-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-metrics-bar {
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-top: 1.4rem;
+  }
+
+  .abt-metric-num {
+    font-size: 1.45rem;
+  }
+
+  .abt-metric-tag {
+    font-size: 0.68rem;
+  }
+
+  /* Mosaic adjustments for mobile screens */
+  .mosaic-canvas {
+    max-width: 100%;
+  }
+
+  .mosaic-inset-frame {
+    width: 110px;
+    height: 110px;
+    bottom: -15px;
+    right: -10px;
+  }
+
+  .pill-cert {
+    top: 4%;
+    left: 4%;
+  }
+
+  .pill-hours {
+    top: 45%;
+    right: 4%;
+  }
+
+  .about-glass-pill {
+    padding: 0.65rem 0.95rem;
+  }
+
+  .pill-icon-square {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   CARD CAROUSEL / COVERFLOW 3D DECK SECTION
+   Canvas: --bg-main #fbfdfc | Cards: --bg-surface #ffffff
+   =================================================== */
+
+.coverflow-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.coverflow-stage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  perspective: 1200px;
+  /* 3D depth viewport */
+  padding-block: 1rem 2rem;
+}
+
+/* 3D Coverflow Container */
+.coverflow-deck {
+  position: relative;
+  height: 520px;
+  width: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual Coverflow Card */
+.coverflow-card {
+  position: absolute;
+  width: 360px;
+  height: 480px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(38, 70, 83, 0.08);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform, opacity;
+}
+
+/* Media Upper Half */
+.coverflow-media {
+  position: relative;
+  width: 100%;
+  height: 52%;
+  overflow: hidden;
+}
+
+.coverflow-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.coverflow-card:hover .coverflow-media img {
+  transform: scale(1.06);
+}
+
+.coverflow-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(38, 70, 83, 0.6) 100%);
+}
+
+.coverflow-year {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: rgba(38, 70, 83, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Card Body Lower Half */
+.coverflow-body {
+  padding: 1.6rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.coverflow-badge {
+  width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.coverflow-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.coverflow-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.coverflow-meta {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* ---------------------------------------------------
+   ACTIVE / CENTER CARD HIGHLIGHT
+   --------------------------------------------------- */
+.coverflow-card.active {
+  border-color: var(--primary);
+  box-shadow:
+    0 24px 60px rgba(38, 70, 83, 0.16),
+    0 4px 16px rgba(14, 131, 136, 0.18);
+  cursor: default;
+}
+
+/* ---------------------------------------------------
+   CONTROLS: ARROWS & PAGINATION DOTS
+   --------------------------------------------------- */
+.coverflow-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.coverflow-arrow-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coverflow-arrow-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(14, 131, 136, 0.25);
+}
+
+.coverflow-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.coverflow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.coverflow-dot.active {
+  width: 28px;
+  border-radius: 20px;
+  background-color: var(--primary);
+}
+
+/* ===================================================
+   768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 768px) {
+  .coverflow-section {
+    padding-block: 4rem;
+  }
+
+  .coverflow-stage-wrapper {
+    perspective: 800px;
+  }
+
+  .coverflow-deck {
+    height: 440px;
+  }
+
+  .coverflow-card {
+    width: 290px;
+    height: 420px;
+    border-radius: 20px;
+  }
+
+  .coverflow-body {
+    padding: 1.25rem 1.35rem;
+  }
+
+  .coverflow-title {
+    font-size: 1.1rem;
+  }
+
+  .coverflow-text {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-bottom: 0.65rem;
+  }
+
+  .coverflow-meta {
+    font-size: 0.74rem;
+  }
+
+  .coverflow-arrow-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   MASONRY GRID SHOWCASE SECTION
+   Canvas: --bg-main #fbfdfc | Cards: --bg-surface #ffffff
+   =================================================== */
+
+.masonry-culture-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ---------------------------------------------------
+   1. CSS COLUMN MASONRY ARCHITECTURE (Desktop: 3 Columns)
+   --------------------------------------------------- */
+.masonry-wall {
+  column-count: 3;
+  column-gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Base Masonry Brick Element */
+.masonry-brick {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  box-shadow:
+    0 10px 30px rgba(38, 70, 83, 0.05),
+    0 1px 3px rgba(38, 70, 83, 0.03);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.masonry-brick:hover {
+  transform: translateY(-6px);
+  border-color: rgba(14, 131, 136, 0.4);
+  box-shadow:
+    0 20px 45px rgba(38, 70, 83, 0.12),
+    0 4px 12px rgba(14, 131, 136, 0.08);
+}
+
+/* ---------------------------------------------------
+   2. IMAGE BRICK WITH CINEMATIC HOVER OVERLAY
+   --------------------------------------------------- */
+.brick-media-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.brick-media-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.masonry-brick:hover .brick-media-wrap img {
+  transform: scale(1.06);
+}
+
+.brick-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(38, 70, 83, 0.2) 0%,
+      rgba(38, 70, 83, 0.75) 50%,
+      rgba(22, 42, 50, 0.95) 100%);
+  padding: 1.85rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.masonry-brick:hover .brick-hover-overlay {
+  opacity: 1;
+}
+
+.brick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.75rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 0.65rem;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.masonry-brick:hover .brick-pill {
+  transform: translateY(0);
+}
+
+.brick-caption-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.brick-caption-text {
+  font-size: 0.85rem;
+  color: #c4d7dc;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------------------------------------------------
+   3. TEXT & STAT CALLOUT BRICKS
+   --------------------------------------------------- */
+.brick-card-inner {
+  padding: 2.2rem 2rem;
+}
+
+/* Founder Quote Brick */
+.brick-quote-card {
+  background: linear-gradient(145deg, #ffffff 0%, var(--bg-muted) 100%);
+  border-left: 4px solid var(--secondary);
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: var(--secondary);
+  opacity: 0.4;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.quote-body {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.quote-author-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.quote-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.quote-author-row strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.quote-author-row span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Metric Stat Brick */
+.brick-metric-card {
+  background: var(--bg-surface);
+  text-align: left;
+}
+
+.brick-micro-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.brick-big-stat {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: var(--secondary);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-block: 0.4rem 0.6rem;
+}
+
+.brick-stat-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.brick-progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-muted);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.brick-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 6px;
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .masonry-wall {
+    column-count: 2;
+    column-gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-culture-section {
+    padding-block: 4rem;
+  }
+
+  /* Single Column Flow for Mobile Viewports */
+  .masonry-wall {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  .masonry-brick {
+    margin-bottom: 1.25rem;
+    border-radius: 20px;
+  }
+
+  /* Always keep the captions visible on touch mobile screens */
+  .brick-hover-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg,
+        transparent 35%,
+        rgba(38, 70, 83, 0.85) 75%,
+        rgba(22, 42, 50, 0.98) 100%);
+    padding: 1.5rem 1.2rem;
+  }
+
+  .brick-pill {
+    transform: none;
+    font-size: 0.68rem;
+  }
+
+  .brick-caption-title {
+    font-size: 1.1rem;
+  }
+
+  .brick-caption-text {
+    font-size: 0.8rem;
+  }
+
+  .brick-card-inner {
+    padding: 1.75rem 1.35rem;
+  }
+
+  .quote-body {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .brick-big-stat {
+    font-size: 2.2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===================================================
+   SPLIT-SCREEN SHOWCASE SECTION
+   Canvas: --bg-main #fbfdfc | Theme: --primary #0e8388 & #f4a261
+   =================================================== */
+
+.split-showcase-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ---------------------------------------------------
+   1. SPLIT-SCREEN CONTAINER & PANELS
+   --------------------------------------------------- */
+.split-screen-canvas {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 24px 60px rgba(38, 70, 83, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.split-panel {
+  position: relative;
+  padding: 4rem 3.5rem;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-inverse);
+  overflow: hidden;
+}
+
+/* Background Media & Filter Tints */
+.panel-background-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.panel-background-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.split-panel:hover .panel-background-media img {
+  transform: scale(1.05);
+}
+
+/* Left Tint: Desaturated, Clinical Cool Slate */
+.panel-traditional .panel-background-media img {
+  filter: grayscale(85%) contrast(110%);
+}
+
+.panel-tint-dark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg,
+      rgba(27, 38, 44, 0.95) 0%,
+      rgba(38, 70, 83, 0.9) 100%);
+}
+
+/* Right Tint: Warm, Rich Signature Teal & Amber Atmosphere */
+.panel-modern .panel-background-media img {
+  filter: saturate(115%);
+}
+
+.panel-tint-warm {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg,
+      rgba(14, 131, 136, 0.94) 0%,
+      rgba(38, 70, 83, 0.96) 100%);
+}
+
+/* Panel Content */
+.panel-content-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Status Tags */
+.panel-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.tag-traditional {
+  background: rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tag-traditional i {
+  color: #f87171;
+}
+
+.tag-modern {
+  background: rgba(244, 162, 97, 0.2);
+  color: var(--secondary);
+  border: 1px solid rgba(244, 162, 97, 0.4);
+}
+
+.panel-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.panel-lead {
+  font-size: 0.95rem;
+  color: #c4d7dc;
+  line-height: 1.62;
+  margin-bottom: 2rem;
+}
+
+/* Feature Checklists */
+.panel-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.panel-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.list-traditional li i {
+  color: #ef4444;
+  font-size: 1.05rem;
+  margin-top: 2px;
+}
+
+.list-traditional li span {
+  color: #9ca3af;
+}
+
+.list-modern li i {
+  color: #72efdd;
+  font-size: 1.05rem;
+  margin-top: 2px;
+}
+
+.list-modern li span {
+  color: #e5ecee;
+  font-weight: 500;
+}
+
+/* Bottom Metric Chips */
+.panel-summary-chip {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.traditional-chip {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.traditional-chip .chip-metric {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f87171;
+}
+
+.traditional-chip .chip-label {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.modern-chip {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.modern-chip .chip-metric {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #72efdd;
+}
+
+.modern-chip .chip-label {
+  font-size: 0.82rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ---------------------------------------------------
+   2. CENTER VS BADGE
+   --------------------------------------------------- */
+.split-divider-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.split-vs-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--primary);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------------------------------
+   3. BOTTOM REASSURANCE BANNER
+   --------------------------------------------------- */
+.split-footer-banner {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 24px;
+  padding: 1.85rem 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 12px 32px rgba(38, 70, 83, 0.06);
+}
+
+.footer-banner-text {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.banner-icon-pill {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.banner-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.25rem;
+}
+
+.banner-sub {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.split-banner-btn {
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .split-screen-canvas {
+    grid-template-columns: 1fr;
+  }
+
+  .split-divider-badge {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .split-panel {
+    padding: 3rem 2.5rem;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .split-showcase-section {
+    padding-block: 4rem;
+  }
+
+  .split-screen-canvas {
+    border-radius: 22px;
+  }
+
+  .split-panel {
+    padding: 2.25rem 1.4rem;
+  }
+
+  .split-divider-badge {
+    display: none;
+    /* Hide VS circle on mobile to avoid content collision */
+  }
+
+  .panel-title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .panel-lead {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .panel-feature-list {
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .panel-feature-list li {
+    font-size: 0.85rem;
+  }
+
+  .panel-summary-chip {
+    padding: 0.85rem 1.1rem;
+    gap: 0.75rem;
+  }
+
+  .traditional-chip .chip-metric,
+  .modern-chip .chip-metric {
+    font-size: 1.25rem;
+  }
+
+  .traditional-chip .chip-label,
+  .modern-chip .chip-label {
+    font-size: 0.74rem;
+  }
+
+  .split-footer-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.85rem 1.25rem;
+    gap: 1.4rem;
+    border-radius: 20px;
+  }
+
+  .footer-banner-text {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .banner-sub {
+    font-size: 0.85rem;
+  }
+
+  .split-banner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   MICRO-INTERACTIVE & MOTION-DRIVEN SENSORY CONSOLE
+   Theme: --bg-main #fbfdfc | --primary #0e8388 | --secondary #f4a261
+   =================================================== */
+
+.motion-sensory-section {
+  position: relative;
+  background-color: var(--bg-surface);
+  /* #ffffff */
+  padding-block: 6.5rem 7.5rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sensory-console-card {
+  max-width: 1160px;
+  margin-inline: auto;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(38, 70, 83, 0.08);
+  overflow: hidden;
+}
+
+.console-body-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.2fr;
+}
+
+/* ---------------------------------------------------
+   1. LEFT CONTROLS PANEL
+   --------------------------------------------------- */
+.console-left-controls {
+  padding: 3rem 2.6rem;
+  border-right: 1px solid var(--border-color);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.console-subhead {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.control-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sensor-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--success);
+  background: #e6f7f4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.sensor-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.7);
+  animation: beaconPulseGreen 2s infinite;
+}
+
+@keyframes beaconPulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(42, 157, 143, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(42, 157, 143, 0);
+  }
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.control-label {
+  font-size: 0.825rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Patient Type Tab Switcher */
+.patient-type-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  background: var(--bg-muted);
+  padding: 0.35rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+}
+
+.patient-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.patient-btn:hover {
+  color: var(--text-main);
+}
+
+.patient-btn.active {
+  background: #ffffff;
+  color: var(--primary);
+  box-shadow: 0 3px 10px rgba(38, 70, 83, 0.08);
+}
+
+/* Sensory Channel Cards */
+.sensory-channel-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 18px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.channel-card:hover {
+  background: #ffffff;
+  border-color: rgba(14, 131, 136, 0.4);
+  transform: translateX(4px);
+}
+
+.channel-card.active {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 6px 20px rgba(14, 131, 136, 0.12);
+  transform: translateX(6px);
+}
+
+.channel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.bg-mint-channel {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.bg-amber-channel {
+  background: var(--secondary-light);
+  color: var(--secondary-hover);
+}
+
+.bg-coral-channel {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.channel-info {
+  flex: 1;
+}
+
+.channel-info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.channel-info span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.channel-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.channel-card.active .channel-arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* ---------------------------------------------------
+   2. RIGHT TELEMETRY DISPLAY PANEL
+   --------------------------------------------------- */
+.console-right-display {
+  background: linear-gradient(145deg, #fbfdfc 0%, var(--bg-muted) 100%);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.display-chassis {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 26px;
+  padding: 2.4rem;
+  box-shadow: 0 16px 40px rgba(38, 70, 83, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.hud-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+}
+
+.hud-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-top: 0.15rem;
+}
+
+.hud-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--success);
+  background: #e6f7f4;
+  padding: 0.4rem 0.85rem;
+  border-radius: 30px;
+}
+
+/* Interactive SVG Radial Stress Gauge */
+.biometric-gauge-stage {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-svg-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  stroke: var(--border-color);
+}
+
+.ring-active {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.4s ease;
+}
+
+.gauge-center-box {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gauge-score-value {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.gauge-score-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+/* 3 Metrics Row */
+.hud-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.hud-metric-pod {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 0.95rem;
+  text-align: center;
+}
+
+.metric-caption {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.metric-val-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.metric-val-wrap i {
+  color: var(--secondary);
+  font-size: 0.88rem;
+}
+
+/* Clinical Observation Brief */
+.hud-clinical-brief {
+  background: var(--bg-muted);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 14px 14px 0;
+  padding: 1.15rem 1.35rem;
+}
+
+.brief-lead {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.brief-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ===================================================
+   3. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .console-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .console-left-controls {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 2.25rem 1.6rem;
+  }
+
+  .console-right-display {
+    padding: 2.25rem 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .motion-sensory-section {
+    padding-block: 4rem;
+  }
+
+  .sensory-console-card {
+    border-radius: 22px;
+  }
+
+  .console-left-controls {
+    padding: 1.75rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .channel-card {
+    padding: 0.95rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .channel-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .channel-info strong {
+    font-size: 0.88rem;
+  }
+
+  .channel-info span {
+    font-size: 0.74rem;
+  }
+
+  .display-chassis {
+    padding: 1.6rem 1.2rem;
+    border-radius: 20px;
+    gap: 1.4rem;
+  }
+
+  .hud-title {
+    font-size: 1.25rem;
+  }
+
+  .biometric-gauge-stage {
+    width: 160px;
+    height: 160px;
+  }
+
+  .gauge-score-value {
+    font-size: 2.3rem;
+  }
+
+  .hud-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .hud-metric-pod {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  .metric-caption {
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===================================================
+   ABOUT PAGE PRE-FOOTER CTA SECTION
+   Identity: --text-main #264653 | Accent: #0e8388 & #f4a261
+   =================================================== */
+
+.about-cta-section {
+  position: relative;
+  background-color: var(--text-main);
+  /* #264653 */
+  color: var(--text-inverse);
+  padding-block: 7rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(220, 231, 231, 0.12);
+}
+
+/* Ambient Radial Glows & Subtle Texture */
+.about-cta-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.abt-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  will-change: transform;
+}
+
+.orb-teal-drift {
+  width: 580px;
+  height: 580px;
+  background: var(--primary);
+  /* #0e8388 */
+  top: -160px;
+  left: -120px;
+  opacity: 0.35;
+  animation: orbDrift1 15s ease-in-out infinite alternate;
+}
+
+.orb-amber-drift {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary);
+  /* #f4a261 */
+  bottom: -150px;
+  right: -80px;
+  opacity: 0.3;
+  animation: orbDrift2 18s ease-in-out infinite alternate;
+}
+
+@keyframes orbDrift1 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(70px, 50px);
+  }
+}
+
+@keyframes orbDrift2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-60px, -40px);
+  }
+}
+
+.abt-topo-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.7;
+}
+
+.about-cta-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Elevated Glassmorphic Pod */
+.about-cta-pod {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 3.75rem 3.5rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* Top Priority Status Bar */
+.about-cta-topbar {
+  padding-bottom: 2rem;
+  margin-bottom: 2.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hospital-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #72efdd;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.7);
+  animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(114, 239, 221, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0);
+  }
+}
+
+.hospital-accred-code {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #c4d7dc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hospital-accred-code i {
+  color: var(--secondary);
+}
+
+/* Narrative Wrapping */
+.about-cta-text-wrap {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+.about-cta-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  margin-block: 1.15rem 1rem;
+}
+
+.about-cta-desc {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #c4d7dc;
+}
+
+/* Pathways Grid */
+.about-pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.pathway-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pathway-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(14, 131, 136, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card-featured-pathway {
+  border-color: rgba(244, 162, 97, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card-featured-pathway:hover {
+  border-color: rgba(244, 162, 97, 0.6);
+}
+
+.pathway-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.bg-mint-box {
+  background: rgba(14, 131, 136, 0.25);
+  color: #72efdd;
+  border: 1px solid rgba(14, 131, 136, 0.45);
+}
+
+.bg-amber-box {
+  background: rgba(244, 162, 97, 0.25);
+  color: var(--secondary);
+  border: 1px solid rgba(244, 162, 97, 0.45);
+}
+
+.pathway-eyebrow {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #72efdd;
+  margin-bottom: 0.35rem;
+}
+
+.eyebrow-highlight {
+  color: var(--secondary);
+}
+
+.pathway-heading {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5rem;
+}
+
+.pathway-detail {
+  font-size: 0.925rem;
+  color: #c4d7dc;
+  line-height: 1.62;
+  margin-bottom: 2rem;
+}
+
+.pathway-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Bottom Reassurance Footer */
+.about-cta-footer {
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reassurance-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c4d7dc;
+}
+
+.reassurance-item i {
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.reassurance-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ===================================================
+   768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .about-pathways-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cta-section {
+    padding-block: 4rem;
+  }
+
+  .about-cta-pod {
+    padding: 2.25rem 1.4rem;
+    border-radius: 24px;
+  }
+
+  .about-cta-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-cta-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .about-cta-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .pathway-card {
+    padding: 1.85rem 1.35rem;
+  }
+
+  .pathway-heading {
+    font-size: 1.25rem;
+  }
+
+  .pathway-detail {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-cta-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding-top: 1.75rem;
+  }
+
+  .reassurance-divider {
+    display: none;
+  }
+}

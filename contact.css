@@ -1,0 +1,3006 @@
+/* ===================================================
+   CONTACT PAGE HERO: ORBITAL CONSTELLATION & RADAR
+   Theme Tokens: --text-main #264653 | --primary #0e8388 | --secondary #f4a261
+   =================================================== */
+
+.contact-hero-section {
+  position: relative;
+  background-color: var(--text-main);
+  /* #264653 */
+  color: var(--text-inverse);
+  padding-block: 6rem 7rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(220, 231, 231, 0.12);
+}
+
+/* ---------------------------------------------------
+   1. AMBIENT CONSTELLATION & RADAR BACKDROP
+   --------------------------------------------------- */
+.contact-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.contact-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  will-change: transform;
+}
+
+.contact-ambient-orb.orb-teal {
+  width: 580px;
+  height: 580px;
+  background: var(--primary);
+  /* #0e8388 */
+  top: -150px;
+  left: -120px;
+  opacity: 0.38;
+  animation: contactDriftA 16s ease-in-out infinite alternate;
+}
+
+.contact-ambient-orb.orb-amber {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary);
+  /* #f4a261 */
+  bottom: -130px;
+  right: -90px;
+  opacity: 0.32;
+  animation: contactDriftB 18s ease-in-out infinite alternate;
+}
+
+@keyframes contactDriftA {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(75px, 60px) scale(1.15);
+  }
+}
+
+@keyframes contactDriftB {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-65px, -50px) scale(1.12);
+  }
+}
+
+/* Concentric Radar Rings */
+.contact-radar-ring {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.ring-1 {
+  width: 480px;
+  height: 480px;
+  animation: radarSpin 45s linear infinite;
+}
+
+.ring-2 {
+  width: 780px;
+  height: 780px;
+  border-color: rgba(114, 239, 221, 0.1);
+  animation: radarSpin 65s linear infinite reverse;
+}
+
+.ring-3 {
+  width: 1100px;
+  height: 1100px;
+  animation: radarSpin 85s linear infinite;
+}
+
+@keyframes radarSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Constellation Dots */
+.constellation-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.c-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: #72efdd;
+  box-shadow: 0 0 10px #72efdd;
+  opacity: 0.45;
+}
+
+.dot-1 {
+  width: 50px;
+  height: 50px;
+  top: 22%;
+  left: 18%;
+}
+
+.dot-2 {
+  width: 80px;
+  height: 80px;
+  top: 38%;
+  left: 82%;
+  background: var(--secondary);
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+.dot-3 {
+  width: 40px;
+  height: 40px;
+  top: 75%;
+  left: 28%;
+}
+
+.dot-4 {
+  width: 60px;
+  height: 60px;
+  top: 65%;
+  left: 62%;
+}
+
+.dot-5 {
+  width: 90px;
+  height: 90px;
+  top: 82%;
+  left: 48%;
+  opacity: 0.25;
+}
+
+.dot-6 {
+  width: 50px;
+  height: 50px;
+  top: 15%;
+  left: 68%;
+}
+
+/* Grid Pattern Overlay */
+.contact-grid-mesh {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.75;
+}
+
+.contact-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------
+   2. CONTENT LAYOUT & TYPOGRAPHY
+   --------------------------------------------------- */
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Breadcrumbs */
+.contact-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #a4bcc4;
+  margin-bottom: 1rem;
+}
+
+.contact-breadcrumbs .crumb-link {
+  color: #c4d7dc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.contact-breadcrumbs .crumb-link:hover {
+  color: var(--secondary);
+}
+
+.contact-breadcrumbs .crumb-sep {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-breadcrumbs .crumb-current {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* Triage Status Pill */
+.triage-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #72efdd;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.7);
+  animation: pulseDotContact 2s infinite;
+}
+
+@keyframes pulseDotContact {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(114, 239, 221, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0);
+  }
+}
+
+/* Typography */
+.contact-hero-headline {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.contact-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #c4d7dc;
+  margin-bottom: 2.25rem;
+  max-width: 620px;
+}
+
+/* Fast Triage Communication Pods */
+.triage-channels-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.triage-channel-chip {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 1.15rem 1.4rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.triage-channel-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #72efdd;
+  transform: translateX(6px);
+}
+
+.triage-channel-chip.chip-emergency {
+  border-color: rgba(244, 162, 97, 0.35);
+}
+
+.triage-channel-chip.chip-emergency:hover {
+  border-color: var(--secondary);
+}
+
+.channel-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.bg-coral-pulse {
+  background: rgba(244, 162, 97, 0.2);
+  color: var(--secondary);
+  border: 1px solid rgba(244, 162, 97, 0.4);
+}
+
+.bg-mint-box {
+  background: rgba(14, 131, 136, 0.25);
+  color: #72efdd;
+  border: 1px solid rgba(14, 131, 136, 0.45);
+}
+
+.channel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.channel-caption {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a4bcc4;
+  font-weight: 700;
+}
+
+.channel-main-val {
+  font-size: 1.15rem;
+  color: var(--text-inverse);
+  letter-spacing: -0.01em;
+}
+
+/* ---------------------------------------------------
+   3. RIGHT HOSPITAL OPERATING DISPATCH CARD
+   --------------------------------------------------- */
+.contact-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hospital-dispatch-card {
+  width: 100%;
+  max-width: 490px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 2.6rem 2.4rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.dispatch-header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.facility-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #72efdd;
+}
+
+.dispatch-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--secondary);
+  background: rgba(244, 162, 97, 0.15);
+  border: 1px solid rgba(244, 162, 97, 0.35);
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+}
+
+.dispatch-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  box-shadow: 0 0 6px var(--secondary);
+}
+
+.facility-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.015em;
+}
+
+.facility-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: #c4d7dc;
+  line-height: 1.55;
+  margin-bottom: 0.85rem;
+}
+
+.facility-address i {
+  color: var(--secondary);
+  margin-top: 3px;
+}
+
+.facility-sub-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #a4bcc4;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.facility-sub-detail i {
+  color: #72efdd;
+  margin-right: 0.35rem;
+}
+
+/* Hours Grid */
+.dispatch-hours-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 1.15rem;
+}
+
+.hours-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hours-dept {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #8faab2;
+  font-weight: 700;
+}
+
+.hours-cell strong {
+  font-size: 0.88rem;
+  color: var(--text-inverse);
+}
+
+.dispatch-actions {
+  margin-top: auto;
+}
+
+.dispatch-btn {
+  width: 100%;
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .contact-hero-narrative {
+    text-align: center;
+  }
+
+  .contact-breadcrumbs {
+    justify-content: center;
+  }
+
+  .triage-channels-row {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-section {
+    padding-block: 4rem 4.5rem;
+  }
+
+  .contact-hero-headline {
+    font-size: 2.15rem;
+    line-height: 1.22;
+  }
+
+  .contact-hero-lead {
+    font-size: 0.96rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .triage-channel-chip {
+    padding: 1rem 1.15rem;
+    gap: 1rem;
+  }
+
+  .channel-icon-wrap {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .channel-main-val {
+    font-size: 1.05rem;
+  }
+
+  .hospital-dispatch-card {
+    padding: 1.85rem 1.35rem;
+    border-radius: 22px;
+    gap: 1.4rem;
+    max-width: 100%;
+  }
+
+  .facility-name {
+    font-size: 1.25rem;
+  }
+
+  .facility-address {
+    font-size: 0.86rem;
+  }
+
+  .dispatch-hours-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  /* Optimize background for mobile */
+  .ring-1,
+  .ring-2,
+  .ring-3 {
+    left: 50%;
+  }
+
+  .ring-3 {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+/* ===================================================
+   INTERACTIVE INTAKE & BOOKING CONCIERGE SECTION
+   Canvas: --bg-main #fbfdfc | Cards: --bg-surface #ffffff
+   =================================================== */
+
+.booking-concierge-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intake-console-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ---------------------------------------------------
+   1. INTAKE CARD & STEP NAVIGATION
+   --------------------------------------------------- */
+.intake-card {
+  padding: 3rem 2.8rem;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 16px 45px rgba(38, 70, 83, 0.06);
+}
+
+.intake-steps-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.step-indicator.active {
+  opacity: 1;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-muted);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-indicator.active .step-num {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(14, 131, 136, 0.25);
+}
+
+.step-text {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border-color);
+  margin-inline: 1rem;
+}
+
+/* Panes Handling */
+.intake-step-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.intake-step-pane.active {
+  display: block;
+  opacity: 1;
+}
+
+.form-group-block {
+  margin-bottom: 2rem;
+}
+
+.intake-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+}
+
+/* ---------------------------------------------------
+   2. COMPANION & DISCIPLINE SELECTORS
+   --------------------------------------------------- */
+.companion-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.companion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.companion-card input {
+  display: none;
+}
+
+.companion-card:hover {
+  background: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.companion-card.active {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(14, 131, 136, 0.14);
+  transform: translateY(-3px);
+}
+
+.comp-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.comp-name {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.comp-sub {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* Discipline Cards Grid */
+.discipline-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.discipline-card {
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 18px;
+  padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discipline-card input {
+  display: none;
+}
+
+.discipline-card:hover {
+  background: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.discipline-card.active {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(14, 131, 136, 0.12);
+}
+
+.discipline-top {
+  margin-bottom: 0.65rem;
+}
+
+.disc-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.2rem 0.65rem;
+  border-radius: 30px;
+}
+
+.disc-pill.pill-amber {
+  color: var(--secondary-hover);
+  background: var(--secondary-light);
+}
+
+.disc-pill.pill-danger {
+  color: var(--danger);
+  background: #fee2e2;
+}
+
+.disc-time {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.disc-title {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.disc-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ---------------------------------------------------
+   3. FORM FIELDS & CHECKBOX CHIPS
+   --------------------------------------------------- */
+.form-row-grid {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.intake-field {
+  background-color: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.94rem;
+}
+
+.intake-field:focus {
+  background-color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(14, 131, 136, 0.15);
+}
+
+.intake-textarea {
+  resize: vertical;
+}
+
+/* Amenities Checkboxes */
+.amenities-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.amenity-check-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 14px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.amenity-check-chip input {
+  display: none;
+}
+
+.amenity-check-chip i {
+  color: var(--secondary);
+}
+
+.amenity-check-chip.active {
+  background: #ffffff;
+  border-color: var(--primary);
+  color: var(--text-main);
+  box-shadow: 0 4px 12px rgba(14, 131, 136, 0.08);
+}
+
+.intake-step-nav {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.step-btn-next {
+  width: 100%;
+}
+
+/* ---------------------------------------------------
+   4. RIGHT SUMMARY SIDEBAR
+   --------------------------------------------------- */
+.summary-card {
+  padding: 2.5rem 2.2rem;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 16px 45px rgba(38, 70, 83, 0.06);
+  position: sticky;
+  top: 100px;
+}
+
+.summary-topbar {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.summary-code {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.summary-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--success);
+  background: #e6f7f4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 6px var(--success);
+}
+
+.summary-highlight-box {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin-bottom: 1.75rem;
+}
+
+.summary-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.summary-type-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary-hover);
+  margin-bottom: 0.2rem;
+}
+
+.summary-headline {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.summary-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.sum-label {
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sum-label i {
+  color: var(--secondary);
+}
+
+.sum-val {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.summary-guarantees {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.75rem;
+}
+
+.guarantee-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.guarantee-row i {
+  color: var(--success);
+}
+
+.summary-help-box {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 0.95rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.help-bubble {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--secondary-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.help-text span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.help-link {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.help-link:hover {
+  color: var(--primary);
+}
+
+/* ===================================================
+   5. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .intake-console-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-concierge-section {
+    padding-block: 4rem;
+  }
+
+  .intake-card {
+    padding: 1.85rem 1.35rem;
+    border-radius: 22px;
+  }
+
+  .intake-steps-bar {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .step-text {
+    display: none;
+    /* Keep numbers only on mobile for clean fit */
+  }
+
+  .companion-selector-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .companion-card {
+    flex-direction: row;
+    padding: 0.85rem 1rem;
+    gap: 0.85rem;
+    text-align: left;
+  }
+
+  .comp-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .discipline-selector-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .form-row-grid {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .amenities-checkbox-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .summary-card {
+    padding: 1.85rem 1.35rem;
+    border-radius: 22px;
+  }
+
+  .summary-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   CAMPUS TRANSIT & EMERGENCY BAY WAYFINDING
+   Canvas: --bg-main #fbfdfc | Cards: --bg-surface #ffffff
+   =================================================== */
+
+.campus-transit-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.transit-console-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* ---------------------------------------------------
+   1. LEFT ROUTE SELECTOR COLUMN
+   --------------------------------------------------- */
+.routes-card {
+  padding: 2.8rem 2.4rem;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 16px 45px rgba(38, 70, 83, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.routes-header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.75rem;
+}
+
+.routes-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.routes-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--success);
+  background: #e6f7f4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+}
+
+.route-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 6px var(--success);
+}
+
+/* Route Buttons Stack */
+.route-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.route-select-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.35rem 1.4rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.route-select-card:hover {
+  background: #ffffff;
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.route-select-card.active {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 10px 28px rgba(14, 131, 136, 0.12);
+  transform: translateX(6px);
+}
+
+.route-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.bg-coral-pulse {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.route-meta {
+  flex: 1;
+}
+
+.route-meta-top {
+  margin-bottom: 0.35rem;
+}
+
+.route-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+.route-tag.tag-urgent {
+  color: var(--danger);
+}
+
+.route-tag.tag-amber {
+  color: var(--secondary-hover);
+}
+
+.route-lane {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.route-name {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+.route-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.48;
+  margin: 0;
+}
+
+/* Bottom Parking Metrics */
+.transit-parking-metrics {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  border-radius: 18px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-color);
+}
+
+.parking-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.p-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.p-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.p-divider {
+  width: 1px;
+  height: 26px;
+  background-color: var(--border-color);
+}
+
+/* ---------------------------------------------------
+   2. RIGHT TRANSIT DECK & SPATIAL STAGE
+   --------------------------------------------------- */
+.transit-deck-card {
+  padding: 2.8rem 2.6rem;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 16px 45px rgba(38, 70, 83, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.deck-top-bar {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.75rem;
+}
+
+.deck-code-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.deck-code {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+.deck-clearance {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.deck-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--success);
+  background: #e6f7f4;
+  padding: 0.3rem 0.85rem;
+  border-radius: 30px;
+}
+
+/* Visual Stage Pod */
+.deck-visual-stage {
+  position: relative;
+  background: linear-gradient(145deg, #18313a 0%, var(--text-main) 100%);
+  border-radius: 22px;
+  padding: 2.6rem 2.4rem;
+  color: var(--text-inverse);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 35px rgba(38, 70, 83, 0.18);
+}
+
+.wayfinding-vector-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.campus-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.campus-radar-sweep {
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(114, 239, 221, 0.15) 0%, transparent 70%);
+}
+
+.deck-instruction-content {
+  position: relative;
+  z-index: 2;
+}
+
+.instruction-step {
+  font-family: monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #72efdd;
+  background: rgba(114, 239, 221, 0.12);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.instruction-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.015em;
+}
+
+.instruction-text {
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: #c4d7dc;
+  margin-bottom: 1.75rem;
+}
+
+/* Checkpoints */
+.deck-checkpoints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkpoint-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.86rem;
+  color: #e5ecee;
+}
+
+.checkpoint-item i {
+  color: var(--secondary);
+  font-size: 0.75rem;
+}
+
+/* Bottom Actions */
+.deck-action-dock {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.gps-coords {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.coords-label {
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.coords-val {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.gps-buttons {
+  gap: 0.75rem;
+}
+
+/* ===================================================
+   3. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .transit-console-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .campus-transit-section {
+    padding-block: 4rem;
+  }
+
+  .routes-card,
+  .transit-deck-card {
+    padding: 1.85rem 1.35rem;
+    border-radius: 22px;
+  }
+
+  .route-select-card {
+    padding: 1.15rem 1.1rem;
+    gap: 1rem;
+  }
+
+  .route-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+
+  .route-name {
+    font-size: 0.98rem;
+  }
+
+  .route-desc {
+    font-size: 0.8rem;
+  }
+
+  .transit-parking-metrics {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1.15rem;
+  }
+
+  .p-divider {
+    display: none;
+  }
+
+  .deck-visual-stage {
+    padding: 1.75rem 1.35rem;
+  }
+
+  .instruction-title {
+    font-size: 1.3rem;
+  }
+
+  .instruction-text {
+    font-size: 0.88rem;
+  }
+
+  .deck-action-dock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .gps-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .gps-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   EMERGENCY TRIAGE HOTLINE & HERO SHOWCASE SECTION
+   Hero Palette: --text-main #264653 | Accent: #f4a261 & #0e8388
+   =================================================== */
+
+.contact-triage-hero-showcase {
+  position: relative;
+  background-color: var(--text-main);
+  /* #264653 */
+  color: var(--text-inverse);
+  padding-block: 7rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(220, 231, 231, 0.12);
+  border-bottom: 1px solid rgba(220, 231, 231, 0.12);
+}
+
+/* ---------------------------------------------------
+   1. CINEMATIC MEDIA BACKDROP WITH OVERLAYS
+   --------------------------------------------------- */
+.triage-hero-media-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.triage-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: saturate(110%) brightness(0.65);
+  transform: scale(1.04);
+  transition: transform 10s ease;
+}
+
+.contact-triage-hero-showcase:hover .triage-backdrop-img {
+  transform: scale(1.08);
+}
+
+/* Deep Hero Gradient Overlays */
+.triage-linear-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(38, 70, 83, 0.94) 0%,
+      rgba(22, 42, 50, 0.92) 20%,
+      rgba(14, 28, 34, 0.98) 25%);
+}
+
+.triage-radial-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(14, 131, 136, 0.35) 0%, transparent 20%),
+    radial-gradient(circle at 85% 75%, rgba(244, 162, 97, 0.28) 0%, transparent 10%);
+  filter: blur(60px);
+}
+
+.triage-mesh-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.85;
+}
+
+.triage-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------
+   2. MAIN GLASS POD & TYPOGRAPHY
+   --------------------------------------------------- */
+.triage-hero-inner-pod {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 32px;
+  padding: 3.75rem 3.5rem;
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.42);
+}
+
+/* Top Beacon Strip */
+.triage-beacon-bar {
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.triage-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #72efdd;
+}
+
+.beacon-circle-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7);
+  animation: beaconPingAmber 2s infinite;
+}
+
+@keyframes beaconPingAmber {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(244, 162, 97, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 162, 97, 0);
+  }
+}
+
+.triage-code-pill {
+  font-family: monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #c4d7dc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.triage-code-pill i {
+  color: var(--secondary);
+}
+
+/* Narrative Block */
+.triage-narrative-block {
+  max-width: 820px;
+  margin-bottom: 3.5rem;
+}
+
+.triage-pill-badge {
+  margin-bottom: 1rem;
+}
+
+.triage-showcase-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.triage-showcase-desc {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #c4d7dc;
+  margin: 0;
+}
+
+/* ---------------------------------------------------
+   3. ACTION CHANNELS GRID
+   --------------------------------------------------- */
+.triage-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.triage-action-card {
+  padding: 2.6rem 2.4rem;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Glowing Amber Hotline Card */
+.card-emergency-glow {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(244, 162, 97, 0.38);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-emergency-glow:hover {
+  transform: translateY(-6px);
+  border-color: var(--secondary);
+  box-shadow: 0 24px 50px rgba(244, 162, 97, 0.18);
+}
+
+/* Glass En-Route Card */
+.card-intransit-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+}
+
+.card-intransit-glass:hover {
+  transform: translateY(-6px);
+  border-color: rgba(14, 131, 136, 0.5);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+}
+
+.action-card-top {
+  margin-bottom: 1.5rem;
+}
+
+.action-icon-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.bg-amber-pulse {
+  background: rgba(244, 162, 97, 0.22);
+  color: var(--secondary);
+  border: 1px solid rgba(244, 162, 97, 0.45);
+}
+
+.bg-mint-box {
+  background: rgba(14, 131, 136, 0.25);
+  color: #72efdd;
+  border: 1px solid rgba(14, 131, 136, 0.45);
+}
+
+.action-time-tag {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #c4d7dc;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.8rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.action-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  margin-bottom: 0.35rem;
+}
+
+.action-headline {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.action-subtext {
+  font-size: 0.92rem;
+  color: #c4d7dc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.action-btn-wide {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ---------------------------------------------------
+   4. BOTTOM METRICS STRIP
+   --------------------------------------------------- */
+.triage-metrics-strip {
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.triage-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.triage-metric-item i {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.triage-metric-item strong {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.2;
+}
+
+.triage-metric-item span {
+  display: block;
+  font-size: 0.8rem;
+  color: #a4bcc4;
+}
+
+.triage-metric-divider {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ===================================================
+   5. RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   =================================================== */
+
+/* Tablet & Smaller Laptops (<= 992px) */
+@media (max-width: 992px) {
+  .triage-channels-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .triage-hero-inner-pod {
+    padding: 3rem 2.25rem;
+  }
+
+  .triage-showcase-title {
+    font-size: 2.45rem;
+  }
+}
+
+/* Standard Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .contact-triage-hero-showcase {
+    padding-block: 3.75rem 4.25rem;
+  }
+
+  .triage-hero-container {
+    padding-inline: 1rem;
+  }
+
+  /* Inner Glass Pod */
+  .triage-hero-inner-pod {
+    padding: 1.85rem 1.25rem;
+    border-radius: 20px;
+    border-width: 1px;
+  }
+
+  /* Beacon Strip */
+  .triage-beacon-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .triage-live-tag {
+    font-size: 0.74rem;
+    line-height: 1.3;
+  }
+
+  .triage-code-pill {
+    font-size: 0.72rem;
+  }
+
+  /* Headline & Text */
+  .triage-narrative-block {
+    margin-bottom: 2.25rem;
+  }
+
+  .triage-showcase-title {
+    font-size: 1.85rem;
+    line-height: 1.22;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+
+  .triage-showcase-desc {
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
+  /* Action Cards */
+  .triage-channels-grid {
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .triage-action-card {
+    padding: 1.65rem 1.2rem;
+    border-radius: 18px;
+  }
+
+  .action-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .action-icon-circle {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+    border-radius: 13px;
+  }
+
+  .action-time-tag {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .action-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  .action-headline {
+    font-size: 1.35rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .action-subtext {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .action-btn-wide {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.92rem;
+  }
+
+  /* Metrics Strip */
+  .triage-metrics-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding-top: 1.5rem;
+  }
+
+  .triage-metric-item {
+    gap: 0.85rem;
+  }
+
+  .triage-metric-item i {
+    font-size: 1.35rem;
+  }
+
+  .triage-metric-item strong {
+    font-size: 1rem;
+  }
+
+  .triage-metric-item span {
+    font-size: 0.76rem;
+  }
+
+  .triage-metric-divider {
+    display: none;
+  }
+}
+
+/* Small Screens & Compact Phones (<= 480px) */
+@media (max-width: 480px) {
+  .contact-triage-hero-showcase {
+    padding-block: 3rem 3.5rem;
+  }
+
+  .triage-hero-inner-pod {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .triage-showcase-title {
+    font-size: 1.65rem;
+  }
+
+  .action-headline {
+    font-size: 1.22rem;
+  }
+
+  .action-card-top {
+    flex-wrap: wrap;
+  }
+
+  .triage-action-card {
+    padding: 1.4rem 1rem;
+  }
+}
+
+
+
+
+
+
+
+/* ===================================================
+   PRE-ARRIVAL CLINICAL CHECKLIST & PATIENT PREPARATION
+   Canvas: --bg-main #fbfdfc | Cards: --bg-surface #ffffff
+   =================================================== */
+
+.visit-prep-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prep-console-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* ---------------------------------------------------
+   1. LEFT SIDEBAR & PROGRESS TRACKER
+   --------------------------------------------------- */
+.prep-sidebar-card {
+  padding: 2.8rem 2.4rem;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 16px 45px rgba(38, 70, 83, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-top {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.75rem;
+}
+
+.sidebar-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+}
+
+/* Mode Selectors Stack */
+.prep-mode-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.prep-mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.prep-mode-btn:hover {
+  background: #ffffff;
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.prep-mode-btn.active {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 10px 28px rgba(14, 131, 136, 0.12);
+  transform: translateX(6px);
+}
+
+.mode-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.bg-amber-box {
+  background: var(--secondary-light);
+  color: var(--secondary-hover);
+}
+
+.bg-mint-box {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.mode-info {
+  flex: 1;
+}
+
+.mode-caption {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.prep-mode-btn.active .mode-caption {
+  color: var(--primary);
+}
+
+.mode-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.mode-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.mode-arrow {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.prep-mode-btn.active .mode-arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* Progress Tracker Card */
+.prep-progress-card {
+  margin-top: auto;
+  padding: 1.35rem 1.4rem;
+  border-radius: 18px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-color);
+}
+
+.progress-info {
+  margin-bottom: 0.65rem;
+}
+
+.progress-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.progress-count {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(38, 70, 83, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.65rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 6px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-tip {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------
+   2. RIGHT CHECKLIST DECK
+   --------------------------------------------------- */
+.prep-deck-card {
+  padding: 2.8rem 2.6rem;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 16px 45px rgba(38, 70, 83, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.deck-header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.25rem;
+}
+
+.deck-category {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-hover);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.deck-main-head {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.deck-timer-chip {
+  font-family: monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--text-main);
+  background: var(--bg-muted);
+  padding: 0.35rem 0.85rem;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.deck-timer-chip i {
+  color: var(--secondary);
+}
+
+.deck-summary-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.62;
+  margin-bottom: 1.85rem;
+}
+
+/* Actionable Interactive Checklist */
+.actionable-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.check-item-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  padding: 1.15rem 1.35rem;
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-color);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.check-item-card:hover {
+  background: #ffffff;
+  border-color: rgba(14, 131, 136, 0.4);
+}
+
+.check-item-card.completed {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(14, 131, 136, 0.08);
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: transparent;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.check-item-card.completed .custom-checkbox {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(14, 131, 136, 0.3);
+}
+
+.check-item-body {
+  flex: 1;
+}
+
+.check-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.check-item-card.completed .check-title {
+  color: var(--primary);
+}
+
+.check-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Advisory Dock */
+.prep-advisory-dock {
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.advisory-message {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.advisory-message i {
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+/* ===================================================
+   3. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .prep-console-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .visit-prep-section {
+    padding-block: 4rem;
+  }
+
+  .prep-sidebar-card,
+  .prep-deck-card {
+    padding: 1.85rem 1.35rem;
+    border-radius: 22px;
+  }
+
+  .prep-mode-btn {
+    padding: 1.1rem 1.15rem;
+    gap: 1rem;
+  }
+
+  .mode-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+
+  .mode-title {
+    font-size: 0.98rem;
+  }
+
+  .deck-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .deck-main-head {
+    font-size: 1.25rem;
+  }
+
+  .deck-summary-text {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .check-item-card {
+    padding: 1rem 1.15rem;
+    gap: 0.85rem;
+  }
+
+  .check-title {
+    font-size: 0.9rem;
+  }
+
+  .check-desc {
+    font-size: 0.8rem;
+  }
+
+  .prep-advisory-dock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.15rem;
+  }
+
+  .advisory-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===================================================
+   FINAL CONTACT PRE-FOOTER CTA SECTION
+   Identity: --text-main #264653 | Accent: #f4a261 & #0e8388
+   =================================================== */
+
+.contact-final-cta-section {
+  position: relative;
+  background-color: var(--text-main);
+  /* #264653 */
+  color: var(--text-inverse);
+  padding-block: 7rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(220, 231, 231, 0.12);
+}
+
+/* Ambient Radiant Glows */
+.cta-ambient-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-radiant-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  will-change: transform;
+}
+
+.cta-radiant-orb.orb-teal {
+  width: 580px;
+  height: 580px;
+  background: var(--primary);
+  /* #0e8388 */
+  top: -160px;
+  left: -120px;
+  opacity: 0.35;
+  animation: floatOrbTeal 15s ease-in-out infinite alternate;
+}
+
+.cta-radiant-orb.orb-amber {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary);
+  /* #f4a261 */
+  bottom: -150px;
+  right: -80px;
+  opacity: 0.3;
+  animation: floatOrbAmber 18s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrbTeal {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(70px, 50px) scale(1.12);
+  }
+}
+
+@keyframes floatOrbAmber {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-60px, -40px) scale(1.1);
+  }
+}
+
+.cta-mesh-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.8;
+}
+
+.cta-final-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Elevated Glass Dock */
+.cta-elevated-dock {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 3.75rem 3.5rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* Top Status Bar */
+.cta-dock-topbar {
+  padding-bottom: 2rem;
+  margin-bottom: 2.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-live-beacon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #72efdd;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pulse-beacon-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.7);
+  animation: pulseBeaconDot 2s infinite;
+}
+
+@keyframes pulseBeaconDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(114, 239, 221, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0);
+  }
+}
+
+.cta-cert-code {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #c4d7dc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.cta-cert-code i {
+  color: var(--secondary);
+}
+
+/* Narrative Center */
+.cta-narrative-center {
+  max-width: 820px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+.cta-badge {
+  margin-bottom: 1.15rem;
+}
+
+.cta-hero-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.15rem;
+}
+
+.cta-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #c4d7dc;
+  margin: 0;
+}
+
+/* Action Tiles Grid */
+.cta-action-dock-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.cta-action-tile {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cta-action-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Emergency Tile Highlight */
+.tile-emergency {
+  border-color: rgba(244, 162, 97, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tile-emergency:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 20px 45px rgba(244, 162, 97, 0.18);
+}
+
+/* Digital Tile Highlight */
+.tile-digital:hover {
+  border-color: rgba(14, 131, 136, 0.5);
+  box-shadow: 0 20px 45px rgba(14, 131, 136, 0.2);
+}
+
+.tile-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.bg-amber-pulse {
+  background: rgba(244, 162, 97, 0.25);
+  color: var(--secondary);
+  border: 1px solid rgba(244, 162, 97, 0.45);
+}
+
+.bg-mint-box {
+  background: rgba(14, 131, 136, 0.25);
+  color: #72efdd;
+  border: 1px solid rgba(14, 131, 136, 0.45);
+}
+
+.tile-tag {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #72efdd;
+  margin-bottom: 0.35rem;
+}
+
+.tile-tag.tag-urgent {
+  color: var(--secondary);
+}
+
+.tile-heading {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5rem;
+}
+
+.tile-subtext {
+  font-size: 0.925rem;
+  color: #c4d7dc;
+  line-height: 1.62;
+  margin-bottom: 2rem;
+}
+
+.tile-action-btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Bottom Reassurance Footer */
+.cta-dock-footer {
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dock-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c4d7dc;
+}
+
+.dock-trust-item i {
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.dock-trust-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ===================================================
+   768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .cta-action-dock-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-final-cta-section {
+    padding-block: 4rem;
+  }
+
+  .cta-elevated-dock {
+    padding: 2.25rem 1.4rem;
+    border-radius: 24px;
+  }
+
+  .cta-dock-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .cta-hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .cta-action-tile {
+    padding: 1.85rem 1.35rem;
+  }
+
+  .tile-heading {
+    font-size: 1.25rem;
+  }
+
+  .tile-subtext {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-dock-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding-top: 1.75rem;
+  }
+
+  .dock-trust-divider {
+    display: none;
+  }
+}

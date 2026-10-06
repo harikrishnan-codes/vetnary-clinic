@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VetCare & Wellness Center</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="our.css" />
+
+    <link rel="icon" href="./assets/logo.webp" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Top Announcement / Emergency Bar -->
+    <aside class="top-bar">
+        <div class="container flex-between">
+            <div class="top-bar-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span>24/7 Pet Emergency Hotline: <strong>+1 (800) 555-VETS</strong></span>
+            </div>
+            <div class="top-bar-item top-bar-hours">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Mon - Sat: 8:00 AM - 8:00 PM</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Sticky Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container flex-between header-wrapper">
+
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo" aria-label="VetCare Home">
+                <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="nav-desktop" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="service.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="our.html" class="nav-link">Our Vets</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Desktop Header Actions -->
+            <div class="header-actions">
+                <a href="auth.html" class="btn btn-outline-primary btn-sm" id="openSignInBtn">Sign In</a>
+                <a href="contact.html" class="btn btn-primary btn-sm">Book Visit</a>
+
+                <!-- Hamburger Button (Mobile / Tablet) -->
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Backdrop Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Mobile Slide Drawer -->
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="mobile-drawer-header flex-between">
+            <a href="index.html" class="logo">
+                <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+            </a>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+        </div>
+
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+                <li><a href="our.html" class="mobile-nav-link">Our Vets</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="mobile-drawer-actions">
+            <a href="auth.html" class="btn btn-outline-primary" id="mobileSignInBtn">Sign In</a>
+            <a href="contact.html" class="btn btn-primary mobile-book-btn">Book Appointment</a>
+        </div>
+
+        <div class="mobile-drawer-footer">
+            <p class="emergency-tag">24/7 Emergency Line</p>
+            <a href="error.html" class="emergency-number">+1 (800) 555-VETS</a>
+        </div>
+    </aside>
+
+
+
+
+
+
+
+
+    <!-- Our Vets Page: Faculty & Clinical Leadership Hero Section -->
+    <section class="section vets-hero-section" id="vetsHero">
+
+        <!-- Ambient Cellular & Medical Bio-Luminescence Backdrop -->
+        <div class="vets-hero-backdrop" aria-hidden="true">
+            <div class="vets-ambient-orb orb-teal"></div>
+            <div class="vets-ambient-orb orb-amber"></div>
+
+            <!-- Animated Medical Vitals Pulse Path -->
+            <svg class="vitals-pulse-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+                preserveAspectRatio="none">
+                <path class="vitals-trace-line"
+                    d="M0,160 L450,160 L470,120 L490,210 L520,70 L550,230 L570,140 L600,160 L1440,160" fill="none"
+                    stroke="rgba(114, 239, 221, 0.22)" stroke-width="2.5" />
+            </svg>
+
+            <div class="vets-grid-mesh"></div>
+        </div>
+
+        <div class="container vets-hero-container">
+            <div class="vets-hero-grid">
+
+                <!-- Left Column: Authority Narrative & Filter Badges -->
+                <div class="vets-hero-narrative">
+
+                    <div class="vets-breadcrumbs gsap-vets-hero">
+                        <a href="index.html" class="crumb-link"><i class="fa-solid fa-house-chimney"></i> Home</a>
+                        <span class="crumb-sep">/</span>
+                        <span class="crumb-current">Medical Faculty & Clinicians</span>
+                    </div>
+
+                    <div class="faculty-status-pill gsap-vets-hero">
+                        <span class="status-pulse-dot"></span>
+                        <span>Board-Certified Specialists • 24/7 Trauma Coverage</span>
+                    </div>
+
+                    <h1 class="vets-hero-headline gsap-vets-hero">
+                        World-Class Clinicians. Unmatched Empathy.
+                    </h1>
+
+                    <p class="vets-hero-lead gsap-vets-hero">
+                        Our senior surgical staff, feline behavioral specialists, and internal medicine fellows combine
+                        Ivy League veterinary training with genuine Fear-Free bedside kindness.
+                    </p>
+
+                    <!-- Department Fast-Jump Interactive Chips -->
+                    <div class="vets-dept-chips gsap-vets-hero" id="vetsDeptFilter">
+                        <button type="button" class="vets-chip active" data-dept="all">
+                            <i class="fa-solid fa-user-doctor"></i> All Faculty
+                        </button>
+                        <button type="button" class="vets-chip" data-dept="surgery">
+                            <i class="fa-solid fa-scissors"></i> Surgery &amp; Ortho
+                        </button>
+                        <button type="button" class="vets-chip" data-dept="cardio">
+                            <i class="fa-solid fa-heart-pulse"></i> Cardiology
+                        </button>
+                        <button type="button" class="vets-chip" data-dept="feline">
+                            <i class="fa-solid fa-shield-cat"></i> Feline Medicine
+                        </button>
+                    </div>
+
+                    <!-- Metric Credentials Bar -->
+                    <div class="vets-credentials-bar gsap-vets-hero">
+                        <div class="vet-stat-box">
+                            <span class="vet-stat-number" data-count="32">0+</span>
+                            <span class="vet-stat-label">Resident Specialists</span>
+                        </div>
+                        <div class="vet-stat-divider"></div>
+                        <div class="vet-stat-box">
+                            <span class="vet-stat-number" data-count="14">0</span>
+                            <span class="vet-stat-label">Avg Years Experience</span>
+                        </div>
+                        <div class="vet-stat-divider"></div>
+                        <div class="vet-stat-box">
+                            <span class="vet-stat-number" data-count="100">0%</span>
+                            <span class="vet-stat-label">Fear-Free Certified</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Interactive Lead Surgeon Profile Podium -->
+                <div class="vets-hero-visual gsap-vets-visual">
+                    <div class="faculty-hero-podium">
+
+                        <!-- Master Visual Portrait Frame -->
+                        <div class="surgeon-master-card">
+                            <img src="./assets/girl 29.webp" alt="Dr. Amanda Vance - Chief of Surgery"
+                                class="surgeon-portrait-img" loading="lazy" />
+                            <div class="surgeon-card-vignette"></div>
+
+                            <div class="surgeon-card-bio">
+                                <span class="surgeon-post-tag">CHIEF MEDICAL OFFICER</span>
+                                <h3 class="surgeon-name">Dr. Amanda Vance, DVM, DACVS</h3>
+                                <p class="surgeon-specialty">Diplomate, American College of Veterinary Surgeons</p>
+
+                                <div class="surgeon-sub-meta">
+                                    <span><i class="fa-solid fa-graduation-cap"></i> Cornell University</span>
+                                    <span><i class="fa-solid fa-calendar-check"></i> 16 Yrs Practice</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Credential Card: Surgical Telemetry -->
+                        <div class="vets-floating-badge badge-top-left">
+                            <div class="badge-icon-box bg-mint">
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+                            <div>
+                                <strong>AAHA Master Fellow</strong>
+                                <span>Soft-Tissue &amp; Orthopedics</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Credential Card: Patient Ratio -->
+                        <div class="vets-floating-badge badge-bottom-right">
+                            <div class="badge-icon-box bg-amber">
+                                <i class="fa-solid fa-heart-circle-check"></i>
+                            </div>
+                            <div>
+                                <strong>1:1 Nurse-to-Patient</strong>
+                                <span>Continuous ICU Monitoring</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Claymorphism: Faculty Care Standards & Tactile Amenities -->
+    <section class="section clay-vets-section" id="facultyStandards">
+        <div class="container">
+
+            <!-- Universal Section Header -->
+            <div class="section-header text-center gsap-clay-header">
+                <span class="badge badge-primary">Clinical Bedside Philosophy</span>
+                <h2 class="stack-main-title">The Art of Low-Stress Examination</h2>
+                <p class="stack-subtitle">
+                    Every veterinarian on our staff undergoes 120+ hours of annual behavioral training. Here is how our
+                    team transforms scary clinical moments into calm, cooperative checkups.
+                </p>
+            </div>
+
+            <!-- 4-Column Claymorphic Grid -->
+            <div class="clay-vets-grid">
+
+                <!-- Clay Card 1: Teal Accent -->
+                <div class="clay-vet-card clay-teal gsap-clay-card" data-tilt>
+                    <div class="clay-vet-icon-bubble">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="clay-vet-pill">Restraint-Free</div>
+                    <h3 class="clay-vet-title">Minimal Physical Force</h3>
+                    <p class="clay-vet-text">
+                        Zero scruffing or pinning down. Our doctors utilize gentle towel wraps, elevated non-slip foam,
+                        and companion proximity.
+                    </p>
+                    <div class="clay-vet-metric">
+                        <i class="fa-solid fa-sparkles"></i> 100% Consent-Based
+                    </div>
+                </div>
+
+                <!-- Clay Card 2: Amber Accent -->
+                <div class="clay-vet-card clay-amber gsap-clay-card" data-tilt>
+                    <div class="clay-vet-icon-bubble">
+                        <i class="fa-solid fa-cookie-bite"></i>
+                    </div>
+                    <div class="clay-vet-pill">Sensory Diversion</div>
+                    <h3 class="clay-vet-title">High-Value Rewards</h3>
+                    <p class="clay-vet-text">
+                        Lick mats layered with hypoallergenic organic liver pâté keep attention focused during vital
+                        signs and vaccinations.
+                    </p>
+                    <div class="clay-vet-metric">
+                        <i class="fa-solid fa-heart"></i> Endorphin Release
+                    </div>
+                </div>
+
+                <!-- Clay Card 3: Mint Accent -->
+                <div class="clay-vet-card clay-mint gsap-clay-card" data-tilt>
+                    <div class="clay-vet-icon-bubble">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div class="clay-vet-pill">Acoustic Shield</div>
+                    <h3 class="clay-vet-title">Silent Auscultation</h3>
+                    <p class="clay-vet-text">
+                        Ultra-sensitive digital stethoscopes warmed to body temperature allow rapid cardiac readings
+                        without metal cold shock.
+                    </p>
+                    <div class="clay-vet-metric">
+                        <i class="fa-solid fa-temperature-arrow-up"></i> Pre-Warmed Heads
+                    </div>
+                </div>
+
+                <!-- Clay Card 4: Coral Accent -->
+                <div class="clay-vet-card clay-coral gsap-clay-card" data-tilt>
+                    <div class="clay-vet-icon-bubble">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div class="clay-vet-pill">Unhurried Pacing</div>
+                    <h3 class="clay-vet-title">45-Minute Consults</h3>
+                    <p class="clay-vet-text">
+                        We double typical appointment windows so patients can acclimate, sniff the suite, and settle
+                        before examination starts.
+                    </p>
+                    <div class="clay-vet-metric">
+                        <i class="fa-solid fa-hourglass-half"></i> 2x Industry Average
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Clay Bottom Facility Banner -->
+            <div class="clay-vet-banner gsap-clay-card">
+                <div class="clay-banner-details">
+                    <div class="clay-banner-badge-icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h4 class="clay-banner-head">Want To Schedule A “Happy Visit” Acclimation Session?</h4>
+                        <p class="clay-banner-sub">Bring your anxious puppy or rescue cat for a zero-exam treat session
+                            so they love returning.</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn-secondary clay-banner-action">Request Happy Visit</a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- Split-Screen Showcase: Surgical Excellence vs Feline Medicine Leadership -->
+    <section class="section vets-split-showcase-section" id="vetsSplitShowcase">
+        <div class="container">
+
+            <!-- Universal Section Header -->
+            <div class="section-header text-center gsap-vsplit-header">
+                <span class="badge badge-secondary">Specialized Faculty Wings</span>
+                <h2 class="stack-main-title">Dual Pillars of Clinical Leadership</h2>
+                <p class="stack-subtitle">
+                    Explore our two primary clinical disciplines—sterile orthopedic surgery and specialized feline
+                    internal medicine—each led by board-certified department chiefs.
+                </p>
+            </div>
+
+            <!-- Master Split-Screen Stage -->
+            <div class="vets-split-canvas gsap-vsplit-canvas">
+
+                <!-- Left Wing: Surgical & Orthopedic Center -->
+                <article class="vets-split-wing wing-surgical">
+                    <div class="wing-bg-media">
+                        <img src="./assets/boy 22.webp" alt="Sterile surgical operating theatre" loading="lazy" />
+                        <div class="wing-vignette vignette-teal"></div>
+                    </div>
+
+                    <div class="wing-content">
+                        <div class="wing-badge-row">
+                            <span class="wing-pill pill-teal">
+                                <i class="fa-solid fa-scissors"></i> Orthopedic &amp; Soft-Tissue
+                            </span>
+                            <span class="wing-status">HEPA-14 Cleanroom</span>
+                        </div>
+
+                        <h3 class="wing-title">Department of Advanced Surgery</h3>
+                        <p class="wing-lead">
+                            Headed by Dr. Julian Thorne, focusing on minimally invasive laparoscopy, TPLO cruciate
+                            stabilization, and zero-infection protocols.
+                        </p>
+
+                        <div class="wing-doctor-preview">
+                            <img src="./assets/girl 29.webp" alt="Dr. Julian Thorne" class="wing-doctor-avatar" />
+                            <div>
+                                <strong class="doctor-name">Dr. Julian Thorne, DVM, DACVS</strong>
+                                <span class="doctor-title">Director of Orthopedics • 18 Yrs Experience</span>
+                            </div>
+                        </div>
+
+                        <ul class="wing-spec-list list-teal">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Titanium locking-plate fracture stabilization</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Sevoflurane targeted anesthesia with 6-lead ECG telemetry</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Therapeutic infrared post-operative warming pods</span>
+                            </li>
+                        </ul>
+
+                        <div class="wing-action-row">
+                            <a href="contact.html" class="btn btn-secondary wing-cta-btn">
+                                <span>Consult Chief Surgeon</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Center Divider Emblem -->
+                <div class="vets-split-divider" aria-hidden="true">
+                    <div class="vets-divider-circle">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                </div>
+
+                <!-- Right Wing: Feline & Internal Medicine Sanctuary -->
+                <article class="vets-split-wing wing-feline">
+                    <div class="wing-bg-media">
+                        <img src="./assets/girl 28.webp" alt="Quiet feline medicine sanctuary" loading="lazy" />
+                        <div class="wing-vignette vignette-amber"></div>
+                    </div>
+
+                    <div class="wing-content">
+                        <div class="wing-badge-row">
+                            <span class="wing-pill pill-amber">
+                                <i class="fa-solid fa-shield-cat"></i> Feline &amp; Internal Medicine
+                            </span>
+                            <span class="wing-status">Acoustic Isolated</span>
+                        </div>
+
+                        <h3 class="wing-title">Department of Feline Medicine</h3>
+                        <p class="wing-lead">
+                            Headed by Dr. Elena Rostova, providing dedicated canine-free wings, ultrasonic color Doppler
+                            echocardiograms, and low-stress endocrinology.
+                        </p>
+
+                        <div class="wing-doctor-preview">
+                            <img src="./assets/girl 28.webp" alt="Dr. Elena Rostova" class="wing-doctor-avatar" />
+                            <div>
+                                <strong class="doctor-name">Dr. Elena Rostova, DVM, DABVP</strong>
+                                <span class="doctor-title">Feline Practice Specialist • 14 Yrs Experience</span>
+                            </div>
+                        </div>
+
+                        <ul class="wing-spec-list list-amber">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Dedicated feline pheromone micro-diffused examination suites</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>High-frequency color Doppler cardiac and abdominal screening</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Geriatric renal protection &amp; chronic pain management plans</span>
+                            </li>
+                        </ul>
+
+                        <div class="wing-action-row">
+                            <a href="contact.html" class="btn btn-outline-hero wing-cta-btn">
+                                <span>Book Cat Specialist</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Bottom Reassurance Banner -->
+            <div class="vets-split-foot-banner card gsap-vsplit-canvas">
+                <div class="foot-banner-info">
+                    <div class="foot-icon-orb">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div>
+                        <h4 class="foot-banner-title">Need a Cross-Disciplinary Consultation?</h4>
+                        <p class="foot-banner-desc">Our surgical, dental, and internal medicine clinicians collaborate
+                            on complex patient cases daily.</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn-primary foot-banner-action">Refer or Request Consult</a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- 3D Tilt & Multi-Layer Parallax Faculty Cards Section -->
+    <section class="section faculty-tilt-section" id="facultyRoster">
+        <div class="container">
+
+            <!-- Universal Section Header -->
+            <div class="section-header text-center gsap-tilt-header">
+                <span class="badge badge-primary">Resident Specialists</span>
+                <h2 class="stack-main-title">Meet Our Lead Clinical Faculty</h2>
+                <p class="stack-subtitle">
+                    Every attending veterinarian brings fellowship certification, continuous surgical accreditation, and
+                    a compassionate bedside touch to every case.
+                </p>
+            </div>
+
+            <!-- 3-Column 3D Tilt Stage -->
+            <div class="tilt-cards-grid">
+
+                <!-- Faculty 1: Chief of Cardiology & Ultrasound -->
+                <article class="tilt-card gsap-tilt-card" data-tilt>
+                    <div class="tilt-card-inner">
+                        <div class="tilt-glare-layer"></div>
+
+                        <!-- Layer 1: Floating Profile Portrait Frame (Parallax Z-Depth) -->
+                        <div class="tilt-layer-media">
+                            <img src="./assets/doc 1.webp" alt="Dr. Marcus Thorne - Veterinary Cardiologist"
+                                class="tilt-doctor-img" loading="lazy" />
+                            <div class="tilt-media-gradient"></div>
+                            <span class="tilt-status-badge"><span class="badge-pulse"></span> On-Duty Today</span>
+                        </div>
+
+                        <!-- Layer 2: Clinical Data & Accolades -->
+                        <div class="tilt-layer-content">
+                            <span class="tilt-dept-tag">CARDIOLOGY &amp; DOPPLER</span>
+                            <h3 class="tilt-doctor-name">Dr. Marcus Thorne, DVM</h3>
+                            <p class="tilt-doctor-cert">Diplomate ACVIM (Cardiology) • UC Davis</p>
+
+                            <p class="tilt-doctor-bio">
+                                Specializing in non-invasive 4D echocardiograms, congenital murmur management, and
+                                pacemaker telemetry implants.
+                            </p>
+
+                            <div class="tilt-stats-row">
+                                <div class="tilt-stat-box">
+                                    <strong>14 Yrs</strong>
+                                    <span>Clinical Exp</span>
+                                </div>
+                                <div class="tilt-stat-box">
+                                    <strong>4,200+</strong>
+                                    <span>Echo Scans</span>
+                                </div>
+                                <div class="tilt-stat-box">
+                                    <strong>99.6%</strong>
+                                    <span>Safety Rate</span>
+                                </div>
+                            </div>
+
+                            <div class="tilt-action-box">
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm tilt-cta-btn">
+                                    <span>Book Cardio Consult</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Faculty 2: Chief of Surgery & Orthopedics (Featured Accent) -->
+                <article class="tilt-card featured-tilt-card gsap-tilt-card" data-tilt>
+                    <div class="tilt-card-inner">
+                        <div class="tilt-glare-layer"></div>
+                        <div class="tilt-accent-ribbon">DIRECTOR OF SURGERY</div>
+
+                        <!-- Layer 1: Floating Profile Portrait Frame -->
+                        <div class="tilt-layer-media">
+                            <img src="./assets/doc 2.webp" alt="Dr. Amanda Vance - Chief Surgeon"
+                                class="tilt-doctor-img" loading="lazy" />
+                            <div class="tilt-media-gradient"></div>
+                            <span class="tilt-status-badge badge-amber"><span class="badge-pulse amber-pulse"></span>
+                                ICU Floor Lead</span>
+                        </div>
+
+                        <!-- Layer 2: Clinical Data & Accolades -->
+                        <div class="tilt-layer-content">
+                            <span class="tilt-dept-tag tag-amber">ORTHOPEDIC &amp; RECONSTRUCTION</span>
+                            <h3 class="tilt-doctor-name">Dr. Amanda Vance, DVM</h3>
+                            <p class="tilt-doctor-cert">Diplomate ACVS (Surgery) • Cornell Fellow</p>
+
+                            <p class="tilt-doctor-bio">
+                                Pioneering minimally invasive locking-plate TPLO surgeries and laparoscopic soft-tissue
+                                procedures with zero cold shock.
+                            </p>
+
+                            <div class="tilt-stats-row">
+                                <div class="tilt-stat-box">
+                                    <strong>16 Yrs</strong>
+                                    <span>Surgery Lead</span>
+                                </div>
+                                <div class="tilt-stat-box">
+                                    <strong>5,800+</strong>
+                                    <span>Procedures</span>
+                                </div>
+                                <div class="tilt-stat-box">
+                                    <strong>0.18%</strong>
+                                    <span>Infection Rate</span>
+                                </div>
+                            </div>
+
+                            <div class="tilt-action-box">
+                                <a href="contact.html" class="btn btn-secondary btn-sm tilt-cta-btn">
+                                    <span>Book Surgical Consult</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Faculty 3: Lead Feline & Internal Medicine Specialist -->
+                <article class="tilt-card gsap-tilt-card" data-tilt>
+                    <div class="tilt-card-inner">
+                        <div class="tilt-glare-layer"></div>
+
+                        <!-- Layer 1: Floating Profile Portrait Frame -->
+                        <div class="tilt-layer-media">
+                            <img src="./assets/doc 3.webp" alt="Dr. Elena Rostova - Feline Practitioner"
+                                class="tilt-doctor-img" loading="lazy" />
+                            <div class="tilt-media-gradient"></div>
+                            <span class="tilt-status-badge"><span class="badge-pulse"></span> On-Duty Today</span>
+                        </div>
+
+                        <!-- Layer 2: Clinical Data & Accolades -->
+                        <div class="tilt-layer-content">
+                            <span class="tilt-dept-tag">FELINE PRACTICE &amp; ENDOCRINOLOGY</span>
+                            <h3 class="tilt-doctor-name">Dr. Elena Rostova, DVM</h3>
+                            <p class="tilt-doctor-cert">Diplomate ABVP (Feline Practice) • Royal Vet College</p>
+
+                            <p class="tilt-doctor-bio">
+                                International Fear-Free master educator overseeing dedicated cat sanctuaries, thyroid
+                                management, and renal failure therapies.
+                            </p>
+
+                            <div class="tilt-stats-row">
+                                <div class="tilt-stat-box">
+                                    <strong>12 Yrs</strong>
+                                    <span>Feline Expert</span>
+                                </div>
+                                <div class="tilt-stat-box">
+                                    <strong>3,900+</strong>
+                                    <span>Feline Visits</span>
+                                </div>
+                                <div class="tilt-stat-box">
+                                    <strong>100%</strong>
+                                    <span>Fear-Free</span>
+                                </div>
+                            </div>
+
+                            <div class="tilt-action-box">
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm tilt-cta-btn">
+                                    <span>Book Feline Consult</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Bottom Credential Reassurance Strip -->
+            <div class="faculty-trust-strip card gsap-tilt-card">
+                <div class="trust-strip-left">
+                    <div class="trust-icon-box">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 class="trust-title">Continuous Medical Accreditation</h4>
+                        <p class="trust-desc">All resident doctors complete 120 hours of mandatory advanced surgical,
+                            anesthetic, and pharmacological training annually.</p>
+                    </div>
+                </div>
+                <div class="trust-strip-right">
+                    <span class="trust-pill"><i class="fa-solid fa-shield-halved"></i> 100% Board Certified</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Interactive Bio-Luminescent Synapse & Faculty Research Section -->
+    <section class="section synapse-research-section" id="facultyResearch">
+
+        <!-- Bio-Luminescent Ambient Canvas -->
+        <div class="synapse-ambient-canvas" aria-hidden="true" id="synapseCanvas">
+            <!-- Rotating Bio-Halo Radial Glow -->
+            <div class="bio-radar-halo"></div>
+
+            <!-- Pulsing Organic Neural Synapse SVG Lines -->
+            <svg class="synapse-svg-network" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"
+                preserveAspectRatio="none">
+                <path class="synapse-path path-1" d="M150,150 Q450,80 600,280 T1050,220" />
+                <path class="synapse-path path-2" d="M200,450 Q400,320 600,280 T1000,480" />
+                <path class="synapse-path path-3" d="M300,100 Q600,380 900,120" />
+            </svg>
+
+            <!-- Floating Luminescent Bio-Nodes -->
+            <div class="bio-node node-1" id="bioNode1"></div>
+            <div class="bio-node node-2" id="bioNode2"></div>
+            <div class="bio-node node-3" id="bioNode3"></div>
+            <div class="bio-node node-4" id="bioNode4"></div>
+
+            <!-- Micro-Hexagon Medical Grid Pattern -->
+            <div class="synapse-grid-pattern"></div>
+        </div>
+
+        <div class="container synapse-container">
+
+            <!-- Dark Surface Section Header -->
+            <div class="section-header text-center section-header-dark gsap-synapse-header">
+                <div class="synapse-eyebrow">
+                    <span class="synapse-emitter"></span>
+                    <span>PEER-REVIEWED CLINICAL INNOVATION</span>
+                </div>
+                <h2 class="stack-main-title">Continuous Medical Research &amp; Protocols</h2>
+                <p class="stack-subtitle">
+                    Our clinical faculty doesn't just administer existing veterinary standards—they publish
+                    peer-reviewed studies on fear-free protocols, minimally invasive orthopedics, and feline renal
+                    protection.
+                </p>
+            </div>
+
+            <!-- 2-Column Interactive Research Hub -->
+            <div class="synapse-stage-grid">
+
+                <!-- Left Column: Interactive Study Protocol Switcher -->
+                <div class="synapse-selectors-col gsap-synapse-card">
+                    <div class="study-card active" data-study="ortho">
+                        <div class="study-icon-box bg-mint-box">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta-row">
+                                <span class="study-journal">J Vet Surg • 2025</span>
+                                <span class="study-lead-doc">Dr. Amanda Vance</span>
+                            </div>
+                            <h3 class="study-title">Locking-Plate TPLO Biomechanics</h3>
+                            <p class="study-summary">Minimally invasive cruciate repairs showing 65% faster
+                                weight-bearing recovery.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right study-arrow"></i>
+                    </div>
+
+                    <div class="study-card" data-study="cardio">
+                        <div class="study-icon-box bg-amber-box">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta-row">
+                                <span class="study-journal">Vet Cardiology Review • 2026</span>
+                                <span class="study-lead-doc">Dr. Marcus Thorne</span>
+                            </div>
+                            <h3 class="study-title">Early Strain Doppler in Feline Murmurs</h3>
+                            <p class="study-summary">Color Doppler micro-velocity vectors identifying subclinical
+                                cardiomyopathy 18 months earlier.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right study-arrow"></i>
+                    </div>
+
+                    <div class="study-card" data-study="fearfree">
+                        <div class="study-icon-box bg-mint-box">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta-row">
+                                <span class="study-journal">Animal Behavior Science • 2025</span>
+                                <span class="study-lead-doc">Dr. Elena Rostova</span>
+                            </div>
+                            <h3 class="study-title">Ultrasonic Synthetic Pheromone Saturation</h3>
+                            <p class="study-summary">Continuous micro-misting protocols reducing salivary cortisol
+                                spikes by 72% during blood draws.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right study-arrow"></i>
+                    </div>
+                </div>
+
+                <!-- Right Column: Dynamic Live Telemetry & Case File Glass Deck -->
+                <div class="synapse-display-col gsap-synapse-card">
+                    <div class="case-file-pod card-glass-dark">
+
+                        <div class="pod-header-strip flex-between">
+                            <div class="file-code-tag">
+                                <i class="fa-solid fa-fingerprint"></i>
+                                <span id="caseFileId">PROTOCOL #RES-2026-TPLO</span>
+                            </div>
+                            <div class="peer-status">
+                                <span class="peer-dot"></span>
+                                <span>Peer-Reviewed Standard</span>
+                            </div>
+                        </div>
+
+                        <h3 class="case-headline" id="caseHeadline">Minimally Invasive Locking-Plate Cruciate Recovery
+                        </h3>
+                        <p class="case-narrative" id="caseNarrative">
+                            Through custom 3D pre-operative surgical templating, titanium plate osteotomies yield
+                            near-zero joint friction, allowing active dogs to initiate controlled physical therapy
+                            within 48 hours post-op.
+                        </p>
+
+                        <!-- Dynamic Metric Output Grid -->
+                        <div class="case-metrics-grid">
+                            <div class="case-metric-box">
+                                <span class="case-metric-label">Post-Op Mobilization</span>
+                                <div class="case-metric-val">
+                                    <i class="fa-solid fa-stopwatch"></i>
+                                    <strong id="metricMobility">48 Hours</strong>
+                                </div>
+                            </div>
+                            <div class="case-metric-box">
+                                <span class="case-metric-label">Cortisol Reduction</span>
+                                <div class="case-metric-val">
+                                    <i class="fa-solid fa-arrow-trend-down"></i>
+                                    <strong id="metricCortisol">-68%</strong>
+                                </div>
+                            </div>
+                            <div class="case-metric-box">
+                                <span class="case-metric-label">Clinical Cohort</span>
+                                <div class="case-metric-val">
+                                    <i class="fa-solid fa-paw"></i>
+                                    <strong id="metricCohort">340 Patients</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Action Row -->
+                        <div class="case-action-footer flex-between">
+                            <span class="study-access-notice">
+                                <i class="fa-solid fa-book-open"></i> Full abstract available in patient portal
+                            </span>
+                            <a href="contact.html" class="btn btn-secondary btn-sm case-cta-btn">
+                                <span>Consult Lead Author</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="classy-cta-section" id="consultationCta">
+        <!-- Subtle ambient light spot -->
+        <div class="cta-glow" aria-hidden="true"></div>
+
+        <div class="cta-container">
+            <div class="cta-card">
+
+                <!-- Pill Badge -->
+                <div class="cta-badge">
+                    <span class="badge-dot"></span>
+                    <span>Accepting New Clients</span>
+                </div>
+
+                <!-- Main Heading & Subtext -->
+                <h2 class="cta-headline">
+                    Ready to experience clinical care tailored entirely to you?
+                </h2>
+                <p class="cta-subheading">
+                    Schedule a one-on-one diagnostic consultation with our senior specialists. Unhurried visits,
+                    transparent guidance, and dedicated support.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta btn-primary-lux">
+                        <span>Book Consultation</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="contact.html" class="btn-cta btn-ghost-lux">
+                        <span>Explore Specialties</span>
+                    </a>
+                </div>
+
+                <!-- Trust Signals -->
+                <div class="cta-reassurance">
+                    <div class="reassurance-item">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Direct Doctor Line</span>
+                    </div>
+                    <div class="reassurance-item">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Flexible Rescheduling</span>
+                    </div>
+                    <div class="reassurance-item">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Same-Week Availability</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <!-- Column 1: Brand Info & Socials -->
+                    <div class="footer-col footer-col-brand">
+                        <a href="index.html" class="footer-logo" aria-label="VetCare Home">
+                            <img src="./assets/logo 20.webp" alt="VetCare Logo" width="150" height="50">
+                        </a>
+                        <p class="footer-desc">
+                            Providing compassionate, state-of-the-art veterinary medicine, wellness checkups, and 24/7
+                            emergency critical care for your beloved animal companions.
+                        </p>
+                        <div class="footer-socials">
+                            <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Twitter X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Quick Links (Highlighted dynamically based on current page) -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html" class="footer-nav-link">Home</a></li>
+                            <li><a href="service.html" class="footer-nav-link">Services</a></li>
+                            <li><a href="about.html" class="footer-nav-link">About Us</a></li>
+                            <li><a href="our.html" class="footer-nav-link">Our Vets</a></li>
+                            <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Medical Services -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Pet Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="service.html">Preventive Wellness</a></li>
+                            <li><a href="service.html">Dental Cleaning</a></li>
+                            <li><a href="service.html">Diagnostic Ultrasound</a></li>
+                            <li><a href="service.html">Surgical Care</a></li>
+                            <li><a href="service.html">Microchipping & Vaccines</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Emergency Contacts & Newsletter -->
+                    <div class="footer-col">
+                        <h4 class="footer-heading">24/7 Emergency</h4>
+                        <div class="emergency-badge">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <div>
+                                <span class="emergency-badge-title">Direct Clinic Hotline</span>
+                                <a href="tel:18005558387" class="emergency-badge-num">+1 (800) 555-VETS</a>
+                            </div>
+                        </div>
+                        <div class="footer-newsletter">
+                            <h5 class="newsletter-title">Pet Health Newsletter</h5>
+                            <p class="newsletter-desc">Monthly seasonal care tips and vaccine schedules.</p>
+                            <form class="newsletter-form" id="newsletterForm" novalidate>
+                                <input type="email" id="newsletterEmail" class="form-control newsletter-input"
+                                    placeholder="Your email address" required>
+                                <button type="submit" class="btn btn-secondary newsletter-btn"
+                                    aria-label="Subscribe to newsletter">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </form>
+                            <!-- Small inline feedback message container -->
+                            <span id="newsletterError" class="newsletter-error-msg"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar: Legal & Copyright -->
+        <div class="footer-bottom">
+            <div class="container flex-between footer-bottom-inner">
+                <p class="copyright-text">
+                    &copy; 2026 VetCare Animal Hospital. All rights reserved.
+                </p>
+                <ul class="footer-legal-links">
+                    <li><a href="error.html">Privacy Policy</a></li>
+                    <li><a href="error.html">Terms of Service</a></li>
+                    <li><a href="error.html">Emergency Protocols</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+
+</body>
+
+</html>

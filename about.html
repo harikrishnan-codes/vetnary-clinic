@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCare & Wellness Center</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+
+  <link rel="icon" href="./assets/logo.webp" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Top Announcement / Emergency Bar -->
+  <aside class="top-bar">
+    <div class="container flex-between">
+      <div class="top-bar-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>24/7 Pet Emergency Hotline: <strong>+1 (800) 555-VETS</strong></span>
+      </div>
+      <div class="top-bar-item top-bar-hours">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container flex-between header-wrapper">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo" aria-label="VetCare Home">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="our.html" class="nav-link">Our Vets</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="auth.html" class="btn btn-outline-primary btn-sm" id="openSignInBtn">Sign In</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Visit</a>
+
+        <!-- Hamburger Button (Mobile / Tablet) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Mobile Slide Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header flex-between">
+      <a href="index.html" class="logo">
+        <img src="./assets/logo 20.webp" alt="logo" height="50" width="150">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="our.html" class="mobile-nav-link">Our Vets</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <a href="auth.html" class="btn btn-outline-primary" id="mobileSignInBtn">Sign In</a>
+      <a href="contact.html" class="btn btn-primary mobile-book-btn">Book Appointment</a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <p class="emergency-tag">24/7 Emergency Line</p>
+      <a href="error.html" class="emergency-number">+1 (800) 555-VETS</a>
+    </div>
+  </aside>
+
+
+
+
+
+
+
+
+  <!-- About Page Hero: Organic Topographic & Clinical Heritage Stage -->
+  <section class="section about-hero-section" id="aboutHero">
+
+    <!-- Ambient Topographic Contours & Liquid Color Blobs -->
+    <div class="about-hero-backdrop" aria-hidden="true">
+      <!-- Liquid Mesh Radiant Drift Orbs -->
+      <div class="liquid-orb orb-sage"></div>
+      <div class="liquid-orb orb-coral"></div>
+
+      <!-- Fine SVG Topographic Elevation Isolines Overlay -->
+      <svg class="topographic-mesh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800"
+        preserveAspectRatio="none">
+        <path d="M-100,200 C300,50 600,350 1000,180 C1300,40 1500,220 1600,150" fill="none"
+          stroke="rgba(255,255,255,0.06)" stroke-width="1.5" />
+        <path d="M-100,280 C320,130 620,430 1020,260 C1320,120 1520,300 1600,230" fill="none"
+          stroke="rgba(255,255,255,0.05)" stroke-width="1.5" />
+        <path d="M-100,360 C340,210 640,510 1040,340 C1340,200 1540,380 1600,310" fill="none"
+          stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+        <path d="M-100,440 C360,290 660,590 1060,420 C1360,280 1560,460 1600,390" fill="none"
+          stroke="rgba(255,255,255,0.03)" stroke-width="1.5" />
+      </svg>
+
+      <div class="about-grain-texture"></div>
+    </div>
+
+    <div class="container about-hero-container">
+      <div class="about-hero-grid">
+
+        <!-- Left Column: Legacy Narrative & Philosophy -->
+        <div class="about-hero-narrative">
+
+          <div class="about-breadcrumbs gsap-abt-hero">
+            <a href="index.html" class="crumb-link"><i class="fa-solid fa-house-chimney"></i> Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-current">Our Story & Heritage</span>
+          </div>
+
+          <div class="about-eyebrow-pill gsap-abt-hero">
+            <span class="heritage-dot"></span>
+            <span>ESTABLISHED 2008 • VETERINARY EXCELLENCE</span>
+          </div>
+
+          <h1 class="about-hero-headline gsap-abt-hero">
+            Pioneering Fear-Free Medicine With Heart, Precision & Soul
+          </h1>
+
+          <p class="about-hero-lead gsap-abt-hero">
+            VetCare was founded on a simple, uncompromising promise: hospital visits shouldn't provoke fear. Over nearly
+            two decades, we have paired world-class surgical mastery with acoustic sanctuaries and zero-stress
+            biological handling.
+          </p>
+
+          <!-- Foundational Credo Pillars -->
+          <div class="about-pillars-row gsap-abt-hero">
+            <div class="credo-pillar">
+              <div class="credo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div>
+                <strong>Compassion First</strong>
+                <p>Zero-restraint, treat-based gentle handling.</p>
+              </div>
+            </div>
+            <div class="credo-pillar">
+              <div class="credo-icon"><i class="fa-solid fa-microscope"></i></div>
+              <div>
+                <strong>Pure Transparency</strong>
+                <p>Live parent telemetry & honest diagnostics.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric Counter Bar -->
+          <div class="about-metrics-bar gsap-abt-hero">
+            <div class="abt-metric">
+              <span class="abt-metric-num" data-count="18">0+</span>
+              <span class="abt-metric-tag">Years Clinical Legacy</span>
+            </div>
+            <div class="abt-metric-divider"></div>
+            <div class="abt-metric">
+              <span class="abt-metric-num" data-count="32">0</span>
+              <span class="abt-metric-tag">Board-Certified Staff</span>
+            </div>
+            <div class="abt-metric-divider"></div>
+            <div class="abt-metric">
+              <span class="abt-metric-num" data-count="99.4">0%</span>
+              <span class="abt-metric-tag">Surgical Success Rate</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Asymmetric Heritage Mosaic & Floating Badges -->
+        <div class="about-hero-mosaic gsap-abt-visual">
+          <div class="mosaic-canvas">
+
+            <!-- Primary Doctor Showcase Frame -->
+            <div class="mosaic-main-frame">
+              <img src="./assets/img 11.webp"
+                alt="VetCare Chief Surgeon caring for golden retriever" class="mosaic-hero-img" loading="lazy" />
+              <div class="mosaic-img-gradient"></div>
+
+              <!-- Bottom Frame Caption -->
+              <div class="mosaic-caption">
+                <span class="caption-lead">CLINICAL DIRECTORS</span>
+                <p class="caption-name">Dr. Amanda Vance & Dr. Julian Thorne</p>
+              </div>
+            </div>
+
+            <!-- Secondary Inset Frame: Surgical Suite Purity -->
+            <div class="mosaic-inset-frame">
+              <img src="./assets/img 7.webp"
+                alt="HEPA Sterile Surgery" class="inset-img" loading="lazy" />
+            </div>
+
+            <!-- Floating Floating Glass Pill 1: Fear-Free Accreditation -->
+            <div class="about-glass-pill pill-cert">
+              <div class="pill-icon-square bg-mint-pill">
+                <i class="fa-solid fa-shield-cat"></i>
+              </div>
+              <div class="pill-meta">
+                <strong>Level 3 Fear-Free</strong>
+                <span>International Certified Facility</span>
+              </div>
+            </div>
+
+            <!-- Floating Glass Pill 2: 24/7 Surgical Readiness -->
+            <div class="about-glass-pill pill-hours">
+              <div class="pill-icon-square bg-amber-pill">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+              <div class="pill-meta">
+                <strong>Unbroken Care</strong>
+                <span>365 Days ICU Telemetry</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- 3D Coverflow Deck: Clinical Milestones & Hospital Innovations -->
+  <section class="section coverflow-section" id="coverflowShowcase">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-coverflow-header">
+        <span class="badge badge-primary">Pioneering Milestones</span>
+        <h2 class="stack-main-title">Innovations That Transformed Pet Care</h2>
+        <p class="stack-subtitle">
+          Slide through our architectural breakthroughs, diagnostic leaps, and fear-free clinical protocols developed
+          across 18 years of veterinary dedication.
+        </p>
+      </div>
+
+      <!-- 3D Coverflow Interactive Deck -->
+      <div class="coverflow-stage-wrapper">
+        <div class="coverflow-deck" id="coverflowDeck">
+
+          <!-- Card 1: 2008 Founding -->
+          <article class="coverflow-card" data-index="0">
+            <div class="coverflow-media">
+              <img src="./assets/img 15.webp"
+                alt="Painless examination beginnings" loading="lazy" />
+              <div class="coverflow-overlay"></div>
+              <span class="coverflow-year">EST. 2008</span>
+            </div>
+            <div class="coverflow-body">
+              <span class="coverflow-badge badge-primary">Founding Era</span>
+              <h3 class="coverflow-title">The First Low-Stress Clinic</h3>
+              <p class="coverflow-text">
+                Eliminated cold stainless steel exam tables in favor of therapeutic heated foam and species-separated
+                waiting rooms.
+              </p>
+              <div class="coverflow-meta">
+                <span><i class="fa-solid fa-award"></i> Groundbreaking Protocol</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: 2014 In-House Labs -->
+          <article class="coverflow-card" data-index="1">
+            <div class="coverflow-media">
+              <img src="./assets/img 9.webp"
+                alt="Digital in-house laboratory diagnostics" loading="lazy" />
+              <div class="coverflow-overlay"></div>
+              <span class="coverflow-year">ERA 2014</span>
+            </div>
+            <div class="coverflow-body">
+              <span class="coverflow-badge badge-secondary">Precision Tech</span>
+              <h3 class="coverflow-title">15-Minute Laboratory Suite</h3>
+              <p class="coverflow-text">
+                Integrated real-time automated hematology and blood chemistry, cutting patient diagnosis times from 48
+                hours to 15 minutes.
+              </p>
+              <div class="coverflow-meta">
+                <span><i class="fa-solid fa-microscope"></i> Same-Day Answers</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: 2018 HEPA Surgery (Active by Default) -->
+          <article class="coverflow-card" data-index="2">
+            <div class="coverflow-media">
+              <img src="./assets/img 13.webp"
+                alt="Sterile HEPA surgical theatre" loading="lazy" />
+              <div class="coverflow-overlay"></div>
+              <span class="coverflow-year">ERA 2018</span>
+            </div>
+            <div class="coverflow-body">
+              <span class="coverflow-badge badge-primary">Surgical Purity</span>
+              <h3 class="coverflow-title">HEPA-14 Sterile Cleanrooms</h3>
+              <p class="coverflow-text">
+                Commissioned hospital-grade positive-pressure airflow operating theatres, driving clinical infection
+                rates to under 0.2%.
+              </p>
+              <div class="coverflow-meta">
+                <span><i class="fa-solid fa-shield-halved"></i> ISO 9001 Accredited</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: 2021 Feline Sanctuary -->
+          <article class="coverflow-card" data-index="3">
+            <div class="coverflow-media">
+              <img src="./assets/img 2.webp"
+                alt="Quiet feline recovery sanctuary" loading="lazy" />
+              <div class="coverflow-overlay"></div>
+              <span class="coverflow-year">ERA 2021</span>
+            </div>
+            <div class="coverflow-body">
+              <span class="coverflow-badge badge-secondary">Fear-Free Elite</span>
+              <h3 class="coverflow-title">Acoustic Feline Haven</h3>
+              <p class="coverflow-text">
+                Introduced soundproof partition wards, continuous feline pheromone micro-diffusers, and cat-only
+                consultation wings.
+              </p>
+              <div class="coverflow-meta">
+                <span><i class="fa-solid fa-cat"></i> Zero Canine Cross-Stress</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: 2026 Telemetry Portal -->
+          <article class="coverflow-card" data-index="4">
+            <div class="coverflow-media">
+              <img src="./assets/img 14.webp"
+                alt="Digital telemetry patient health app" loading="lazy" />
+              <div class="coverflow-overlay"></div>
+              <span class="coverflow-year">ERA 2026</span>
+            </div>
+            <div class="coverflow-body">
+              <span class="coverflow-badge badge-primary">Next-Gen Care</span>
+              <h3 class="coverflow-title">Live Telemetry & Parent Portal</h3>
+              <p class="coverflow-text">
+                Enabled wireless vitals streaming from post-op recovery suites directly to pet parents' mobile devices
+                with instant messaging.
+              </p>
+              <div class="coverflow-meta">
+                <span><i class="fa-solid fa-mobile-screen"></i> 100% Transparency</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navigation Controls: Arrows & Indicators -->
+        <div class="coverflow-nav-bar">
+          <button class="coverflow-arrow-btn" id="coverflowPrev" aria-label="Previous milestone">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <div class="coverflow-dots" id="coverflowDots"></div>
+          <button class="coverflow-arrow-btn" id="coverflowNext" aria-label="Next milestone">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- Masonry Grid: Hospital Culture & Behind-the-Scenes Life -->
+  <section class="section masonry-culture-section" id="hospitalCulture">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-masonry-header">
+        <span class="badge badge-secondary">Culture & Daily Care</span>
+        <h2 class="stack-main-title">Behind the Scenes at VetCare</h2>
+        <p class="stack-subtitle">
+          A raw, genuine glimpse into our surgical suites, calm treatment rooms, canine play yards, and the
+          compassionate staff who make every visit joyful.
+        </p>
+      </div>
+
+      <!-- Masonry Dynamic Wall Container -->
+      <div class="masonry-wall" id="masonryWall">
+
+        <!-- Item 1: Tall Visual (Surgical Prep) -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-media-wrap">
+            <img src="./assets/img 16.webp"
+              alt="Sterile surgical scrub-in protocol" loading="lazy" />
+            <div class="brick-hover-overlay">
+              <span class="brick-pill"><i class="fa-solid fa-scissors"></i> Theatre 01</span>
+              <h4 class="brick-caption-title">Pre-Op Scrub Rigor</h4>
+              <p class="brick-caption-text">HEPA airflow checks and multi-lead telemetry calibrate before every
+                soft-tissue procedure.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Medium Card with Text Quote -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-card-inner brick-quote-card">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="quote-body">
+              “When an animal walks into our building, their emotional baseline is our very first vital sign. If they
+              aren’t relaxed, healing takes twice as long.”
+            </p>
+            <div class="quote-author-row">
+              <img src="./assets/img 1.webp"
+                alt="Dr. Amanda Vance" class="quote-avatar" />
+              <div>
+                <strong>Dr. Amanda Vance, DVM</strong>
+                <span>Chief Medical Officer</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Standard Visual (Canine Recovery) -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-media-wrap">
+            <img src="./assets/img 1.webp"
+              alt="Veterinary nurse consoling patient" loading="lazy" />
+            <div class="brick-hover-overlay">
+              <span class="brick-pill"><i class="fa-solid fa-shield-heart"></i> Fear-Free</span>
+              <h4 class="brick-caption-title">Post-Op Recovery Cuddles</h4>
+              <p class="brick-caption-text">Waking up in a warm foam bed with a dedicated anesthesia nurse sitting right
+                beside them.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Wide Milestone Callout -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-card-inner brick-metric-card">
+            <span class="brick-micro-tag">ANNUAL BIOMETRICS</span>
+            <h3 class="brick-big-stat">10,000+</h3>
+            <p class="brick-stat-sub">Organic peanut-butter distraction spoons served annually during painless
+              vaccinations.</p>
+            <div class="brick-progress-track">
+              <div class="brick-progress-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5: Tall Visual (Feline Quiet Haven) -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-media-wrap">
+            <img src="./assets/img 8.webp"
+              alt="Cat resting in quiet feline sanctuary" loading="lazy" />
+            <div class="brick-hover-overlay">
+              <span class="brick-pill"><i class="fa-solid fa-cat"></i> Cat Wing</span>
+              <h4 class="brick-caption-title">Low-Lux Acoustic Suite</h4>
+              <p class="brick-caption-text">Diffused natural pheromones and zero barking corridors keep resting
+                respiratory rates slow.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6: Lab Diagnostics Visual -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-media-wrap">
+            <img src="./assets/img 10.webp"
+              alt="Onsite diagnostic hematology screen" loading="lazy" />
+            <div class="brick-hover-overlay">
+              <span class="brick-pill"><i class="fa-solid fa-microscope"></i> Pathology</span>
+              <h4 class="brick-caption-title">15-Minute Blood Screening</h4>
+              <p class="brick-caption-text">Instant biochemistry panels allow answers before pet parents even pull out
+                of the lot.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 7: Community Outing Visual -->
+        <article class="masonry-brick gsap-brick">
+          <div class="brick-media-wrap">
+            <img src="./assets/img 12.webp"
+              alt="Play yard physical therapy session" loading="lazy" />
+            <div class="brick-hover-overlay">
+              <span class="brick-pill"><i class="fa-solid fa-bone"></i> Rehabilitation</span>
+              <h4 class="brick-caption-title">Mobilization Turf Yard</h4>
+              <p class="brick-caption-text">Gentle post-orthopedic gait assessments on non-slip synthetic outdoor grass.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Split-Screen Showcase: The Paradigm Shift in Pet Medicine -->
+  <section class="section split-showcase-section" id="splitShowcase">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-split-header">
+        <span class="badge badge-primary">The Fear-Free Distinction</span>
+        <h2 class="stack-main-title">Redefining The Veterinary Experience</h2>
+        <p class="stack-subtitle">
+          Compare the clinical reality of traditional animal hospitals with our modern, non-invasive standard designed
+          specifically around animal psychology.
+        </p>
+      </div>
+
+      <!-- Main Split-Screen Comparative Canvas -->
+      <div class="split-screen-canvas gsap-split-canvas">
+
+        <!-- Left Panel: Traditional Standard (Monochrome/Clinical Desaturated) -->
+        <div class="split-panel panel-traditional">
+          <div class="panel-background-media">
+            <img src="./assets/girl 25.webp"
+              alt="Traditional veterinary examination setting" loading="lazy" />
+            <div class="panel-tint-dark"></div>
+          </div>
+
+          <div class="panel-content-wrap">
+            <div class="panel-status-tag tag-traditional">
+              <i class="fa-solid fa-triangle-exclamation"></i> Conventional Clinical Model
+            </div>
+
+            <h3 class="panel-title">High-Sensory Clinical Friction</h3>
+            <p class="panel-lead">
+              Standard veterinary practices frequently rely on forceful physical restraints, loud shared waiting rooms,
+              and cold stainless steel surfaces.
+            </p>
+
+            <ul class="panel-feature-list list-traditional">
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Shared cat and dog corridors amplifying auditory distress</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Cold steel examination tables triggering hypothermic stiffness</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Delayed 24-48 hour outsourced lab diagnostics</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Opaque post-operative recovery with zero parent visibility</span>
+              </li>
+            </ul>
+
+            <div class="panel-summary-chip traditional-chip">
+              <span class="chip-metric">Elevated</span>
+              <span class="chip-label">Patient Cortisol & Heart Rate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Split Emblem -->
+        <div class="split-divider-badge" aria-hidden="true">
+          <span class="split-vs-circle">VS</span>
+        </div>
+
+        <!-- Right Panel: The VetCare Fear-Free Standard (Warm, Radiant, Classy) -->
+        <div class="split-panel panel-modern">
+          <div class="panel-background-media">
+            <img src="./assets/img 14.webp"
+              alt="Warm modern Fear-Free veterinary care" loading="lazy" />
+            <div class="panel-tint-warm"></div>
+          </div>
+
+          <div class="panel-content-wrap">
+            <div class="panel-status-tag tag-modern">
+              <i class="fa-solid fa-shield-heart"></i> The VetCare Standard
+            </div>
+
+            <h3 class="panel-title">Fear-Free Biological Calm</h3>
+            <p class="panel-lead">
+              Every square inch is designed with species-specific calm cues, gentle positive-reinforcement rewards, and
+              instant telemetry.
+            </p>
+
+            <ul class="panel-feature-list list-modern">
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Dedicated acoustic wings with continuous pheromone diffusers</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Therapeutic heated memory foam tables & organic treat distractions</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>15-Minute in-house automated blood and pathology diagnostics</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Live streaming post-op vital signs delivered to your mobile portal</span>
+              </li>
+            </ul>
+
+            <div class="panel-summary-chip modern-chip">
+              <span class="chip-metric">-65%</span>
+              <span class="chip-label">Measured Anxiety & Rapid Healing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Reassurance Strip -->
+      <div class="split-footer-banner card gsap-split-canvas">
+        <div class="footer-banner-text">
+          <div class="banner-icon-pill">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div>
+            <h4 class="banner-title">Experience Veterinary Medicine As It Should Be</h4>
+            <p class="banner-sub">Tour our hospital wards, surgical suites, and quiet feline lounges at your
+              convenience.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-secondary split-banner-btn">
+          <span>Schedule Facility Tour</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- Micro-Interactive & Motion-Driven UI: Fear-Free Biometric Sensory Console -->
+  <section class="section motion-sensory-section" id="sensoryConsole">
+    <div class="container">
+
+      <!-- Universal Section Header -->
+      <div class="section-header text-center gsap-motion-header">
+        <span class="badge badge-secondary">Interactive Sensory Science</span>
+        <h2 class="stack-main-title">The Anatomy of Animal Comfort</h2>
+        <p class="stack-subtitle">
+          Fear-Free care isn't just a philosophy—it's measurable physics. Adjust environmental triggers below to see how
+          our hospital wards eliminate stress in real time.
+        </p>
+      </div>
+
+      <!-- Master Interactive Sensory Bench -->
+      <div class="sensory-console-card card gsap-motion-card">
+        <div class="console-body-grid">
+
+          <!-- Left Panel: Interactive Sensory Switches & Mode Toggles -->
+          <div class="console-left-controls">
+
+            <div class="console-subhead flex-between">
+              <span class="control-tag"><i class="fa-solid fa-sliders"></i> Environmental Triggers</span>
+              <div class="sensor-status-chip">
+                <span class="sensor-beacon"></span>
+                <span>Sensors Live</span>
+              </div>
+            </div>
+
+            <!-- Animal Mode Switcher -->
+            <div class="control-group">
+              <label class="control-label">Patient Subject</label>
+              <div class="patient-type-tabs" id="patientSelector">
+                <button type="button" class="patient-btn active" data-animal="dog">
+                  <i class="fa-solid fa-dog"></i>
+                  <span>Canine</span>
+                </button>
+                <button type="button" class="patient-btn" data-animal="cat">
+                  <i class="fa-solid fa-cat"></i>
+                  <span>Feline</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4 Interactive Sensory Channel Buttons -->
+            <div class="control-group">
+              <label class="control-label">Select Ward Condition</label>
+              <div class="sensory-channel-stack" id="sensoryChannels">
+
+                <button type="button" class="channel-card active" data-channel="acoustic">
+                  <div class="channel-icon bg-mint-channel">
+                    <i class="fa-solid fa-volume-low"></i>
+                  </div>
+                  <div class="channel-info">
+                    <strong>Acoustic Isolation</strong>
+                    <span>Low-frequency calming soundscapes (&lt;32 dB)</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right channel-arrow"></i>
+                </button>
+
+                <button type="button" class="channel-card" data-channel="optical">
+                  <div class="channel-icon bg-amber-channel">
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </div>
+                  <div class="channel-info">
+                    <strong>Circadian Lighting</strong>
+                    <span>Diffused warm spectrum (2700K zero-flicker)</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right channel-arrow"></i>
+                </button>
+
+                <button type="button" class="channel-card" data-channel="thermal">
+                  <div class="channel-icon bg-coral-channel">
+                    <i class="fa-solid fa-temperature-half"></i>
+                  </div>
+                  <div class="channel-info">
+                    <strong>Therapeutic Heat</strong>
+                    <span>38.5°C heated memory-foam exam cushions</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right channel-arrow"></i>
+                </button>
+
+                <button type="button" class="channel-card" data-channel="olfactory">
+                  <div class="channel-icon bg-mint-channel">
+                    <i class="fa-solid fa-spray-can-sparkles"></i>
+                  </div>
+                  <div class="channel-info">
+                    <strong>Biochemical Diffusion</strong>
+                    <span>Adaptil &amp; Feliway ultrasonic micro-mists</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right channel-arrow"></i>
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Panel: Dynamic Motion-Driven Telemetry Visualizer -->
+          <div class="console-right-display">
+            <div class="display-chassis">
+
+              <!-- Live Biometric Readout Header -->
+              <div class="display-top flex-between">
+                <div>
+                  <span class="hud-eyebrow">BIO-METRIC TELEMETRY HUD</span>
+                  <h3 class="hud-title" id="hudTitle">Acoustic Shielding Active</h3>
+                </div>
+                <div class="hud-state-pill">
+                  <i class="fa-solid fa-heart-circle-check"></i>
+                  <span id="hudStateTag">OPTIMAL TRANQUILITY</span>
+                </div>
+              </div>
+
+              <!-- Dynamic Gauge / Stress Level Needle -->
+              <div class="biometric-gauge-stage">
+                <div class="gauge-center-box">
+                  <span class="gauge-score-value" id="gaugeStressVal">14%</span>
+                  <span class="gauge-score-label">Cortisol Index</span>
+                </div>
+
+                <!-- Animated SVG Circular Arc Meter -->
+                <svg class="gauge-svg-ring" viewBox="0 0 200 200">
+                  <circle class="ring-bg" cx="100" cy="100" r="82" fill="none" stroke-width="12" />
+                  <circle class="ring-active" id="gaugeRing" cx="100" cy="100" r="82" fill="none" stroke-width="12"
+                    stroke-dasharray="515" stroke-dashoffset="440" />
+                </svg>
+              </div>
+
+              <!-- 3 Dynamic Metric Readout Pods -->
+              <div class="hud-metrics-row">
+                <div class="hud-metric-pod">
+                  <span class="metric-caption">Heart Rate (BPM)</span>
+                  <div class="metric-val-wrap">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <strong id="metricBpm">72 BPM</strong>
+                  </div>
+                </div>
+                <div class="hud-metric-pod">
+                  <span class="metric-caption">Acoustic Level</span>
+                  <div class="metric-val-wrap">
+                    <i class="fa-solid fa-waveform-lines"></i>
+                    <strong id="metricDecibel">28 dB</strong>
+                  </div>
+                </div>
+                <div class="hud-metric-pod">
+                  <span class="metric-caption">Surface Temp</span>
+                  <div class="metric-val-wrap">
+                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                    <strong id="metricTemp">38.4°C</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Active Physiological Clinical Report -->
+              <div class="hud-clinical-brief">
+                <span class="brief-lead"><i class="fa-solid fa-notes-medical"></i> CLINICAL BEHAVIORAL
+                  OBSERVATION:</span>
+                <p class="brief-text" id="hudBriefText">
+                  Acoustically isolated chambers suppress ultrasonic canine chatter, lowering resting feline respiration
+                  rates by 42% within four minutes of admission.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- About Page Pre-Footer CTA: Hospital Tour & Care Reservation Dock -->
+  <section class="section about-cta-section" id="aboutCta">
+    <!-- Ambient Atmospheric Radiant Glows -->
+    <div class="about-cta-ambient" aria-hidden="true">
+      <div class="abt-glow-orb orb-teal-drift"></div>
+      <div class="abt-glow-orb orb-amber-drift"></div>
+      <div class="abt-topo-overlay"></div>
+    </div>
+
+    <div class="container about-cta-container">
+      <div class="about-cta-pod card-glass-dark gsap-abt-cta">
+
+        <!-- Top Priority Status Strip -->
+        <div class="about-cta-topbar flex-between">
+          <div class="hospital-status-tag">
+            <span class="status-pulse-dot"></span>
+            <span>Open 365 Days • Non-Emergency Tours Welcomed</span>
+          </div>
+          <div class="hospital-accred-code">
+            <i class="fa-solid fa-certificate"></i>
+            <span>AAHA Gold Standard Certified</span>
+          </div>
+        </div>
+
+        <!-- Core Invitation Narrative -->
+        <div class="about-cta-text-wrap text-center">
+          <span class="badge badge-secondary">Your Companion's New Sanctuary</span>
+          <h2 class="about-cta-title">
+            Tour Our Facility Or Schedule Your Pet's First Fear-Free Visit
+          </h2>
+          <p class="about-cta-desc">
+            Meet our surgical clinicians, explore the quiet acoustic feline wings, and see our heated recovery suites
+            firsthand. We believe in complete transparency before you ever commit to care.
+          </p>
+        </div>
+
+        <!-- Two Core Action Pathways -->
+        <div class="about-pathways-grid">
+
+          <!-- Pathway 1: In-Person Facility Tour -->
+          <div class="pathway-card">
+            <div class="pathway-icon-box bg-mint-box">
+              <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-eyebrow">Complimentary Experience</span>
+              <h3 class="pathway-heading">Book A Private Walkthrough</h3>
+              <p class="pathway-detail">
+                Walk our sterile theatres, ICU pods, and play yards alongside one of our clinical concierges.
+              </p>
+            </div>
+            <a href="contact.html" class="btn btn-outline-hero pathway-btn">
+              <span>Request Tour Date</span>
+              <i class="fa-solid fa-compass"></i>
+            </a>
+          </div>
+
+          <!-- Pathway 2: Clinical Appointment Booking -->
+          <div class="pathway-card card-featured-pathway">
+            <div class="pathway-icon-box bg-amber-box">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="pathway-content">
+              <span class="pathway-eyebrow eyebrow-highlight">Direct Registration</span>
+              <h3 class="pathway-heading">Schedule New Patient Exam</h3>
+              <p class="pathway-detail">
+                Lock in your pet's full 15-point head-to-tail physical exam with organic treat-based distraction
+                protocols.
+              </p>
+            </div>
+            <a href="contact.html" class="btn btn-secondary pathway-btn">
+              <span>Book First Visit</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Bottom Reassurance Metrics -->
+        <div class="about-cta-footer flex-between">
+          <div class="reassurance-item">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Zero Coercive Restraints</span>
+          </div>
+          <div class="reassurance-divider"></div>
+          <div class="reassurance-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Transparent Itemized Pricing</span>
+          </div>
+          <div class="reassurance-divider"></div>
+          <div class="reassurance-item">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Direct Surgeon Hotline Access</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand Info & Socials -->
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="footer-logo" aria-label="VetCare Home">
+              <img src="./assets/logo 20.webp" alt="VetCare Logo" width="150" height="50">
+            </a>
+            <p class="footer-desc">
+              Providing compassionate, state-of-the-art veterinary medicine, wellness checkups, and 24/7
+              emergency critical care for your beloved animal companions.
+            </p>
+            <div class="footer-socials">
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="Twitter X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="error.html" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links (Highlighted dynamically based on current page) -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-nav-link">Home</a></li>
+              <li><a href="service.html" class="footer-nav-link">Services</a></li>
+              <li><a href="about.html" class="footer-nav-link">About Us</a></li>
+              <li><a href="our.html" class="footer-nav-link">Our Vets</a></li>
+              <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Medical Services -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Pet Services</h4>
+            <ul class="footer-links">
+              <li><a href="service.html">Preventive Wellness</a></li>
+              <li><a href="service.html">Dental Cleaning</a></li>
+              <li><a href="service.html">Diagnostic Ultrasound</a></li>
+              <li><a href="service.html">Surgical Care</a></li>
+              <li><a href="service.html">Microchipping & Vaccines</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Emergency Contacts & Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-heading">24/7 Emergency</h4>
+            <div class="emergency-badge">
+              <i class="fa-solid fa-phone-volume"></i>
+              <div>
+                <span class="emergency-badge-title">Direct Clinic Hotline</span>
+                <a href="error.html" class="emergency-badge-num">+1 (800) 555-VETS</a>
+              </div>
+            </div>
+            <div class="footer-newsletter">
+              <h5 class="newsletter-title">Pet Health Newsletter</h5>
+              <p class="newsletter-desc">Monthly seasonal care tips and vaccine schedules.</p>
+              <form class="newsletter-form" id="newsletterForm" novalidate>
+                <input type="email" id="newsletterEmail" class="form-control newsletter-input"
+                  placeholder="Your email address" required>
+                <button type="submit" class="btn btn-secondary newsletter-btn" aria-label="Subscribe to newsletter">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+              <!-- Small inline feedback message container -->
+              <span id="newsletterError" class="newsletter-error-msg"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Legal & Copyright -->
+    <div class="footer-bottom">
+      <div class="container flex-between footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 VetCare Animal Hospital. All rights reserved.
+        </p>
+        <ul class="footer-legal-links">
+          <li><a href="error.html">Privacy Policy</a></li>
+          <li><a href="error.html">Terms of Service</a></li>
+          <li><a href="error.html">Emergency Protocols</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <script src="about.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+</body>
+
+</html>

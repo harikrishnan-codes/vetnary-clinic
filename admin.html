@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCare | Clinical Command Dashboard</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="admin.css"/>
+
+
+</head>
+<body class="dashboard-body">
+
+  <!-- Mobile Backdrop Overlay for Scroll Lock -->
+  <div class="dash-backdrop-overlay" id="dashBackdrop" aria-hidden="true"></div>
+
+  <div class="dash-layout-wrapper">
+    
+    <!-- ==============================================
+         SIDEBAR NAVIGATION (DRAWER ON MOBILE <= 768px)
+         ============================================== -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-strip flex-between">
+        <a href="index.html" class="sidebar-logo">
+          <span class="logo-icon"><i class="fa-solid fa-shield-heart"></i></span>
+          <span class="logo-text">Vet<span>Care</span></span>
+        </a>
+        <!-- Close button visible on mobile drawer -->
+        <button type="button" class="sidebar-close-btn" id="dashCloseBtn" aria-label="Close Navigation">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Authenticated Clinical Profile Dock -->
+      <div class="sidebar-user-dock">
+        <div class="user-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop" alt="Admin Doctor Avatar" class="user-avatar" />
+          <span class="avatar-status-dot"></span>
+        </div>
+        <div class="user-meta-info">
+          <strong class="user-display-name user-name-truncate">Authorized Admin</strong>
+          <span class="user-display-email user-email-truncate">loading...</span>
+          <span class="user-role-badge"><i class="fa-solid fa-user-shield"></i> Level-4 Faculty Admin</span>
+        </div>
+      </div>
+
+      <!-- Interactive Navigation Links -->
+      <nav class="sidebar-nav-menu" role="tablist">
+        <span class="nav-section-title">COMMAND CONTROLS</span>
+        
+        <button type="button" class="dash-nav-link active" data-target="view-overview" role="tab">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Overview &amp; Telemetry</span>
+          <span class="nav-count-badge">Live</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-theatres" role="tab">
+          <i class="fa-solid fa-scissors"></i>
+          <span>ICU &amp; Surgical Theatres</span>
+          <span class="nav-count-badge">04</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-triage" role="tab">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span>Patient Admissions</span>
+          <span class="nav-count-badge badge-warning">12</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-faculty" role="tab">
+          <i class="fa-solid fa-user-doctor"></i>
+          <span>Attending Faculty Roster</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-target="view-reports" role="tab">
+          <i class="fa-solid fa-file-waveform"></i>
+          <span>Diagnostic Reports</span>
+        </button>
+
+        <span class="nav-section-title">SYSTEM PROTOCOLS</span>
+
+        <a href="error.html" class="dash-nav-link">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Cleanroom Biometrics</span>
+        </a>
+
+        <a href="error.html" class="dash-nav-link">
+          <i class="fa-solid fa-server"></i>
+          <span>DICOM Telemetry Sync</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer Dock -->
+      <div class="sidebar-footer-dock">
+        <a href="error.html" class="btn btn-outline-hero btn-sm sidebar-logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Sign Out Session</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==============================================
+         MAIN DASHBOARD BODY CONTENT
+         ============================================== -->
+    <div class="dash-main-area">
+      
+      <!-- Top Clinical Command Bar -->
+      <header class="dash-top-header flex-between">
+        <div class="header-left flex-center">
+          <!-- Animated Hamburger Button (Active on screens <= 992px) -->
+          <button type="button" class="dash-hamburger-btn" id="dashHamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </button>
+          
+          <div class="header-titles">
+            <h1 class="header-page-title" id="currentViewTitle">Overview &amp; Telemetry</h1>
+            <span class="header-system-tag">
+              <span class="pulse-beacon-dot"></span> ICU Server Hub 01 • All HEPA Units Operational
+            </span>
+          </div>
+        </div>
+
+        <!-- Top Right Actions & Email Monitor -->
+        <div class="header-right flex-center">
+          <div class="header-email-pill">
+            <i class="fa-solid fa-fingerprint"></i>
+            <span class="user-display-email">admin@vetcarehospital.com</span>
+          </div>
+
+          <a href="error.html" class="btn btn-secondary btn-sm header-action-btn">
+            <i class="fa-solid fa-plus"></i>
+            <span>Admit Emergency</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- ==============================================
+           DYNAMIC TAB VIEW PANELS
+           ============================================== -->
+      <main class="dash-content-container">
+
+        <!-- VIEW 1: OVERVIEW & TELEMETRY (DEFAULT ACTIVE) -->
+        <section class="dash-view-panel active" id="view-overview">
+          
+          <!-- 4 Core Metric Counter Pods -->
+          <div class="dash-stats-grid">
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">ACTIVE SURGICAL SUITES</span>
+                <div class="metric-icon bg-mint-box"><i class="fa-solid fa-scissors"></i></div>
+              </div>
+              <strong class="metric-big-num">03 / 04</strong>
+              <div class="metric-bottom-trend text-success">
+                <i class="fa-solid fa-arrow-trend-up"></i> Positive-pressure optimal
+              </div>
+            </div>
+
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">EMERGENCY ICU PATIENTS</span>
+                <div class="metric-icon bg-coral-pulse"><i class="fa-solid fa-heart-pulse"></i></div>
+              </div>
+              <strong class="metric-big-num">14</strong>
+              <div class="metric-bottom-trend text-warning">
+                <i class="fa-solid fa-bed-pulse"></i> 2 Critical Trauma Bays
+              </div>
+            </div>
+
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">BLOOD BANK RESERVE</span>
+                <div class="metric-icon bg-amber-box"><i class="fa-solid fa-vial-virus"></i></div>
+              </div>
+              <strong class="metric-big-num">98.4%</strong>
+              <div class="metric-bottom-trend text-success">
+                <i class="fa-solid fa-circle-check"></i> Whole Blood &amp; FFP Stocked
+              </div>
+            </div>
+
+            <div class="dash-metric-card card">
+              <div class="metric-top-row flex-between">
+                <span class="metric-caption">ON-DUTY SPECIALISTS</span>
+                <div class="metric-icon bg-mint-box"><i class="fa-solid fa-user-doctor"></i></div>
+              </div>
+              <strong class="metric-big-num">18</strong>
+              <div class="metric-bottom-trend text-primary">
+                <i class="fa-solid fa-clock"></i> Next Roster Shift in 4h
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Patient Queue & Telemetry Stream Table -->
+          <div class="dash-table-card card">
+            <div class="table-card-header flex-between">
+              <div>
+                <h3 class="table-title">Live Hospital Floor Admissions</h3>
+                <p class="table-subtitle">Continuous multi-lead telemetry updates logged via bedside micro-monitors.</p>
+              </div>
+              <div class="table-actions-dock flex-center">
+                <a href="error.html" class="btn btn-outline-primary btn-sm">
+                  <i class="fa-solid fa-filter"></i> <span>Filter Status</span>
+                </a>
+                <a href="error.html" class="btn btn-secondary btn-sm">
+                  <i class="fa-solid fa-file-export"></i> <span>Export CSV</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="table-responsive-wrapper">
+              <table class="dash-data-table">
+                <thead>
+                  <tr>
+                    <th>Patient Companion</th>
+                    <th>Species &amp; Ward</th>
+                    <th>Attending Clinician</th>
+                    <th>Vitals Status</th>
+                    <th>Core Metric</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="patient-cell flex-center">
+                        <div class="patient-avatar bg-amber-box"><i class="fa-solid fa-dog"></i></div>
+                        <div>
+                          <strong>Bella (Golden Retriever)</strong>
+                          <span class="cell-sub">ID: #VET-9842</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Surgical Bay 01 (Post-Op TPLO)</td>
+                    <td>Dr. Amanda Vance, DACVS</td>
+                    <td><span class="status-badge badge-success"><span class="badge-dot"></span> Stable Telemetry</span></td>
+                    <td><strong class="text-teal">74 BPM • 38.5°C</strong></td>
+                    <td>
+                      <a href="error.html" class="btn btn-outline-hero btn-xs">Review Chart</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="patient-cell flex-center">
+                        <div class="patient-avatar bg-mint-box"><i class="fa-solid fa-cat"></i></div>
+                        <div>
+                          <strong>Oliver (British Shorthair)</strong>
+                          <span class="cell-sub">ID: #VET-9845</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Cat Sanctuary Ward 03</td>
+                    <td>Dr. Elena Rostova, DABVP</td>
+                    <td><span class="status-badge badge-success"><span class="badge-dot"></span> Calm Baseline</span></td>
+                    <td><strong class="text-teal">118 BPM • 38.2°C</strong></td>
+                    <td>
+                      <a href="error.html" class="btn btn-outline-hero btn-xs">Review Chart</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="patient-cell flex-center">
+                        <div class="patient-avatar bg-coral-pulse"><i class="fa-solid fa-dog"></i></div>
+                        <div>
+                          <strong>Zeus (German Shepherd)</strong>
+                          <span class="cell-sub">ID: #VET-9848</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>ICU Trauma Resuscitation</td>
+                    <td>Dr. Julian Thorne, DACVECC</td>
+                    <td><span class="status-badge badge-warning"><span class="badge-dot"></span> Acute Triage</span></td>
+                    <td><strong class="text-danger">142 BPM • 39.4°C</strong></td>
+                    <td>
+                      <a href="error.html" class="btn btn-secondary btn-xs">Bedside Telemetry</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="patient-cell flex-center">
+                        <div class="patient-avatar bg-mint-box"><i class="fa-solid fa-dog"></i></div>
+                        <div>
+                          <strong>Milo (French Bulldog)</strong>
+                          <span class="cell-sub">ID: #VET-9851</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Cardiology Echocardiogram</td>
+                    <td>Dr. Marcus Thorne, DACVIM</td>
+                    <td><span class="status-badge badge-success"><span class="badge-dot"></span> Doppler Complete</span></td>
+                    <td><strong class="text-teal">82 BPM • 38.6°C</strong></td>
+                    <td>
+                      <a href="error.html" class="btn btn-outline-hero btn-xs">Review Chart</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 2: ICU & SURGICAL THEATRES -->
+        <section class="dash-view-panel" id="view-theatres">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">HEPA-14 Sterile Surgical Theatre Controls</h3>
+              <p class="banner-sub">Positive air curtains, continuous sevoflurane telemetry, and heated recovery pod status.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Calibrate Cleanrooms</a>
+          </div>
+
+          <div class="theatres-grid">
+            <div class="theatre-pod card">
+              <div class="theatre-head flex-between">
+                <span class="theatre-num">THEATRE 01</span>
+                <span class="status-badge badge-success">IN PROCEDURE</span>
+              </div>
+              <h4 class="theatre-name">Laparoscopic Soft-Tissue Suite</h4>
+              <p class="theatre-desc">Case: Minimally invasive preventive gastropexy • Dr. Vance</p>
+              <div class="theatre-metrics-list">
+                <div class="t-row flex-between"><span>Laminar Pressure:</span><strong>+28 Pa (OPTIMAL)</strong></div>
+                <div class="t-row flex-between"><span>Sevoflurane Vaporizer:</span><strong>1.8% Flow Rate</strong></div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Camera Feed</a>
+            </div>
+
+            <div class="theatre-pod card">
+              <div class="theatre-head flex-between">
+                <span class="theatre-num">THEATRE 02</span>
+                <span class="status-badge badge-success">IN PROCEDURE</span>
+              </div>
+              <h4 class="theatre-name">Orthopedic Joint Reconstruction</h4>
+              <p class="theatre-desc">Case: TPLO titanium cruciate fixation • Dr. Thorne</p>
+              <div class="theatre-metrics-list">
+                <div class="t-row flex-between"><span>Laminar Pressure:</span><strong>+32 Pa (OPTIMAL)</strong></div>
+                <div class="t-row flex-between"><span>Core Pod Heat:</span><strong>38.6°C Stable</strong></div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Camera Feed</a>
+            </div>
+
+            <div class="theatre-pod card">
+              <div class="theatre-head flex-between">
+                <span class="theatre-num">THEATRE 03</span>
+                <span class="status-badge badge-primary">READY / STERILIZED</span>
+              </div>
+              <h4 class="theatre-name">Dental Surgical Ultrasonic Suite</h4>
+              <p class="theatre-desc">Standby for afternoon subgingival piezo-scaling case.</p>
+              <div class="theatre-metrics-list">
+                <div class="t-row flex-between"><span>HEPA Clean Level:</span><strong>ISO Class 5</strong></div>
+                <div class="t-row flex-between"><span>Water Filtration:</span><strong>0.2 Micron Purified</strong></div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Book Case</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 3: PATIENT ADMISSIONS & TRIAGE -->
+        <section class="dash-view-panel" id="view-triage">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Emergency Bay Admissions &amp; Triage</h3>
+              <p class="banner-sub">Real-time gate arrivals, ambulatory intakes, and Fear-Free patient triage queues.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Direct Gate Open</a>
+          </div>
+
+          <div class="triage-overview-grid">
+            <div class="triage-status-box card">
+              <div class="triage-box-header flex-between">
+                <span class="t-code">BAY 01 // NORTH AMBULANCE</span>
+                <span class="status-badge badge-warning">ACTIVE INTAKE</span>
+              </div>
+              <h4>Critical Trauma: Zeus (German Shepherd)</h4>
+              <p>Vehicle arrived 08:34 AM. IV shock fluid stabilization in progress under Dr. Julian Thorne.</p>
+              <a href="error.html" class="btn btn-secondary btn-sm">Take Bedside Chart</a>
+            </div>
+
+            <div class="triage-status-box card">
+              <div class="triage-box-header flex-between">
+                <span class="t-code">BAY 02 // FELINE DIRECT ENTRY</span>
+                <span class="status-badge badge-success">CALM ADMISSION</span>
+              </div>
+              <h4>Feline Specialist: Oliver (Shorthair)</h4>
+              <p>Direct acoustic suite entry. Zero canine corridor exposure. Pheromone vaporizer active.</p>
+              <a href="error.html" class="btn btn-outline-primary btn-sm">Take Bedside Chart</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 4: ATTENDING FACULTY ROSTER -->
+        <section class="dash-view-panel" id="view-faculty">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Active Clinicians &amp; Attending Fellows</h3>
+              <p class="banner-sub">Current floor shifts, surgical credentials, and on-call paging contacts.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Manage Roster Shifts</a>
+          </div>
+
+          <div class="faculty-cards-grid">
+            <div class="faculty-profile-card card">
+              <div class="faculty-card-top flex-between">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop" alt="Dr. Vance" class="fac-avatar" />
+                <span class="status-badge badge-success">ON-DUTY</span>
+              </div>
+              <h4>Dr. Amanda Vance, DVM, DACVS</h4>
+              <span class="fac-role">Chief Medical Officer • Soft-Tissue Surgery</span>
+              <p class="fac-meta"><i class="fa-solid fa-graduation-cap"></i> Cornell Fellow • 16 Yrs Exp</p>
+              <a href="error.html" class="btn btn-outline-hero btn-sm fac-btn">Page Clinician</a>
+            </div>
+
+            <div class="faculty-profile-card card">
+              <div class="faculty-card-top flex-between">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&auto=format&fit=crop" alt="Dr. Julian Thorne" class="fac-avatar" />
+                <span class="status-badge badge-success">ON-DUTY</span>
+              </div>
+              <h4>Dr. Julian Thorne, DVM, DACVECC</h4>
+              <span class="fac-role">Director of Trauma &amp; Critical ICU</span>
+              <p class="fac-meta"><i class="fa-solid fa-graduation-cap"></i> Tufts Vet • 18 Yrs Exp</p>
+              <a href="error.html" class="btn btn-outline-hero btn-sm fac-btn">Page Clinician</a>
+            </div>
+
+            <div class="faculty-profile-card card">
+              <div class="faculty-card-top flex-between">
+                <img src="https://images.unsplash.com/photo-1594824813583-b778749a9978?q=80&w=200&auto=format&fit=crop" alt="Dr. Elena Rostova" class="fac-avatar" />
+                <span class="status-badge badge-success">ON-DUTY</span>
+              </div>
+              <h4>Dr. Elena Rostova, DVM, DABVP</h4>
+              <span class="fac-role">Head of Feline Sanctuary Care</span>
+              <p class="fac-meta"><i class="fa-solid fa-graduation-cap"></i> Royal Vet College • 14 Yrs Exp</p>
+              <a href="error.html" class="btn btn-outline-hero btn-sm fac-btn">Page Clinician</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 5: DIAGNOSTIC REPORTS -->
+        <section class="dash-view-panel" id="view-reports">
+          <div class="dash-view-banner card flex-between">
+            <div>
+              <h3 class="banner-title">Diagnostic Pathology &amp; DICOM Library</h3>
+              <p class="banner-sub">Automated 15-minute blood chemistry files, 4D echocardiograms, and radiographic films.</p>
+            </div>
+            <a href="error.html" class="btn btn-secondary btn-sm">Upload External Scans</a>
+          </div>
+
+          <div class="reports-list-stack">
+            <div class="report-row card flex-between">
+              <div class="report-meta flex-center">
+                <div class="rep-icon bg-amber-box"><i class="fa-solid fa-file-pdf"></i></div>
+                <div>
+                  <strong>Bella_TPLO_PostOp_Radiograph.dcm</strong>
+                  <span class="rep-sub">Orthopedic Cleanroom 02 • 14.2 MB • Recorded Today 07:45 AM</span>
+                </div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm">Download DICOM</a>
+            </div>
+
+            <div class="report-row card flex-between">
+              <div class="report-meta flex-center">
+                <div class="rep-icon bg-mint-box"><i class="fa-solid fa-file-pdf"></i></div>
+                <div>
+                  <strong>Oliver_Comprehensive_Hematology_15Min.pdf</strong>
+                  <span class="rep-sub">In-House Pathology Lab • Complete Biochemical Panel</span>
+                </div>
+              </div>
+              <a href="error.html" class="btn btn-outline-primary btn-sm">Download PDF</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- GSAP Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Site Scripts -->
+  <script>
+
+// ===================================================
+// ADMIN DASHBOARD CONTROLLER & HAMBURGER SYSTEM
+// ===================================================
+function initAdminDashboard() {
+  const dashSidebar = document.getElementById('dashSidebar');
+  const dashHamburgerBtn = document.getElementById('dashHamburgerBtn');
+  const dashCloseBtn = document.getElementById('dashCloseBtn');
+  const dashBackdrop = document.getElementById('dashBackdrop');
+  const navLinks = document.querySelectorAll('.dash-nav-link[data-target]');
+  const viewPanels = document.querySelectorAll('.dash-view-panel');
+  const currentViewTitle = document.getElementById('currentViewTitle');
+
+  // 1. RENDER AUTHENTICATED EMAIL FROM LOGIN SESSION
+  const activeEmail = sessionStorage.getItem('auth_user_email') || 'dr.vance@vetcarehospital.com';
+  const activeName = sessionStorage.getItem('auth_user_name') || 'Dr. Amanda Vance';
+
+  document.querySelectorAll('.user-display-email').forEach(el => {
+    el.textContent = activeEmail;
+  });
+  document.querySelectorAll('.user-display-name').forEach(el => {
+    el.textContent = activeName;
+  });
+
+  if (!dashSidebar || !dashHamburgerBtn) return;
+
+  // 2. HAMBURGER OPEN & CLOSE WITH BODY SCROLL LOCK
+  function openMobileNav() {
+    dashSidebar.classList.add('active');
+    dashBackdrop.classList.add('active');
+    dashHamburgerBtn.classList.add('active');
+    dashHamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('dash-scroll-locked'); // Locks background scrolling
+  }
+
+  function closeMobileNav() {
+    dashSidebar.classList.remove('active');
+    dashBackdrop.classList.remove('active');
+    dashHamburgerBtn.classList.remove('active');
+    dashHamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('dash-scroll-locked'); // Restores body scrolling
+  }
+
+  dashHamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (dashSidebar.classList.contains('active')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
+
+  dashCloseBtn?.addEventListener('click', closeMobileNav);
+  dashBackdrop?.addEventListener('click', closeMobileNav);
+
+  // 3. SECTION SWITCHING & AUTO-CLOSE ON NAVLINK CLICK
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const targetId = link.getAttribute('data-target');
+      const targetPanel = document.getElementById(targetId);
+
+      if (!targetPanel) return;
+
+      // Update Active Navigation Button
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      // Update Header Title
+      if (currentViewTitle) {
+        const linkText = link.querySelector('span').textContent;
+        currentViewTitle.textContent = linkText;
+      }
+
+      // Smooth Switch Tab Panel with GSAP
+      viewPanels.forEach(panel => {
+        if (panel.classList.contains('active')) {
+          if (typeof gsap !== 'undefined') {
+            gsap.to(panel, {
+              opacity: 0,
+              y: -8,
+              duration: 0.2,
+              ease: 'power2.in',
+              onComplete: () => {
+                panel.classList.remove('active');
+                panel.style.display = 'none';
+
+                targetPanel.style.display = 'block';
+                targetPanel.classList.add('active');
+                gsap.fromTo(
+                  targetPanel,
+                  { opacity: 0, y: 12 },
+                  { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+                );
+              }
+            });
+          } else {
+            panel.classList.remove('active');
+            targetPanel.classList.add('active');
+          }
+        }
+      });
+
+      // Close mobile drawer and release scroll lock automatically on navigation
+      if (window.innerWidth <= 992) {
+        closeMobileNav();
+      }
+    });
+  });
+}
+
+// Call on load
+document.addEventListener('DOMContentLoaded', () => {
+  initAdminDashboard();
+});
+
+  </script>
+
+
+
+</body>
+</html>

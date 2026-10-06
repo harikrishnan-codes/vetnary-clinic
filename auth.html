@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VetCare | Portal Authentication</title>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="auth.css"/>
+
+
+</head>
+
+<body class="auth-body">
+
+    <main class="auth-page-wrapper">
+        <!-- Ambient Bio-Luminescent Gradient Background -->
+        <div class="auth-ambient-stage" aria-hidden="true">
+            <div class="auth-glow-orb orb-1"></div>
+            <div class="auth-glow-orb orb-2"></div>
+            <div class="auth-mesh-grid"></div>
+        </div>
+
+        <div class="container auth-container">
+            <div class="auth-card-chassis">
+
+                <!-- Brand Identification Header -->
+                <div class="auth-brand-strip text-center">
+                    <a href="index.html" class="auth-brand-logo">
+                        <span class="logo-icon"><i class="fa-solid fa-shield-heart"></i></span>
+                        <span class="logo-text">Vet<span>Care</span></span>
+                    </a>
+                    <span class="auth-badge-tag"><i class="fa-solid fa-lock"></i> 256-Bit Encrypted Telemetry</span>
+                </div>
+
+                <!-- ==============================================
+             SECTION 1: SIGNUP (VISIBLE FIRST BY DEFAULT)
+             ============================================== -->
+                <section class="auth-view-panel active" id="signupSection">
+                    <div class="auth-panel-heading text-center">
+                        <h1 class="auth-title">Create Account</h1>
+                        <p class="auth-sub">Register your portal access to telemetry records and clinical dashboards.
+                        </p>
+                    </div>
+
+                    <form id="signupForm" class="auth-form" novalidate>
+                        <!-- Full Name Input -->
+                        <div class="auth-field-group">
+                            <label for="signupName" class="auth-label">Full Name</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-user field-icon"></i>
+                                <input type="text" id="signupName" class="auth-input" placeholder="e.g. Amanda Vance"
+                                    autocomplete="name" />
+                            </div>
+                            <span class="auth-error-hint" id="signupNameError"></span>
+                        </div>
+
+                        <!-- Email Address Input -->
+                        <div class="auth-field-group">
+                            <label for="signupEmail" class="auth-label">Email Address</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-envelope field-icon"></i>
+                                <input type="email" id="signupEmail" class="auth-input"
+                                    placeholder="e.g. name@vetcarehospital.com" autocomplete="email" />
+                            </div>
+                            <span class="auth-error-hint" id="signupEmailError"></span>
+                        </div>
+
+                        <!-- Custom Non-Native Account Role Dropdown -->
+                        <div class="auth-field-group">
+                            <label class="auth-label">Account Role</label>
+                            <div class="custom-dropdown" id="signupRoleDropdown">
+                                <input type="hidden" id="signupRoleValue" value="client" />
+                                <button type="button" class="custom-dropdown-trigger" id="roleDropdownBtn"
+                                    aria-haspopup="listbox" aria-expanded="false">
+                                    <span class="dropdown-selected-text">
+                                        <i class="fa-solid fa-paw icon-role"></i> Client Account
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                                </button>
+                                <div class="custom-dropdown-menu" id="roleDropdownMenu" role="listbox">
+                                    <div class="custom-dropdown-option active" data-value="client" role="option">
+                                        <div class="option-content">
+                                            <div class="option-icon-box"><i class="fa-solid fa-paw"></i></div>
+                                            <div class="option-text">
+                                                <strong>Client Account</strong>
+                                                <p>Pet guardian access to live vitals and appointments</p>
+                                            </div>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check option-check"></i>
+                                    </div>
+                                    <div class="custom-dropdown-option" data-value="admin" role="option">
+                                        <div class="option-content">
+                                            <div class="option-icon-box"><i class="fa-solid fa-user-shield"></i></div>
+                                            <div class="option-text">
+                                                <strong>Admin / Hospital Faculty</strong>
+                                                <p>Specialist triage, staff rosters & telemetry controls</p>
+                                            </div>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check option-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="auth-error-hint" id="signupRoleError"></span>
+                        </div>
+
+                        <!-- Password Input with Toggle Eye -->
+                        <div class="auth-field-group">
+                            <label for="signupPassword" class="auth-label">Password</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-lock field-icon"></i>
+                                <input type="password" id="signupPassword" class="auth-input"
+                                    placeholder="Minimum 6 characters" />
+                                <button type="button" class="pwd-peek-btn" aria-label="Toggle password view"
+                                    data-target="signupPassword">
+                                    <i class="fa-regular fa-eye eye-icon"></i>
+                                </button>
+                            </div>
+                            <span class="auth-error-hint" id="signupPasswordError"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-secondary auth-submit-btn">
+                            <span>Register &amp; Proceed to Login</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <!-- Switch to Login Navigation -->
+                        <div class="auth-switch-dock text-center">
+                            <span>Already registered?</span>
+                            <button type="button" class="auth-link-btn" id="switchToLoginBtn">Log in here</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ==============================================
+             SECTION 2: LOGIN
+             ============================================== -->
+                <section class="auth-view-panel" id="loginSection">
+                    <div class="auth-panel-heading text-center">
+                        <h2 class="auth-title">Welcome Back</h2>
+                        <p class="auth-sub">Enter credentials to authenticate into your clinical portal.</p>
+                    </div>
+
+                    <form id="loginForm" class="auth-form" novalidate>
+                        <!-- Account Holder Full Name Input -->
+                        <div class="auth-field-group">
+                            <label for="loginName" class="auth-label">Full Name</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-user field-icon"></i>
+                                <input type="text" id="loginName" class="auth-input" placeholder="e.g. Amanda Vance"
+                                    autocomplete="name" />
+                            </div>
+                            <span class="auth-error-hint" id="loginNameError"></span>
+                        </div>
+
+                        <!-- Email Address Input -->
+                        <div class="auth-field-group">
+                            <label for="loginEmail" class="auth-label">Email Address</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-envelope field-icon"></i>
+                                <input type="email" id="loginEmail" class="auth-input"
+                                    placeholder="e.g. name@vetcarehospital.com" autocomplete="email" />
+                            </div>
+                            <span class="auth-error-hint" id="loginEmailError"></span>
+                        </div>
+
+                        <!-- Password Input with Toggle Eye & Forgot Password Link -->
+                        <div class="auth-field-group">
+                            <div class="label-row flex-between">
+                                <label for="loginPassword" class="auth-label">Password</label>
+                                <button type="button" class="auth-forgot-link" id="switchToForgotBtn">Forgot
+                                    password?</button>
+                            </div>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-lock field-icon"></i>
+                                <input type="password" id="loginPassword" class="auth-input"
+                                    placeholder="Minimum 6 characters" />
+                                <button type="button" class="pwd-peek-btn" aria-label="Toggle password view"
+                                    data-target="loginPassword">
+                                    <i class="fa-regular fa-eye eye-icon"></i>
+                                </button>
+                            </div>
+                            <span class="auth-error-hint" id="loginPasswordError"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-secondary auth-submit-btn">
+                            <span>Authenticate &amp; Open Dashboard</span>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </button>
+
+                        <!-- Switch to Signup Navigation -->
+                        <div class="auth-switch-dock text-center">
+                            <span>New patient or staff member?</span>
+                            <button type="button" class="auth-link-btn" id="switchToSignupBtn">Create account</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ==============================================
+             SECTION 3: FORGOT PASSWORD
+             ============================================== -->
+                <section class="auth-view-panel" id="forgotSection">
+                    <div class="auth-panel-heading text-center">
+                        <h2 class="auth-title">Reset Password</h2>
+                        <p class="auth-sub">Enter your verified recovery details. System validation links directly to
+                            security recovery.</p>
+                    </div>
+
+                    <form id="forgotForm" class="auth-form" novalidate>
+                        <!-- Account Holder Full Name Input -->
+                        <div class="auth-field-group">
+                            <label for="forgotName" class="auth-label">Full Name</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-user field-icon"></i>
+                                <input type="text" id="forgotName" class="auth-input" placeholder="e.g. Amanda Vance" />
+                            </div>
+                            <span class="auth-error-hint" id="forgotNameError"></span>
+                        </div>
+
+                        <!-- Email Address Input -->
+                        <div class="auth-field-group">
+                            <label for="forgotEmail" class="auth-label">Registered Email</label>
+                            <div class="auth-input-shell">
+                                <i class="fa-solid fa-envelope field-icon"></i>
+                                <input type="email" id="forgotEmail" class="auth-input"
+                                    placeholder="e.g. name@vetcarehospital.com" />
+                            </div>
+                            <span class="auth-error-hint" id="forgotEmailError"></span>
+                        </div>
+
+                        <!-- Submit Button (Triggers Validation & Redirects to error.html) -->
+                        <button type="submit" class="btn btn-secondary auth-submit-btn">
+                            <span>Validate &amp; Request Reset</span>
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </button>
+
+                        <!-- Return to Login Navigation -->
+                        <div class="auth-switch-dock text-center">
+                            <button type="button" class="auth-link-btn" id="returnToLoginBtn">
+                                <i class="fa-solid fa-arrow-left"></i> Return to login
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- GSAP Core & ScrollTrigger for Transitions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Site Scripts -->
+    <script>
+
+        // ===================================================
+        // AUTHENTICATION SUITE CONTROLLER (login.html)
+        // ===================================================
+        function initAuthenticationSuite() {
+            const signupSection = document.getElementById('signupSection');
+            const loginSection = document.getElementById('loginSection');
+            const forgotSection = document.getElementById('forgotSection');
+
+            if (!signupSection || !loginSection || !forgotSection) return;
+
+            // View Panels Dictionary
+            const panels = {
+                signup: signupSection,
+                login: loginSection,
+                forgot: forgotSection
+            };
+
+            // Helper: Smooth Transition between Sections using GSAP
+            function switchAuthView(viewName) {
+                Object.keys(panels).forEach(key => {
+                    const panel = panels[key];
+                    if (panel.classList.contains('active')) {
+                        if (typeof gsap !== 'undefined') {
+                            gsap.to(panel, {
+                                opacity: 0,
+                                y: -10,
+                                duration: 0.25,
+                                ease: 'power2.in',
+                                onComplete: () => {
+                                    panel.classList.remove('active');
+                                    panel.style.display = 'none';
+
+                                    // Reveal target
+                                    const target = panels[viewName];
+                                    target.style.display = 'block';
+                                    target.classList.add('active');
+                                    gsap.fromTo(
+                                        target,
+                                        {opacity: 0, y: 15},
+                                        {opacity: 1, y: 0, duration: 0.35, ease: 'power2.out'}
+                                    );
+                                }
+                            });
+                        } else {
+                            panel.classList.remove('active');
+                            panels[viewName].classList.add('active');
+                        }
+                    }
+                });
+
+                // Clear visible validation errors
+                document.querySelectorAll('.auth-error-hint').forEach(err => err.textContent = '');
+                document.querySelectorAll('.auth-input-shell').forEach(shell => shell.classList.remove('has-error'));
+            }
+
+            // Panel Switch Navigation Triggers
+            document.getElementById('switchToLoginBtn')?.addEventListener('click', () => switchAuthView('login'));
+            document.getElementById('switchToSignupBtn')?.addEventListener('click', () => switchAuthView('signup'));
+            document.getElementById('switchToForgotBtn')?.addEventListener('click', () => switchAuthView('forgot'));
+            document.getElementById('returnToLoginBtn')?.addEventListener('click', () => switchAuthView('login'));
+
+            // -------------------------------------------------
+            // PASSWORD EYE TOGGLE PEEK
+            // -------------------------------------------------
+            const peekButtons = document.querySelectorAll('.pwd-peek-btn');
+            peekButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetInputId = btn.getAttribute('data-target');
+                    const targetInput = document.getElementById(targetInputId);
+                    const icon = btn.querySelector('.eye-icon');
+
+                    if (!targetInput) return;
+
+                    const isPassword = targetInput.type === 'password';
+                    targetInput.type = isPassword ? 'text' : 'password';
+                    btn.classList.toggle('active', isPassword);
+
+                    if (icon) {
+                        icon.classList.toggle('fa-eye', !isPassword);
+                        icon.classList.toggle('fa-eye-slash', isPassword);
+                    }
+                });
+            });
+
+            // -------------------------------------------------
+            // CUSTOM NON-NATIVE ROLE DROPDOWN LOGIC
+            // -------------------------------------------------
+            const dropdown = document.getElementById('signupRoleDropdown');
+            const dropdownBtn = document.getElementById('roleDropdownBtn');
+            const roleHiddenInput = document.getElementById('signupRoleValue');
+            const options = document.querySelectorAll('.custom-dropdown-option');
+
+            if (dropdown && dropdownBtn) {
+                dropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = dropdown.classList.contains('open');
+                    dropdown.classList.toggle('open', !isOpen);
+                    dropdownBtn.setAttribute('aria-expanded', String(!isOpen));
+                });
+
+                options.forEach(opt => {
+                    opt.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        options.forEach(o => o.classList.remove('active'));
+                        opt.classList.add('active');
+
+                        const chosenVal = opt.getAttribute('data-value');
+                        roleHiddenInput.value = chosenVal;
+
+                        // Update button text and icon
+                        const selectedText = dropdownBtn.querySelector('.dropdown-selected-text');
+                        if (chosenVal === 'admin') {
+                            selectedText.innerHTML = '<i class="fa-solid fa-user-shield icon-role"></i> Admin / Hospital Faculty';
+                        } else {
+                            selectedText.innerHTML = '<i class="fa-solid fa-paw icon-role"></i> Client Account';
+                        }
+
+                        dropdown.classList.remove('open');
+                        dropdownBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                // Close when clicking anywhere outside
+                document.addEventListener('click', () => {
+                    dropdown.classList.remove('open');
+                    dropdownBtn.setAttribute('aria-expanded', 'false');
+                });
+            }
+
+            // -------------------------------------------------
+            // VALIDATION PATTERNS & UTILITY
+            // -------------------------------------------------
+            // Only accept alphabets and whitespace (no numbers or special characters)
+            const nameRegex = /^[A-Za-z\s]+$/;
+            // Standard strict email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function setFieldError(inputId, errorId, message) {
+                const input = document.getElementById(inputId);
+                const errorEl = document.getElementById(errorId);
+                if (errorEl) errorEl.textContent = message;
+                if (input) {
+                    const shell = input.closest('.auth-input-shell');
+                    if (shell) shell.classList.add('has-error');
+                }
+            }
+
+            function clearFieldError(inputId, errorId) {
+                const input = document.getElementById(inputId);
+                const errorEl = document.getElementById(errorId);
+                if (errorEl) errorEl.textContent = '';
+                if (input) {
+                    const shell = input.closest('.auth-input-shell');
+                    if (shell) shell.classList.remove('has-error');
+                }
+            }
+
+            // -------------------------------------------------
+            // SIGNUP FORM VALIDATION -> REDIRECTS TO LOGIN VIEW
+            // -------------------------------------------------
+            const signupForm = document.getElementById('signupForm');
+            signupForm?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                const nameVal = document.getElementById('signupName').value.trim();
+                const emailVal = document.getElementById('signupEmail').value.trim();
+                const passVal = document.getElementById('signupPassword').value;
+                const roleVal = document.getElementById('signupRoleValue').value;
+
+                // Validate Name (alphabets only)
+                if (!nameVal) {
+                    setFieldError('signupName', 'signupNameError', 'Full name is required.');
+                    isValid = false;
+                } else if (!nameRegex.test(nameVal)) {
+                    setFieldError('signupName', 'signupNameError', 'Name can only contain alphabetic letters.');
+                    isValid = false;
+                } else {
+                    clearFieldError('signupName', 'signupNameError');
+                }
+
+                // Validate Email
+                if (!emailVal) {
+                    setFieldError('signupEmail', 'signupEmailError', 'Email address is required.');
+                    isValid = false;
+                } else if (!emailRegex.test(emailVal)) {
+                    setFieldError('signupEmail', 'signupEmailError', 'Please enter a valid email address.');
+                    isValid = false;
+                } else {
+                    clearFieldError('signupEmail', 'signupEmailError');
+                }
+
+                // Validate Password (minimum 6 digits/characters)
+                if (!passVal) {
+                    setFieldError('signupPassword', 'signupPasswordError', 'Password is required.');
+                    isValid = false;
+                } else if (passVal.length < 6) {
+                    setFieldError('signupPassword', 'signupPasswordError', 'Password must contain at least 6 characters.');
+                    isValid = false;
+                } else {
+                    clearFieldError('signupPassword', 'signupPasswordError');
+                }
+
+                if (isValid) {
+                    // Store registered profile temporarily in sessionStorage for smooth handoff
+                    sessionStorage.setItem('registered_user_email', emailVal);
+                    sessionStorage.setItem('registered_user_name', nameVal);
+                    sessionStorage.setItem('registered_user_role', roleVal);
+
+                    // Pre-fill login email for convenience
+                    const loginEmailInput = document.getElementById('loginEmail');
+                    const loginNameInput = document.getElementById('loginName');
+                    if (loginEmailInput) loginEmailInput.value = emailVal;
+                    if (loginNameInput) loginNameInput.value = nameVal;
+
+                    // Transition smoothly from Signup to Login view
+                    switchAuthView('login');
+                }
+            });
+
+            // -------------------------------------------------
+            // LOGIN FORM VALIDATION -> REDIRECTS TO RESPECTIVE DASHBOARD
+            // -------------------------------------------------
+            const loginForm = document.getElementById('loginForm');
+            loginForm?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                const nameVal = document.getElementById('loginName').value.trim();
+                const emailVal = document.getElementById('loginEmail').value.trim();
+                const passVal = document.getElementById('loginPassword').value;
+
+                // Validate Name
+                if (!nameVal) {
+                    setFieldError('loginName', 'loginNameError', 'Full name is required.');
+                    isValid = false;
+                } else if (!nameRegex.test(nameVal)) {
+                    setFieldError('loginName', 'loginNameError', 'Name can only contain alphabetic letters.');
+                    isValid = false;
+                } else {
+                    clearFieldError('loginName', 'loginNameError');
+                }
+
+                // Validate Email
+                if (!emailVal) {
+                    setFieldError('loginEmail', 'loginEmailError', 'Email address is required.');
+                    isValid = false;
+                } else if (!emailRegex.test(emailVal)) {
+                    setFieldError('loginEmail', 'loginEmailError', 'Please enter a valid email address.');
+                    isValid = false;
+                } else {
+                    clearFieldError('loginEmail', 'loginEmailError');
+                }
+
+                // Validate Password (minimum 6 digits)
+                if (!passVal) {
+                    setFieldError('loginPassword', 'loginPasswordError', 'Password is required.');
+                    isValid = false;
+                } else if (passVal.length < 6) {
+                    setFieldError('loginPassword', 'loginPasswordError', 'Password must contain at least 6 characters.');
+                    isValid = false;
+                } else {
+                    clearFieldError('loginPassword', 'loginPasswordError');
+                }
+
+                if (isValid) {
+                    // Check stored role or default based on email structure
+                    const savedRole = sessionStorage.getItem('registered_user_role') || 'client';
+
+                    // Save credentials for display in dashboards
+                    sessionStorage.setItem('auth_user_email', emailVal);
+                    sessionStorage.setItem('auth_user_name', nameVal);
+                    sessionStorage.setItem('auth_user_role', savedRole);
+
+                    // Redirect to respective dashboard
+                    if (savedRole === 'admin') {
+                        window.location.href = 'admin.html';
+                    } else {
+                        window.location.href = 'client.html';
+                    }
+                }
+            });
+
+            // -------------------------------------------------
+            // FORGOT PASSWORD VALIDATION -> REDIRECTS TO error.html
+            // -------------------------------------------------
+            const forgotForm = document.getElementById('forgotForm');
+            forgotForm?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                const nameVal = document.getElementById('forgotName').value.trim();
+                const emailVal = document.getElementById('forgotEmail').value.trim();
+
+                // Validate Name
+                if (!nameVal) {
+                    setFieldError('forgotName', 'forgotNameError', 'Full name is required.');
+                    isValid = false;
+                } else if (!nameRegex.test(nameVal)) {
+                    setFieldError('forgotName', 'forgotNameError', 'Name can only contain alphabetic letters.');
+                    isValid = false;
+                } else {
+                    clearFieldError('forgotName', 'forgotNameError');
+                }
+
+                // Validate Email
+                if (!emailVal) {
+                    setFieldError('forgotEmail', 'forgotEmailError', 'Email address is required.');
+                    isValid = false;
+                } else if (!emailRegex.test(emailVal)) {
+                    setFieldError('forgotEmail', 'forgotEmailError', 'Please enter a valid email address.');
+                    isValid = false;
+                } else {
+                    clearFieldError('forgotEmail', 'forgotEmailError');
+                }
+
+                if (isValid) {
+                    // Save email context and redirect directly to error.html fallback
+                    sessionStorage.setItem('recovery_email_target', emailVal);
+                    window.location.href = 'error.html';
+                }
+            });
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            initAuthenticationSuite();
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

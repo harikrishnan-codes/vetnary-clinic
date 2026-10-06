@@ -1,0 +1,439 @@
+/* ===================================================
+   404 PREMIUM ERROR PAGE STYLING
+   =================================================== */
+
+/* Page Background Setup */
+.error-page-body {
+    background: radial-gradient(circle at 50% 20%, #ffffff 0%, var(--bg-muted) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle background mesh glow */
+.error-page-body::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14, 131, 136, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.error-page-body::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(244, 162, 97, 0.14) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.error-wrapper {
+    width: 100%;
+    padding-block: 3.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Card Container */
+.error-card {
+    max-width: 760px;
+    width: 100%;
+    padding: 3.5rem 3rem;
+    border-radius: 28px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(220, 231, 231, 0.8);
+    box-shadow: 0 20px 45px rgba(38, 70, 83, 0.08);
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* 404 Large Display Numbers */
+.error-digits-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-block: 1rem 0.5rem;
+    user-select: none;
+}
+
+.digit {
+    font-size: 7.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text-main);
+    letter-spacing: -0.04em;
+    text-shadow: 0 6px 14px rgba(38, 70, 83, 0.06);
+}
+
+/* Center Animated Paw Sphere */
+.digit-center-badge {
+    position: relative;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-inverse);
+    box-shadow: 0 8px 24px rgba(14, 131, 136, 0.35);
+    cursor: pointer;
+}
+
+.paw-symbol {
+    font-size: 2.8rem;
+    transform-origin: center;
+}
+
+.paw-ring-pulse {
+    position: absolute;
+    inset: -6px;
+    border: 2px dashed rgba(14, 131, 136, 0.45);
+    border-radius: 50%;
+    animation: spinSlow 18s linear infinite;
+}
+
+@keyframes spinSlow {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Walking Paw Prints Trail */
+.paw-trail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-block: 0.5rem 1.5rem;
+}
+
+.paw-step {
+    color: var(--secondary);
+    font-size: 1.15rem;
+    opacity: 0;
+    transform: translateY(4px);
+}
+
+.step-1 {
+    transform: rotate(-25deg);
+}
+
+.step-2 {
+    transform: rotate(15deg);
+}
+
+.step-3 {
+    transform: rotate(-20deg);
+}
+
+.step-4 {
+    transform: rotate(18deg);
+}
+
+/* Typography */
+.error-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.error-description {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin-inline: auto;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+}
+
+/* Search Box Container */
+.error-search-box {
+    position: relative;
+    max-width: 480px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.35rem 0.45rem 0.35rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.25rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.error-search-box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(14, 131, 136, 0.15);
+}
+
+.error-search-box .search-icon {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-right: 0.65rem;
+}
+
+.error-search-box .form-control {
+    border: none;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.95rem;
+    background: transparent;
+    box-shadow: none;
+}
+
+.error-search-box .form-control:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* Button Group */
+.error-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Emergency Hotline Footnote */
+.error-footer-note {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.error-hotline {
+    color: var(--secondary-hover);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s ease;
+}
+
+.container .error-card .logo {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    text-align: center;
+}
+
+.error-hotline:hover {
+    color: var(--secondary);
+}
+
+/* Ambient Floating Background Icons */
+.ambient-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ambient-icon {
+    position: absolute;
+    color: var(--primary);
+    opacity: 0.15;
+    font-size: 2.5rem;
+    filter: blur(0.5px);
+}
+
+.icon-1 {
+    top: 12%;
+    left: 10%;
+    font-size: 2.8rem;
+}
+
+.icon-2 {
+    top: 22%;
+    right: 12%;
+    font-size: 2.2rem;
+    color: var(--secondary);
+}
+
+.icon-3 {
+    bottom: 18%;
+    left: 14%;
+    font-size: 3rem;
+}
+
+.icon-4 {
+    bottom: 25%;
+    right: 10%;
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+.icon-5 {
+    top: 50%;
+    left: 4%;
+    font-size: 1.8rem;
+}
+
+/* ===================================================
+   768PX MEDIA QUERY BREAKPOINT
+   =================================================== */
+@media (max-width: 768px) {
+    .error-wrapper {
+        padding-block: 2rem;
+    }
+
+    .error-card {
+        padding: 2.25rem 1.25rem;
+        border-radius: 20px;
+        margin-inline: 0.5rem;
+    }
+
+    .digit {
+        font-size: 4.8rem;
+    }
+
+    .digit-center-badge {
+        width: 68px;
+        height: 68px;
+    }
+
+    .paw-symbol {
+        font-size: 2rem;
+    }
+
+    .error-title {
+        font-size: 1.6rem;
+    }
+
+    .error-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .error-search-box {
+        flex-direction: column;
+        padding: 0.75rem;
+        border-radius: 14px;
+        gap: 0.6rem;
+    }
+
+    .error-search-box .search-icon {
+        display: none;
+    }
+
+    .error-search-box .form-control {
+        text-align: center;
+        width: 100%;
+    }
+
+    .error-search-box button {
+        width: 100%;
+    }
+
+    .error-btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .error-btn-group .btn {
+        width: 100%;
+    }
+
+    .ambient-icon {
+        opacity: 0.08;
+        /* Reduce visibility on smaller screens */
+    }
+
+    .icon-5 {
+        display: none;
+    }
+}
+
+
+/* ===================================================
+   ERROR PAGE TOP NAVIGATION
+   =================================================== */
+.error-page-body {
+    /* Change min-height to flex column so header sits neatly on top */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.error-top-nav {
+    width: 100%;
+    padding-block: 1.25rem;
+    position: relative;
+    z-index: 10;
+}
+
+.error-top-nav .logo img {
+    display: block;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.error-top-nav .logo img:hover {
+    transform: scale(1.03);
+}
+
+.error-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--bg-surface);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.error-back-btn:hover {
+    transform: translateX(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Ensure wrapper takes remaining vertical space */
+.error-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 768px Mobile Query */
+@media (max-width: 768px) {
+    .error-top-nav {
+        padding-block: 1rem;
+    }
+
+    .error-top-nav .logo img {
+        height: 40px;
+        width: auto;
+    }
+
+    .error-back-btn {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,2459 @@
+/* ===================================================
+   VETS PAGE HERO: CLINICAL LEADERSHIP & FACULTY
+   Theme Tokens: --text-main #264653 | --primary #0e8388 | --secondary #f4a261
+   =================================================== */
+
+.vets-hero-section {
+  position: relative;
+  background-color: var(--text-main);
+  /* #264653 */
+  color: var(--text-inverse);
+  padding-block: 6rem 7rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(220, 231, 231, 0.12);
+}
+
+/* ---------------------------------------------------
+   1. AMBIENT CELLULAR & VITALS BACKDROP
+   --------------------------------------------------- */
+.vets-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.vets-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  will-change: transform;
+}
+
+.vets-ambient-orb.orb-teal {
+  width: 580px;
+  height: 580px;
+  background: var(--primary);
+  /* #0e8388 */
+  top: -150px;
+  left: -120px;
+  opacity: 0.38;
+  animation: orbDriftA 16s ease-in-out infinite alternate;
+}
+
+.vets-ambient-orb.orb-amber {
+  width: 500px;
+  height: 500px;
+  background: var(--secondary);
+  /* #f4a261 */
+  bottom: -130px;
+  right: -90px;
+  opacity: 0.32;
+  animation: orbDriftB 18s ease-in-out infinite alternate;
+}
+
+@keyframes orbDriftA {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(75px, 60px) scale(1.15);
+  }
+}
+
+@keyframes orbDriftB {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-65px, -50px) scale(1.12);
+  }
+}
+
+/* Animated Vitals Pulse SVG */
+.vitals-pulse-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  opacity: 0.7;
+}
+
+.vitals-trace-line {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: tracePulse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes tracePulse {
+  0% {
+    stroke-dashoffset: 1400;
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+.vets-grid-mesh {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.75;
+}
+
+.vets-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------
+   2. CONTENT LAYOUT & TYPOGRAPHY
+   --------------------------------------------------- */
+.vets-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Breadcrumbs */
+.vets-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #a4bcc4;
+  margin-bottom: 1rem;
+}
+
+.vets-breadcrumbs .crumb-link {
+  color: #c4d7dc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.vets-breadcrumbs .crumb-link:hover {
+  color: var(--secondary);
+}
+
+.vets-breadcrumbs .crumb-sep {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.vets-breadcrumbs .crumb-current {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* Faculty Status Badge */
+.faculty-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #72efdd;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.7);
+  animation: pulseDotGreen 2s infinite;
+}
+
+@keyframes pulseDotGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(114, 239, 221, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0);
+  }
+}
+
+/* Typography */
+.vets-hero-headline {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--text-inverse);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.vets-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #c4d7dc;
+  margin-bottom: 2rem;
+  max-width: 620px;
+}
+
+/* Interactive Filter Chips */
+.vets-dept-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.vets-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.05rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #e5ecee;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vets-chip i {
+  color: var(--secondary);
+  font-size: 0.88rem;
+}
+
+.vets-chip:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.vets-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(14, 131, 136, 0.35);
+  transform: translateY(-2px);
+}
+
+.vets-chip.active i {
+  color: var(--text-inverse);
+}
+
+/* Metrics Counter Bar */
+.vets-credentials-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vet-stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.vet-stat-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a4bcc4;
+  font-weight: 600;
+}
+
+.vet-stat-divider {
+  width: 1px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------------------------------------------
+   3. LEAD SURGEON SHOWCASE PODIUM & FLOATING BADGES
+   --------------------------------------------------- */
+.vets-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.faculty-hero-podium {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.surgeon-master-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.8;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.surgeon-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.surgeon-master-card:hover .surgeon-portrait-img {
+  transform: scale(1.05);
+}
+
+.surgeon-card-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(38, 70, 83, 0.96) 100%);
+}
+
+.surgeon-card-bio {
+  position: absolute;
+  bottom: 1.6rem;
+  bottom:80px ;
+  left: 1.6rem;
+  right: 1.6rem;
+  z-index: 2;
+}
+
+.surgeon-post-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--secondary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.surgeon-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.surgeon-specialty {
+  font-size: 0.88rem;
+  color: #c4d7dc;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.surgeon-sub-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  font-size: 0.78rem;
+  color: #a4bcc4;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.surgeon-sub-meta i {
+  color: var(--secondary);
+}
+
+/* Floating Glass Accreditation Badges */
+.vets-floating-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  color: var(--text-main);
+  z-index: 3;
+}
+
+.badge-top-left {
+  top: 8%;
+  left: -10%;
+}
+
+.badge-bottom-right {
+  bottom: 8%;
+  right: -8%;
+}
+
+.badge-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.badge-icon-box.bg-mint {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-icon-box.bg-amber {
+  background-color: var(--secondary-light);
+  color: var(--secondary-hover);
+}
+
+.vets-floating-badge strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.vets-floating-badge span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .vets-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .vets-hero-narrative {
+    text-align: center;
+  }
+
+  .vets-breadcrumbs {
+    justify-content: center;
+  }
+
+  .vets-dept-chips {
+    justify-content: center;
+  }
+
+  .vets-credentials-bar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vets-hero-section {
+    padding-block: 4rem 4.5rem;
+  }
+
+  .vets-hero-headline {
+    font-size: 2.15rem;
+    line-height: 1.22;
+  }
+
+  .vets-hero-lead {
+    font-size: 0.96rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .vets-dept-chips {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .vets-chip {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .vets-credentials-bar {
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-top: 1.4rem;
+  }
+
+  .vet-stat-number {
+    font-size: 1.45rem;
+  }
+
+  .vet-stat-label {
+    font-size: 0.68rem;
+  }
+
+  /* Safe positioning for floating badges on touch screens */
+  .faculty-hero-podium {
+    max-width: 100%;
+  }
+
+  .badge-top-left {
+    top: 4%;
+    left: 4%;
+  }
+
+  .badge-bottom-right {
+    bottom: 4%;
+    right: 4%;
+  }
+
+  .vets-floating-badge {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .badge-icon-box {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   CLAYMORPHISM SECTION: VETS PAGE
+   Canvas: --bg-main #fbfdfc | 3D Inflated Tactile Cards
+   =================================================== */
+
+.clay-vets-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.clay-vets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Base Tactile Clay Card */
+.clay-vet-card {
+  position: relative;
+  border-radius: 32px;
+  padding: 2.4rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  user-select: none;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+/* Clay Depth: Dual Drop Shadow + Dual Inset Highlights */
+.clay-vet-card.clay-teal {
+  background: #edf8f8;
+  box-shadow:
+    14px 18px 30px rgba(14, 131, 136, 0.12),
+    -10px -10px 24px rgba(255, 255, 255, 0.95),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.85),
+    inset -4px -4px 10px rgba(14, 131, 136, 0.08);
+}
+
+.clay-vet-card.clay-amber {
+  background: #fdf5ec;
+  box-shadow:
+    14px 18px 30px rgba(244, 162, 97, 0.16),
+    -10px -10px 24px rgba(255, 255, 255, 0.95),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.85),
+    inset -4px -4px 10px rgba(244, 162, 97, 0.1);
+}
+
+.clay-vet-card.clay-mint {
+  background: #edf8f5;
+  box-shadow:
+    14px 18px 30px rgba(42, 157, 143, 0.14),
+    -10px -10px 24px rgba(255, 255, 255, 0.95),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.85),
+    inset -4px -4px 10px rgba(42, 157, 143, 0.09);
+}
+
+.clay-vet-card.clay-coral {
+  background: #fdf0ee;
+  box-shadow:
+    14px 18px 30px rgba(230, 57, 70, 0.12),
+    -10px -10px 24px rgba(255, 255, 255, 0.95),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.85),
+    inset -4px -4px 10px rgba(230, 57, 70, 0.08);
+}
+
+/* Hover Lift */
+.clay-vet-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.clay-vet-card.clay-teal:hover {
+  box-shadow:
+    18px 24px 38px rgba(14, 131, 136, 0.18),
+    -12px -12px 28px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -4px 10px rgba(14, 131, 136, 0.05);
+}
+
+.clay-vet-card.clay-amber:hover {
+  box-shadow:
+    18px 24px 38px rgba(244, 162, 97, 0.22),
+    -12px -12px 28px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -4px 10px rgba(244, 162, 97, 0.06);
+}
+
+.clay-vet-card.clay-mint:hover {
+  box-shadow:
+    18px 24px 38px rgba(42, 157, 143, 0.2),
+    -12px -12px 28px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -4px 10px rgba(42, 157, 143, 0.06);
+}
+
+.clay-vet-card.clay-coral:hover {
+  box-shadow:
+    18px 24px 38px rgba(230, 57, 70, 0.18),
+    -12px -12px 28px rgba(255, 255, 255, 1),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.95),
+    inset -4px -4px 10px rgba(230, 57, 70, 0.05);
+}
+
+/* Clay Rounded Floating Icon Bubble */
+.clay-vet-icon-bubble {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: 1.4rem;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    6px 8px 14px rgba(38, 70, 83, 0.06),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.clay-teal .clay-vet-icon-bubble {
+  color: var(--primary);
+}
+
+.clay-amber .clay-vet-icon-bubble {
+  color: var(--secondary-hover);
+}
+
+.clay-mint .clay-vet-icon-bubble {
+  color: var(--success);
+}
+
+.clay-coral .clay-vet-icon-bubble {
+  color: var(--danger);
+}
+
+/* Category Pill */
+.clay-vet-pill {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.78rem;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+}
+
+.clay-teal .clay-vet-pill {
+  color: var(--primary);
+}
+
+.clay-amber .clay-vet-pill {
+  color: var(--secondary-hover);
+}
+
+.clay-mint .clay-vet-pill {
+  color: var(--success);
+}
+
+.clay-coral .clay-vet-pill {
+  color: var(--danger);
+}
+
+.clay-vet-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.015em;
+}
+
+.clay-vet-text {
+  font-size: 0.91rem;
+  color: var(--text-muted);
+  line-height: 1.62;
+  margin-bottom: 1.6rem;
+}
+
+.clay-vet-metric {
+  margin-top: auto;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Clay Bottom Reassurance Banner */
+.clay-vet-banner {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.2rem 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 2px solid #ffffff;
+  box-shadow:
+    14px 20px 35px rgba(38, 70, 83, 0.06),
+    -8px -8px 20px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.85);
+}
+
+.clay-banner-details {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.clay-banner-badge-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  flex-shrink: 0;
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.clay-banner-head {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.clay-banner-sub {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.clay-banner-action {
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .clay-vets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .clay-vets-section {
+    padding-block: 4rem;
+  }
+
+  .clay-vets-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .clay-vet-card {
+    padding: 1.85rem 1.4rem;
+    border-radius: 24px;
+  }
+
+  .clay-vet-title {
+    font-size: 1.25rem;
+  }
+
+  .clay-vet-text {
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .clay-vet-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.35rem;
+    gap: 1.4rem;
+    border-radius: 22px;
+  }
+
+  .clay-banner-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .clay-banner-head {
+    font-size: 1.15rem;
+  }
+
+  .clay-banner-sub {
+    font-size: 0.86rem;
+  }
+
+  .clay-banner-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+/* ===================================================
+   VETS SPLIT-SCREEN SHOWCASE SECTION
+   Canvas: --bg-main #fbfdfc | Theme: --primary #0e8388 & --secondary #f4a261
+   =================================================== */
+
+.vets-split-showcase-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ---------------------------------------------------
+   1. SPLIT-SCREEN CONTAINER & WINGS
+   --------------------------------------------------- */
+.vets-split-canvas {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 24px 60px rgba(38, 70, 83, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.vets-split-wing {
+  position: relative;
+  padding: 4rem 3.5rem;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-inverse);
+  overflow: hidden;
+}
+
+/* Background Media & Atmospheric Gradients */
+.wing-bg-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.wing-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vets-split-wing:hover .wing-bg-media img {
+  transform: scale(1.05);
+}
+
+/* Left Wing Vignette: Signature Deep Teal */
+.vignette-teal {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg,
+      rgba(14, 131, 136, 0.95) 0%,
+      rgba(38, 70, 83, 0.96) 100%);
+}
+
+/* Right Wing Vignette: Dark Amber / Deep Teal Fusion */
+.vignette-amber {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg,
+      rgba(38, 70, 83, 0.96) 0%,
+      rgba(190, 110, 50, 0.92) 100%);
+}
+
+.wing-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Badges Row */
+.wing-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.wing-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+}
+
+.pill-teal {
+  background: rgba(255, 255, 255, 0.15);
+  color: #72efdd;
+  border: 1px solid rgba(114, 239, 221, 0.4);
+}
+
+.pill-amber {
+  background: rgba(244, 162, 97, 0.2);
+  color: var(--secondary);
+  border: 1px solid rgba(244, 162, 97, 0.4);
+}
+
+.wing-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c4d7dc;
+}
+
+.wing-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.wing-lead {
+  font-size: 0.96rem;
+  color: #c4d7dc;
+  line-height: 1.62;
+  margin-bottom: 1.85rem;
+}
+
+/* Doctor Profile Strip */
+.wing-doctor-preview {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.95rem 1.25rem;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+}
+
+.wing-doctor-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary);
+  flex-shrink: 0;
+}
+
+.doctor-name {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-inverse);
+  margin-bottom: 0.15rem;
+}
+
+.doctor-title {
+  display: block;
+  font-size: 0.78rem;
+  color: #a4bcc4;
+}
+
+/* Spec List */
+.wing-spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.wing-spec-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e5ecee;
+}
+
+.list-teal li i {
+  color: #72efdd;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.list-amber li i {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.wing-action-row {
+  margin-top: auto;
+}
+
+.wing-cta-btn {
+  width: 100%;
+}
+
+/* ---------------------------------------------------
+   2. CENTER DIVIDER ICON
+   --------------------------------------------------- */
+.vets-split-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.vets-divider-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border: 3px solid var(--secondary);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------------
+   3. BOTTOM FOOTER BANNER
+   --------------------------------------------------- */
+.vets-split-foot-banner {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 24px;
+  padding: 1.85rem 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 12px 32px rgba(38, 70, 83, 0.06);
+}
+
+.foot-banner-info {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.foot-icon-orb {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.foot-banner-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.25rem;
+}
+
+.foot-banner-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.foot-banner-action {
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .vets-split-canvas {
+    grid-template-columns: 1fr;
+  }
+
+  .vets-split-wing {
+    padding: 3rem 2.4rem;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .vets-split-showcase-section {
+    padding-block: 4rem;
+  }
+
+  .vets-split-canvas {
+    border-radius: 22px;
+  }
+
+  .vets-split-wing {
+    padding: 2.25rem 1.4rem;
+  }
+
+  .vets-split-divider {
+    display: none;
+    /* Avoid visual collision on stacked layouts */
+  }
+
+  .wing-title {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  .wing-lead {
+    font-size: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .wing-doctor-preview {
+    padding: 0.85rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .doctor-name {
+    font-size: 0.88rem;
+  }
+
+  .doctor-title {
+    font-size: 0.72rem;
+  }
+
+  .wing-spec-list {
+    gap: 0.7rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .wing-spec-list li {
+    font-size: 0.84rem;
+  }
+
+  .vets-split-foot-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.85rem 1.25rem;
+    gap: 1.4rem;
+    border-radius: 20px;
+  }
+
+  .foot-banner-info {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .foot-banner-title {
+    font-size: 1.15rem;
+  }
+
+  .foot-banner-desc {
+    font-size: 0.85rem;
+  }
+
+  .foot-banner-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   3D TILT & PARALLAX FACULTY CARDS SECTION
+   Canvas: --bg-main #fbfdfc | Cards: --bg-surface #ffffff
+   =================================================== */
+
+.faculty-tilt-section {
+  position: relative;
+  background-color: var(--bg-main);
+  /* #fbfdfc */
+  padding-block: 6.5rem 7.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tilt-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  perspective: 1200px;
+  /* 3D Camera depth */
+}
+
+/* Base 3D Tilt Card Container */
+.tilt-card {
+  position: relative;
+  border-radius: 28px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  box-shadow:
+    0 16px 40px rgba(38, 70, 83, 0.06),
+    0 2px 6px rgba(38, 70, 83, 0.03);
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+  border-color: rgba(14, 131, 136, 0.4);
+  box-shadow:
+    0 28px 65px rgba(38, 70, 83, 0.14),
+    0 6px 18px rgba(14, 131, 136, 0.1);
+}
+
+/* Featured Center Card */
+.featured-tilt-card {
+  border-color: rgba(244, 162, 97, 0.35);
+  box-shadow:
+    0 20px 48px rgba(244, 162, 97, 0.1),
+    0 2px 6px rgba(38, 70, 83, 0.03);
+}
+
+.featured-tilt-card:hover {
+  border-color: var(--secondary);
+  box-shadow:
+    0 30px 70px rgba(244, 162, 97, 0.22),
+    0 6px 20px rgba(244, 162, 97, 0.15);
+}
+
+.tilt-accent-ribbon {
+  position: absolute;
+  top: 16px;
+  right: -28px;
+  background: var(--secondary);
+  color: var(--text-inverse);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 2.2rem;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.35);
+  z-index: 5;
+}
+
+/* Card Inner Shell with Overflow Hidden for Glass Glare */
+.tilt-card-inner {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+}
+
+/* Dynamic Cursor-Follower Glare Layer */
+.tilt-glare-layer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 65%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 4;
+  transition: opacity 0.3s ease;
+}
+
+.tilt-card:hover .tilt-glare-layer {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------
+   LAYER 1: FLOATING PORTRAIT MEDIA (Parallax Z: 20px)
+   --------------------------------------------------- */
+.tilt-layer-media {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  transform: translateZ(20px);
+  transition: transform 0.4s ease;
+}
+
+.tilt-doctor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tilt-card:hover .tilt-doctor-img {
+  transform: scale(1.06);
+}
+
+.tilt-media-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(38, 70, 83, 0.75) 100%);
+}
+
+.tilt-status-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #72efdd;
+  background: rgba(38, 70, 83, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateZ(30px);
+}
+
+.tilt-status-badge.badge-amber {
+  color: var(--secondary);
+}
+
+.badge-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.7);
+  animation: badgePulseGreen 2s infinite;
+}
+
+.badge-pulse.amber-pulse {
+  background-color: var(--secondary);
+  box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7);
+}
+
+@keyframes badgePulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0.8);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(114, 239, 221, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 239, 221, 0);
+  }
+}
+
+/* ---------------------------------------------------
+   LAYER 2: CLINICAL CONTENT (Parallax Z: 35px)
+   --------------------------------------------------- */
+.tilt-layer-content {
+  padding: 1.85rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--bg-surface);
+  transform: translateZ(35px);
+}
+
+.tilt-dept-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.tilt-dept-tag.tag-amber {
+  color: var(--secondary-hover);
+}
+
+.tilt-doctor-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.015em;
+}
+
+.tilt-doctor-cert {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.tilt-doctor-bio {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+}
+
+/* Micro Stats Row */
+.tilt-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding-block: 1rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.tilt-stat-box strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+  margin-bottom: 0.15rem;
+}
+
+.tilt-stat-box span {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.tilt-action-box {
+  margin-top: auto;
+}
+
+.tilt-cta-btn {
+  width: 100%;
+}
+
+/* ---------------------------------------------------
+   BOTTOM FACULTY TRUST STRIP
+   --------------------------------------------------- */
+.faculty-trust-strip {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 22px;
+  padding: 1.6rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 10px 30px rgba(38, 70, 83, 0.05);
+}
+
+.trust-strip-left {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.trust-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.trust-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.trust-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--success);
+  background: #e6f7f4;
+  padding: 0.45rem 0.95rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* ===================================================
+   768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .tilt-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .faculty-tilt-section {
+    padding-block: 4rem;
+  }
+
+  .tilt-cards-grid {
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+    perspective: none;
+    /* Disable 3D perspective distortion on small mobile viewports */
+  }
+
+  .tilt-card {
+    border-radius: 22px;
+    transform: none !important;
+    /* Flat rendering for natural touch experience */
+  }
+
+  .tilt-card-inner {
+    border-radius: 20px;
+    transform: none !important;
+  }
+
+  .tilt-layer-media,
+  .tilt-layer-content {
+    transform: none !important;
+  }
+
+  .tilt-layer-media {
+    height: 240px;
+  }
+
+  .tilt-layer-content {
+    padding: 1.5rem 1.35rem;
+  }
+
+  .tilt-doctor-name {
+    font-size: 1.25rem;
+  }
+
+  .tilt-doctor-bio {
+    font-size: 0.84rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .tilt-stats-row {
+    padding-block: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .tilt-stat-box strong {
+    font-size: 0.95rem;
+  }
+
+  .tilt-stat-box span {
+    font-size: 0.65rem;
+  }
+
+  .faculty-trust-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.85rem 1.25rem;
+    gap: 1.4rem;
+    border-radius: 20px;
+  }
+
+  .trust-strip-left {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .trust-title {
+    font-size: 1.1rem;
+  }
+
+  .trust-desc {
+    font-size: 0.825rem;
+  }
+
+  .trust-strip-right {
+    width: 100%;
+  }
+
+  .trust-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* ===================================================
+   INTERACTIVE BIO-LUMINESCENT SYNAPSE RESEARCH SECTION
+   Theme: Midnight Bio-Teal Canvas (#0d2229) with Glowing Nodes
+   =================================================== */
+
+.synapse-research-section {
+  position: relative;
+  background-color: #0d2229;
+  color: var(--text-inverse);
+  padding-block: 7rem 8rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(114, 239, 221, 0.18);
+  border-bottom: 1px solid rgba(114, 239, 221, 0.18);
+}
+
+/* ---------------------------------------------------
+   1. AMBIENT BIO-LUMINESCENT ANIMATION ENGINE
+   --------------------------------------------------- */
+.synapse-ambient-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Rotating Radar Bio-Halo */
+.bio-radar-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 780px;
+  height: 780px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      rgba(14, 131, 136, 0.25) 120deg,
+      rgba(244, 162, 97, 0.2) 240deg,
+      transparent 360deg);
+  filter: blur(80px);
+  animation: haloRotate 22s linear infinite;
+}
+
+@keyframes haloRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Pulsing SVG Neural Synapse Path Lines */
+.synapse-svg-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+}
+
+.synapse-path {
+  fill: none;
+  stroke: rgba(114, 239, 221, 0.25);
+  stroke-width: 2;
+  stroke-dasharray: 8 16;
+  animation: synapseFlow 12s linear infinite;
+}
+
+.synapse-path.path-2 {
+  stroke: rgba(244, 162, 97, 0.22);
+  animation-duration: 16s;
+  animation-direction: reverse;
+}
+
+.synapse-path.path-3 {
+  stroke: rgba(42, 157, 143, 0.2);
+  animation-duration: 20s;
+}
+
+@keyframes synapseFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 300;
+  }
+}
+
+/* Floating Luminescent Bio-Nodes */
+.bio-node {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.node-1 {
+  width: 320px;
+  height: 320px;
+  background: var(--primary);
+  top: 10%;
+  left: 5%;
+  animation: nodeDrift1 14s infinite alternate ease-in-out;
+}
+
+.node-2 {
+  width: 360px;
+  height: 360px;
+  background: var(--secondary);
+  bottom: 8%;
+  right: 5%;
+  animation: nodeDrift2 16s infinite alternate ease-in-out;
+}
+
+.node-3 {
+  width: 240px;
+  height: 240px;
+  background: #72efdd;
+  top: 40%;
+  right: 25%;
+  opacity: 0.25;
+}
+
+.node-4 {
+  width: 200px;
+  height: 200px;
+  background: #2a9d8f;
+  bottom: 25%;
+  left: 25%;
+  opacity: 0.3;
+}
+
+@keyframes nodeDrift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(80px, 60px) scale(1.2);
+  }
+}
+
+@keyframes nodeDrift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-70px, -50px) scale(1.15);
+  }
+}
+
+/* Micro Medical Grid Overlay */
+.synapse-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(114, 239, 221, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(114, 239, 221, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.9;
+}
+
+.synapse-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------
+   2. HEADER & EYEBROW STYLING
+   --------------------------------------------------- */
+.synapse-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #72efdd;
+  background: rgba(114, 239, 221, 0.08);
+  border: 1px solid rgba(114, 239, 221, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.synapse-emitter {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #72efdd;
+  box-shadow: 0 0 10px #72efdd;
+  animation: emitterPulse 2s infinite;
+}
+
+@keyframes emitterPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------
+   3. 2-COLUMN RESEARCH STAGE
+   --------------------------------------------------- */
+.synapse-stage-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.25fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Left Study Switcher Cards */
+.synapse-selectors-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.study-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.study-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(114, 239, 221, 0.4);
+  transform: translateX(6px);
+}
+
+.study-card.active {
+  background: rgba(14, 131, 136, 0.22);
+  border-color: #72efdd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 20px rgba(114, 239, 221, 0.08);
+  transform: translateX(8px);
+}
+
+.study-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.study-info {
+  flex: 1;
+}
+
+.study-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.study-journal {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.study-lead-doc {
+  font-size: 0.74rem;
+  color: #a4bcc4;
+  font-weight: 600;
+}
+
+.study-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+
+.study-summary {
+  font-size: 0.85rem;
+  color: #b0c8ce;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.study-arrow {
+  font-size: 0.85rem;
+  color: #a4bcc4;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.study-card.active .study-arrow {
+  color: #72efdd;
+  transform: translateX(4px);
+}
+
+/* Right Dynamic Glass Deck */
+.case-file-pod {
+  height: 100%;
+  padding: 3rem 2.6rem;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1.5px solid rgba(114, 239, 221, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.pod-header-strip {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.file-code-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: monospace;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #72efdd;
+  letter-spacing: 0.05em;
+}
+
+.peer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #72efdd;
+  text-transform: uppercase;
+}
+
+.peer-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #72efdd;
+  box-shadow: 0 0 6px #72efdd;
+}
+
+.case-headline {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.015em;
+}
+
+.case-narrative {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: #c4d7dc;
+  margin-bottom: 2rem;
+}
+
+/* Dynamic Metrics Grid */
+.case-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  margin-bottom: 2rem;
+}
+
+.case-metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.case-metric-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #8faab2;
+  font-weight: 700;
+}
+
+.case-metric-val {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--secondary);
+}
+
+.case-metric-val strong {
+  font-size: 1.25rem;
+  color: var(--text-inverse);
+}
+
+/* Case Action Footer */
+.case-action-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: center;
+}
+
+.study-access-notice {
+  font-size: 0.8rem;
+  color: #a4bcc4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.study-access-notice i {
+  color: var(--secondary);
+}
+
+/* ===================================================
+   4. 768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 992px) {
+  .synapse-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .synapse-research-section {
+    padding-block: 4.5rem;
+  }
+
+  .study-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .study-icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+
+  .study-title {
+    font-size: 1.05rem;
+  }
+
+  .study-summary {
+    font-size: 0.82rem;
+  }
+
+  .case-file-pod {
+    padding: 1.85rem 1.35rem;
+    border-radius: 22px;
+  }
+
+  .case-headline {
+    font-size: 1.45rem;
+  }
+
+  .case-narrative {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .case-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .case-action-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .case-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* GPU-efficient background on mobile screens */
+  .bio-radar-halo {
+    width: 420px;
+    height: 420px;
+  }
+
+  .synapse-path {
+    stroke-width: 1.5;
+  }
+}
+
+
+
+
+
+
+
+/* ===================================================
+   CLASSY LIGHT THEME CTA SECTION
+   =================================================== */
+
+.classy-cta-section {
+  position: relative;
+  background-color: #f8fafc; /* Soft, warm off-white canvas */
+  padding-block: 6rem;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Subtle, Warm Pastel Ambient Glows */
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 420px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(14, 131, 136, 0.12) 0%,
+    rgba(244, 162, 97, 0.08) 50%,
+    transparent 72%
+  );
+  filter: blur(75px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Elevated Porcelain Pedestal Card */
+.cta-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 4.5rem 3.5rem;
+  text-align: center;
+  box-shadow: 
+    0 24px 60px rgba(15, 23, 42, 0.05),
+    0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+/* Micro Pill Badge */
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background-color: #e6f6f6;
+  border: 1px solid rgba(14, 131, 136, 0.25);
+  color: #0e8388;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #0e8388;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(14, 131, 136, 0.6);
+}
+
+/* Typography */
+.cta-headline {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  max-width: 760px;
+  margin: 0 auto 1.25rem;
+}
+
+.cta-subheading {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: #64748b;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Action Buttons */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.75rem;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.95rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Primary Button: Bold Clinic Teal */
+.btn-primary-lux {
+  background-color: #0e8388;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(14, 131, 136, 0.25);
+}
+
+.btn-primary-lux:hover {
+  background-color: #0b6c70;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 131, 136, 0.35);
+  color: #ffffff;
+}
+
+/* Ghost / Secondary Button: Crisp Clean Border */
+.btn-ghost-lux {
+  background-color: #ffffff;
+  color: #334155;
+  border: 1.5px solid #cbd5e1;
+}
+
+.btn-ghost-lux:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Trust Signals Strip */
+.cta-reassurance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.25rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 2rem;
+}
+
+.reassurance-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.reassurance-item i {
+  color: #0e8388;
+  font-size: 0.82rem;
+}
+
+/* ===================================================
+   768PX RESPONSIVE BREAKPOINT
+   =================================================== */
+@media (max-width: 768px) {
+  .classy-cta-section {
+    padding-block: 3.75rem 4rem;
+  }
+
+  .cta-container {
+    padding-inline: 1.15rem;
+  }
+
+  .cta-card {
+    padding: 2.5rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .cta-badge {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .cta-headline {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.9rem;
+  }
+
+  .cta-subheading {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.85rem;
+  }
+
+  /* Full-width tap targets for mobile */
+  .cta-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 1.85rem;
+  }
+
+  .btn-cta {
+    width: 100%;
+    padding-block: 0.85rem;
+    font-size: 0.92rem;
+  }
+
+  /* Clean stacked reassurance checklist */
+  .cta-reassurance {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    padding-top: 1.4rem;
+  }
+
+  .reassurance-item {
+    font-size: 0.8rem;
+  }
+}
