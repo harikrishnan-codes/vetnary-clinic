@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Client Dashboard</title>
-  
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+
   <!-- Site Stylesheet -->
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="client.css"/>
-    <link rel="icon" href="./assets/logo.webp" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="client.css" />
+  <link rel="icon" href="./assets/logo.webp" />
 
 
 </head>
+
 <body class="dashboard-body">
 
   <!-- Mobile Backdrop Overlay for Background Scroll Lock -->
   <div class="dash-backdrop-overlay" id="dashBackdrop" aria-hidden="true"></div>
 
   <div class="dash-layout-wrapper">
-    
+
     <!-- ==============================================
          SIDEBAR NAVIGATION (DRAWER ON MOBILE <= 992px)
          ============================================== -->
@@ -33,7 +37,7 @@
       <!-- Sidebar Brand Header -->
       <div class="sidebar-brand-strip flex-between">
         <a href="index.html" class="sidebar-logo">
-          <img src="./assets/logo 13.webp" alt="logo" height="50px" width="150px">
+          <img src="./assets/logo 23.webp" alt="logo" height="50px" width="150px">
         </a>
         <button type="button" class="sidebar-close-btn" id="dashCloseBtn" aria-label="Close Navigation">
           <i class="fa-solid fa-xmark"></i>
@@ -56,7 +60,7 @@
       <!-- Navigation Tabs (Exact Admin Styling) -->
       <nav class="sidebar-nav-menu" role="tablist">
         <span class="nav-section-title">PATIENT TELEMETRY</span>
-        
+
         <button type="button" class="dash-nav-link active" data-target="view-overview" role="tab">
           <i class="fa-solid fa-heart-pulse"></i>
           <span>Companion Vitals</span>
@@ -111,16 +115,17 @@
          MAIN DASHBOARD BODY CONTENT
          ============================================== -->
     <div class="dash-main-area">
-      
+
       <!-- Top Clinical Command Bar -->
       <header class="dash-top-header flex-between">
         <div class="header-left flex-center">
-          <button type="button" class="dash-hamburger-btn" id="dashHamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <button type="button" class="dash-hamburger-btn" id="dashHamburgerBtn" aria-label="Toggle navigation menu"
+            aria-expanded="false">
             <span class="ham-line"></span>
             <span class="ham-line"></span>
             <span class="ham-line"></span>
           </button>
-          
+
           <div class="header-titles">
             <h1 class="header-page-title" id="currentViewTitle">Companion Vitals &amp; Recovery</h1>
             <span class="header-system-tag">
@@ -150,7 +155,7 @@
 
         <!-- VIEW 1: COMPANION VITALS (DEFAULT ACTIVE) -->
         <section class="dash-view-panel active" id="view-overview">
-          
+
           <!-- Primary Pet Status Card -->
           <div class="dash-banner-card card flex-between">
             <div class="dash-banner-left flex-center">
@@ -161,7 +166,8 @@
                   <span class="dash-chip-code">Microchip: #984-201-992</span>
                 </div>
                 <h2 class="dash-banner-name">Luna (Golden Retriever)</h2>
-                <p class="dash-banner-sub">Attending Surgeon: Dr. Amanda Vance, DACVS • Laparoscopic Gastropexy Suite</p>
+                <p class="dash-banner-sub">Attending Surgeon: Dr. Amanda Vance, DACVS • Laparoscopic Gastropexy Suite
+                </p>
               </div>
             </div>
             <div class="dash-banner-actions">
@@ -316,7 +322,8 @@
           <div class="dash-view-banner card flex-between">
             <div>
               <h3 class="banner-title">Diagnostic Pathology &amp; Imaging Reports</h3>
-              <p class="banner-sub">View in-house 15-minute hematology charts, digital radiographs, and ultrasound files.</p>
+              <p class="banner-sub">View in-house 15-minute hematology charts, digital radiographs, and ultrasound
+                files.</p>
             </div>
             <a href="error.html" class="btn btn-secondary btn-sm">Request Chart Forwarding</a>
           </div>
@@ -363,7 +370,8 @@
                 <span class="theatre-num">REFILLS: 02</span>
               </div>
               <h4 class="theatre-name">Carprofen Chewable (75mg)</h4>
-              <p class="theatre-desc"><i class="fa-solid fa-bell"></i> 1 Tablet every 12 hours with meals for post-op inflammation.</p>
+              <p class="theatre-desc"><i class="fa-solid fa-bell"></i> 1 Tablet every 12 hours with meals for post-op
+                inflammation.</p>
               <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Log Dose Given</a>
             </div>
 
@@ -373,7 +381,8 @@
                 <span class="theatre-num">REFILLS: 01</span>
               </div>
               <h4 class="theatre-name">Gabapentin Capsules (100mg)</h4>
-              <p class="theatre-desc"><i class="fa-solid fa-bell"></i> 1 Capsule every 8 hours for biological nerve comfort.</p>
+              <p class="theatre-desc"><i class="fa-solid fa-bell"></i> 1 Capsule every 8 hours for biological nerve
+                comfort.</p>
               <a href="error.html" class="btn btn-outline-primary btn-sm theatre-btn">Log Dose Given</a>
             </div>
           </div>
@@ -395,7 +404,8 @@
                 <strong>Dr. Amanda Vance, DACVS</strong>
                 <span class="msg-time">Yesterday, 04:15 PM</span>
               </div>
-              <p>Hello! Luna's continuous ECG and incision telemetry are looking fantastic. Make sure to keep her restricted from high jumping until Friday's suture checkup.</p>
+              <p>Hello! Luna's continuous ECG and incision telemetry are looking fantastic. Make sure to keep her
+                restricted from high jumping until Friday's suture checkup.</p>
             </div>
 
             <div class="dark-msg-bubble bubble-guardian">
@@ -403,16 +413,23 @@
                 <strong class="user-display-name">You (Pet Guardian)</strong>
                 <span class="msg-time">Yesterday, 05:20 PM</span>
               </div>
-              <p>Thank you Dr. Vance! She ate her full dinner with the Carprofen without any stomach upset. Looking forward to our Friday appointment.</p>
+              <p>Thank you Dr. Vance! She ate her full dinner with the Carprofen without any stomach upset. Looking
+                forward to our Friday appointment.</p>
             </div>
 
-            <div class="dark-msg-input-dock flex-between">
-              <input type="text" class="dark-dash-input" placeholder="Type a message to Dr. Vance's team..." />
-              <a href="error.html" class="btn btn-secondary btn-sm">
+            <form class="dark-msg-input-dock" id="clientMessageForm" novalidate>
+              <div style="flex: 1; width: 100%;">
+                <input type="text" class="dark-dash-input" id="clientMsgInput"
+                  placeholder="Type a message to Dr. Vance's team..." autocomplete="off" />
+                <div class="msg-error-feedback" id="msgErrorFeedback">
+                  <i class="fa-solid fa-circle-exclamation"></i> Please enter a message before sending.
+                </div>
+              </div>
+              <button type="submit" class="btn btn-secondary btn-sm" id="sendMsgBtn">
                 <i class="fa-solid fa-paper-plane"></i>
                 <span>Send</span>
-              </a>
-            </div>
+              </button>
+            </form>
           </div>
         </section>
 
@@ -425,118 +442,155 @@
   <!-- Site Scripts -->
   <script>
 
-// ===================================================
-// UNIFIED DASHBOARD CONTROLLER (ADMIN & CLIENT)
-// ===================================================
-function initDashboardPlatform() {
-  const dashSidebar = document.getElementById('dashSidebar');
-  const dashHamburgerBtn = document.getElementById('dashHamburgerBtn');
-  const dashCloseBtn = document.getElementById('dashCloseBtn');
-  const dashBackdrop = document.getElementById('dashBackdrop');
-  const navLinks = document.querySelectorAll('.dash-sidebar .dash-nav-link[data-target]');
-  const viewPanels = document.querySelectorAll('.dash-main-area .dash-view-panel');
-  const currentViewTitle = document.getElementById('currentViewTitle');
+    // ===================================================
+    // UNIFIED DASHBOARD CONTROLLER (ADMIN & CLIENT)
+    // ===================================================
+    function initDashboardPlatform() {
+      const dashSidebar = document.getElementById('dashSidebar');
+      const dashHamburgerBtn = document.getElementById('dashHamburgerBtn');
+      const dashCloseBtn = document.getElementById('dashCloseBtn');
+      const dashBackdrop = document.getElementById('dashBackdrop');
+      const navLinks = document.querySelectorAll('.dash-sidebar .dash-nav-link[data-target]');
+      const viewPanels = document.querySelectorAll('.dash-main-area .dash-view-panel');
+      const currentViewTitle = document.getElementById('currentViewTitle');
 
-  // 1. DYNAMICALLY BIND LOGGED-IN EMAIL FROM LOGIN SESSION
-  const activeEmail = sessionStorage.getItem('auth_user_email') || 'sarah.jenkins@gmail.com';
-  const activeName = sessionStorage.getItem('auth_user_name') || 'Sarah Jenkins';
+      // 1. DYNAMICALLY BIND LOGGED-IN EMAIL FROM LOGIN SESSION
+      const activeEmail = sessionStorage.getItem('auth_user_email') || 'sarah.jenkins@gmail.com';
+      const activeName = sessionStorage.getItem('auth_user_name') || 'Sarah Jenkins';
 
-  document.querySelectorAll('.user-display-email').forEach(el => {
-    el.textContent = activeEmail;
-  });
-  document.querySelectorAll('.user-display-name').forEach(el => {
-    el.textContent = activeName;
-  });
+      document.querySelectorAll('.user-display-email').forEach(el => {
+        el.textContent = activeEmail;
+      });
+      document.querySelectorAll('.user-display-name').forEach(el => {
+        el.textContent = activeName;
+      });
 
-  if (!dashSidebar || !dashHamburgerBtn) return;
+      if (!dashSidebar || !dashHamburgerBtn) return;
 
-  // 2. HAMBURGER OPEN & CLOSE WITH BACKGROUND SCROLL LOCK
-  function openMobileNav() {
-    dashSidebar.classList.add('active');
-    dashBackdrop.classList.add('active');
-    dashHamburgerBtn.classList.add('active');
-    dashHamburgerBtn.setAttribute('aria-expanded', 'true');
-    document.body.classList.add('dash-scroll-locked'); // Lock background scroll completely
-  }
-
-  function closeMobileNav() {
-    dashSidebar.classList.remove('active');
-    dashBackdrop.classList.remove('active');
-    dashHamburgerBtn.classList.remove('active');
-    dashHamburgerBtn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('dash-scroll-locked'); // Restore background scroll
-  }
-
-  dashHamburgerBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (dashSidebar.classList.contains('active')) {
-      closeMobileNav();
-    } else {
-      openMobileNav();
-    }
-  });
-
-  dashCloseBtn?.addEventListener('click', closeMobileNav);
-  dashBackdrop?.addEventListener('click', closeMobileNav);
-
-  // 3. SECTION SWITCHING & AUTO-CLOSE ON NAVLINK CLICK
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const targetId = link.getAttribute('data-target');
-      const targetPanel = document.getElementById(targetId);
-
-      if (!targetPanel) return;
-
-      // Update Active Navigation Button
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      // Update Header Title
-      if (currentViewTitle) {
-        const titleSpan = link.querySelector('span');
-        if (titleSpan) currentViewTitle.textContent = titleSpan.textContent;
+      // 2. HAMBURGER OPEN & CLOSE WITH BACKGROUND SCROLL LOCK
+      function openMobileNav() {
+        dashSidebar.classList.add('active');
+        dashBackdrop.classList.add('active');
+        dashHamburgerBtn.classList.add('active');
+        dashHamburgerBtn.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('dash-scroll-locked'); // Lock background scroll completely
       }
 
-      // Smooth Switch Tab Panel with GSAP
-      viewPanels.forEach(panel => {
-        if (panel.classList.contains('active')) {
-          if (typeof gsap !== 'undefined') {
-            gsap.to(panel, {
-              opacity: 0,
-              y: -8,
-              duration: 0.2,
-              ease: 'power2.in',
-              onComplete: () => {
-                panel.classList.remove('active');
-                panel.style.display = 'none';
+      function closeMobileNav() {
+        dashSidebar.classList.remove('active');
+        dashBackdrop.classList.remove('active');
+        dashHamburgerBtn.classList.remove('active');
+        dashHamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('dash-scroll-locked'); // Restore background scroll
+      }
 
-                targetPanel.style.display = 'block';
-                targetPanel.classList.add('active');
-                gsap.fromTo(
-                  targetPanel,
-                  { opacity: 0, y: 12 },
-                  { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
-                );
-              }
-            });
-          } else {
-            panel.classList.remove('active');
-            targetPanel.classList.add('active');
-          }
+      dashHamburgerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (dashSidebar.classList.contains('active')) {
+          closeMobileNav();
+        } else {
+          openMobileNav();
         }
       });
 
-      // Auto-close mobile drawer and release background scroll lock
-      if (window.innerWidth <= 992) {
-        closeMobileNav();
-      }
-    });
+      dashCloseBtn?.addEventListener('click', closeMobileNav);
+      dashBackdrop?.addEventListener('click', closeMobileNav);
+
+      // 3. SECTION SWITCHING & AUTO-CLOSE ON NAVLINK CLICK
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const targetId = link.getAttribute('data-target');
+          const targetPanel = document.getElementById(targetId);
+
+          if (!targetPanel) return;
+
+          // Update Active Navigation Button
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          // Update Header Title
+          if (currentViewTitle) {
+            const titleSpan = link.querySelector('span');
+            if (titleSpan) currentViewTitle.textContent = titleSpan.textContent;
+          }
+
+          // Smooth Switch Tab Panel with GSAP
+          viewPanels.forEach(panel => {
+            if (panel.classList.contains('active')) {
+              if (typeof gsap !== 'undefined') {
+                gsap.to(panel, {
+                  opacity: 0,
+                  y: -8,
+                  duration: 0.2,
+                  ease: 'power2.in',
+                  onComplete: () => {
+                    panel.classList.remove('active');
+                    panel.style.display = 'none';
+
+                    targetPanel.style.display = 'block';
+                    targetPanel.classList.add('active');
+                    gsap.fromTo(
+                      targetPanel,
+                      {opacity: 0, y: 12},
+                      {opacity: 1, y: 0, duration: 0.3, ease: 'power2.out'}
+                    );
+                  }
+                });
+              } else {
+                panel.classList.remove('active');
+                targetPanel.classList.add('active');
+              }
+            }
+          });
+
+          // Auto-close mobile drawer and release background scroll lock
+          if (window.innerWidth <= 992) {
+            closeMobileNav();
+          }
+        });
+      });
+    }
+
+    function initDoctorMessagingValidation() {
+  const form = document.getElementById('clientMessageForm');
+  const input = document.getElementById('clientMsgInput');
+  const errorFeedback = document.getElementById('msgErrorFeedback');
+
+  if (!form || !input) return;
+
+  function clearError() {
+    input.classList.remove('input-error');
+    if (errorFeedback) errorFeedback.classList.remove('visible');
+  }
+
+  input.addEventListener('input', () => {
+    if (input.value.trim().length > 0) {
+      clearError();
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = input.value.trim();
+
+    // Check if input is empty or only whitespace
+    if (!message) {
+      input.classList.add('input-error');
+      if (errorFeedback) errorFeedback.classList.add('visible');
+      input.focus();
+      return;
+    }
+
+    // Valid: Clear error and redirect to error.html
+    clearError();
+    window.location.href = 'error.html';
   });
 }
 
-// Call on load
+// Call during initialization
 document.addEventListener('DOMContentLoaded', () => {
   initDashboardPlatform();
+  initDoctorMessagingValidation();
 });
 
   </script>
@@ -544,4 +598,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 </body>
+
 </html>
