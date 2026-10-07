@@ -392,107 +392,171 @@
 
               </div>
 
-              <!-- STEP 2: Date, Time & Preferences -->
-              <div class="intake-step-pane" id="intakeStep2">
+             <!-- STEP 2: Date, Time & Preferences -->
+<div class="intake-step-pane" id="intakeStep2">
 
-                <div class="form-row-grid">
-                  <div class="form-group flex-1">
-                    <label class="intake-label">Preferred Date</label>
-                    <input type="date" class="form-control intake-field" id="bookingDateInput" required>
-                  </div>
-                  <div class="form-group flex-1">
-                    <label class="intake-label">Preferred Time Slot</label>
-                    <select class="form-control intake-field" id="bookingTimeSelect">
-                      <option value="morning">Morning (08:30 AM – 11:30 AM)</option>
-                      <option value="midday">Midday (12:00 PM – 03:00 PM)</option>
-                      <option value="evening">Late Afternoon (03:30 PM – 06:30 PM)</option>
-                    </select>
-                  </div>
-                </div>
+  <div class="form-group-block">
+    <label class="intake-label" for="bookingDateInput">Preferred Date</label>
+    <div class="custom-date-wrap">
+      <input type="date" class="form-control intake-field" id="bookingDateInput" required>
+    </div>
+  </div>
 
-                <div class="form-group-block">
-                  <label class="intake-label">Fear-Free Comfort Amenities</label>
-                  <div class="amenities-checkbox-grid">
-                    <label class="amenity-check-chip active">
-                      <input type="checkbox" name="amenity" value="treats" checked>
-                      <i class="fa-solid fa-cookie-bite"></i>
-                      <span>Hypoallergenic Treat Mat</span>
-                    </label>
-                    <label class="amenity-check-chip active">
-                      <input type="checkbox" name="amenity" value="phero" checked>
-                      <i class="fa-solid fa-spray-can-sparkles"></i>
-                      <span>Pheromone Micro-Mist Suite</span>
-                    </label>
-                    <label class="amenity-check-chip">
-                      <input type="checkbox" name="amenity" value="quiet">
-                      <i class="fa-solid fa-volume-xmark"></i>
-                      <span>Direct-To-Room (Zero Waiting Room)</span>
-                    </label>
-                    <label class="amenity-check-chip">
-                      <input type="checkbox" name="amenity" value="heated">
-                      <i class="fa-solid fa-temperature-arrow-up"></i>
-                      <span>Heated Memory-Foam Table</span>
-                    </label>
-                  </div>
-                </div>
+  <!-- Custom Time Slot Selector (Replaces <select>) -->
+  <div class="form-group-block">
+    <label class="intake-label">Preferred Clinical Window</label>
+    <div class="custom-slot-grid">
+      
+      <label class="custom-slot-card active">
+        <input type="radio" name="preferredTimeSlot" value="morning" checked>
+        <div class="slot-icon"><i class="fa-solid fa-sun"></i></div>
+        <div class="slot-info">
+          <strong class="slot-title">Morning Window</strong>
+          <span class="slot-hours">08:30 AM – 11:30 AM</span>
+        </div>
+        <span class="slot-badge">Quiet Hours</span>
+      </label>
 
-                <div class="intake-step-nav flex-between">
-                  <button type="button" class="btn btn-outline-primary" onclick="navigateIntakeStep(1)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Back</span>
-                  </button>
-                  <button type="button" class="btn btn-primary" onclick="navigateIntakeStep(3)">
-                    <span>Patient Information</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </button>
-                </div>
+      <label class="custom-slot-card">
+        <input type="radio" name="preferredTimeSlot" value="midday">
+        <div class="slot-icon"><i class="fa-solid fa-sun-plant-wilt"></i></div>
+        <div class="slot-info">
+          <strong class="slot-title">Midday Window</strong>
+          <span class="slot-hours">12:00 PM – 03:00 PM</span>
+        </div>
+        <span class="slot-badge">Surgical Post-Op</span>
+      </label>
 
-              </div>
+      <label class="custom-slot-card">
+        <input type="radio" name="preferredTimeSlot" value="evening">
+        <div class="slot-icon"><i class="fa-solid fa-moon"></i></div>
+        <div class="slot-info">
+          <strong class="slot-title">Late Afternoon</strong>
+          <span class="slot-hours">03:30 PM – 06:30 PM</span>
+        </div>
+        <span class="slot-badge">Express In-Out</span>
+      </label>
 
+    </div>
+  </div>
+
+  <div class="form-group-block">
+    <label class="intake-label">Fear-Free Comfort Amenities</label>
+    <div class="amenities-checkbox-grid">
+      <label class="amenity-check-chip active">
+        <input type="checkbox" name="amenity" value="treats" checked>
+        <i class="fa-solid fa-cookie-bite"></i>
+        <span>Hypoallergenic Treat Mat</span>
+      </label>
+      <label class="amenity-check-chip active">
+        <input type="checkbox" name="amenity" value="phero" checked>
+        <i class="fa-solid fa-spray-can-sparkles"></i>
+        <span>Pheromone Micro-Mist Suite</span>
+      </label>
+      <label class="amenity-check-chip">
+        <input type="checkbox" name="amenity" value="quiet">
+        <i class="fa-solid fa-volume-xmark"></i>
+        <span>Direct-To-Room (Zero Waiting Room)</span>
+      </label>
+      <label class="amenity-check-chip">
+        <input type="checkbox" name="amenity" value="heated">
+        <i class="fa-solid fa-temperature-arrow-up"></i>
+        <span>Heated Memory-Foam Table</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="intake-step-nav flex-between">
+    <button type="button" class="btn btn-outline-primary" onclick="navigateIntakeStep(1)">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Back</span>
+    </button>
+    <button type="button" class="btn btn-primary" onclick="navigateIntakeStep(3)">
+      <span>Patient Information</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
+</div>
               <!-- STEP 3: Owner & Patient Contact Information -->
-              <div class="intake-step-pane" id="intakeStep3">
+              <!-- STEP 3: Owner & Patient Contact Information -->
+<div class="intake-step-pane" id="intakeStep3">
 
-                <div class="form-row-grid">
-                  <div class="form-group flex-1">
-                    <label class="intake-label">Pet Name</label>
-                    <input type="text" class="form-control intake-field" id="summaryPetName" placeholder="e.g. Luna"
-                      required>
-                  </div>
-                  <div class="form-group flex-1">
-                    <label class="intake-label">Breed & Approx Age</label>
-                    <input type="text" class="form-control intake-field" placeholder="e.g. Golden Retriever, 4 Yrs">
-                  </div>
-                </div>
+  <div class="form-row-grid">
+    <div class="form-group flex-1">
+      <label class="intake-label" for="intakePetName">Pet Name *</label>
+      <input 
+        type="text" 
+        class="form-control intake-field" 
+        id="intakePetName" 
+        placeholder="e.g. Luna"
+        autocomplete="off"
+      >
+      <span class="field-error-msg" id="errPetName">Please enter a valid pet name (letters only).</span>
+    </div>
 
-                <div class="form-row-grid">
-                  <div class="form-group flex-1">
-                    <label class="intake-label">Guardian Full Name</label>
-                    <input type="text" class="form-control intake-field" placeholder="e.g. Sarah Jenkins" required>
-                  </div>
-                  <div class="form-group flex-1">
-                    <label class="intake-label">Direct Phone Number</label>
-                    <input type="tel" class="form-control intake-field" placeholder="+1 (555) 000-0000" required>
-                  </div>
-                </div>
+    <div class="form-group flex-1">
+      <label class="intake-label" for="intakeBreedAge">Breed &amp; Approx Age *</label>
+      <input 
+        type="text" 
+        class="form-control intake-field" 
+        id="intakeBreedAge" 
+        placeholder="e.g. Golden Retriever, 4 Yrs"
+        autocomplete="off"
+      >
+      <span class="field-error-msg" id="errBreedAge">Please provide companion breed and age.</span>
+    </div>
+  </div>
 
-                <div class="form-group-block">
-                  <label class="intake-label">Primary Symptoms, Notes or History</label>
-                  <textarea class="form-control intake-field intake-textarea" rows="3"
-                    placeholder="Briefly describe reasons for visit, prior diagnoses, or behavioral sensitivities..."></textarea>
-                </div>
+  <div class="form-row-grid">
+    <div class="form-group flex-1">
+      <label class="intake-label" for="intakeGuardianName">Guardian Full Name *</label>
+      <input 
+        type="text" 
+        class="form-control intake-field" 
+        id="intakeGuardianName" 
+        placeholder="e.g. Sarah Jenkins"
+        autocomplete="off"
+      >
+      <span class="field-error-msg" id="errGuardianName">Please enter a valid guardian name (letters only).</span>
+    </div>
 
-                <div class="intake-step-nav flex-between">
-                  <button type="button" class="btn btn-outline-primary" onclick="navigateIntakeStep(2)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Back</span>
-                  </button>
-                  <button type="submit" class="btn btn-secondary">
-                    <span>Confirm Reservation</span>
-                    <i class="fa-solid fa-circle-check"></i>
-                  </button>
-                </div>
+    <div class="form-group flex-1">
+      <label class="intake-label" for="intakePhone">Direct Phone Number *</label>
+      <input 
+        type="tel" 
+        class="form-control intake-field" 
+        id="intakePhone" 
+        placeholder="e.g. 9876543210"
+        maxlength="10"
+        autocomplete="off"
+      >
+      <span class="field-error-msg" id="errPhone">Please enter a valid 10-digit mobile number (digits only).</span>
+    </div>
+  </div>
 
-              </div>
+  <div class="form-group-block">
+    <label class="intake-label" for="intakeNotes">Primary Symptoms, Notes or History</label>
+    <textarea 
+      class="form-control intake-field intake-textarea" 
+      id="intakeNotes"
+      rows="3"
+      placeholder="Briefly describe reasons for visit, prior diagnoses, or behavioral sensitivities..."
+    ></textarea>
+  </div>
+
+  <div class="intake-step-nav flex-between">
+    <button type="button" class="btn btn-outline-primary" onclick="navigateIntakeStep(2)">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Back</span>
+    </button>
+    <button type="submit" class="btn btn-secondary" id="btnConfirmReservation">
+      <span>Confirm Reservation</span>
+      <i class="fa-solid fa-circle-check"></i>
+    </button>
+  </div>
+
+</div>
 
             </form>
 

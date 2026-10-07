@@ -75,9 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 // ===================================================
-// INTAKE CONCIERGE MULTI-STEP ENGINE & LIVE SUMMARY
+// INTAKE CONCIERGE MULTI-STEP ENGINE & VALIDATION
 // ===================================================
 function initIntakeConcierge() {
   const form = document.getElementById('clinicalIntakeForm');
@@ -90,7 +89,10 @@ function initIntakeConcierge() {
     card.addEventListener('click', () => {
       compCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
-      const species = card.querySelector('input').value;
+      const radio = card.querySelector('input');
+      if (radio) radio.checked = true;
+
+      const species = radio ? radio.value : 'canine';
       if (sumCompanion) {
         sumCompanion.textContent = 
           species === 'canine' ? 'Canine (Heated Foam Suite)' :
@@ -137,7 +139,10 @@ function initIntakeConcierge() {
     card.addEventListener('click', () => {
       discCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
-      const val = card.querySelector('input').value;
+      const radio = card.querySelector('input');
+      if (radio) radio.checked = true;
+
+      const val = radio ? radio.value : 'wellness';
       const data = disciplineData[val];
       if (data && sumHeadline) {
         sumTypeTag.textContent = data.tag;
@@ -151,8 +156,11 @@ function initIntakeConcierge() {
   // 3. Amenity Chip Toggle Behavior
   const amenityChips = document.querySelectorAll('.amenity-check-chip');
   amenityChips.forEach(chip => {
-    chip.addEventListener('click', () => {
+    chip.addEventListener('click', (e) => {
       const input = chip.querySelector('input');
+      if (e.target !== input) {
+        input.checked = !input.checked;
+      }
       chip.classList.toggle('active', input.checked);
     });
   });
@@ -166,7 +174,97 @@ function initIntakeConcierge() {
     dateInput.min = new Date().toISOString().split('T')[0];
   }
 
-  // 5. Entrance Reveal with GSAP ScrollTrigger
+  // 5. Real-Time Strict Filtering for Inputs
+  const petNameInput = document.getElementById('intakePetName');
+  const guardianInput = document.getElementById('intakeGuardianName');
+  const phoneInput = document.getElementById('intakePhone');
+  const breedAgeInput = document.getElementById('intakeBreedAge');
+
+  // Allow only alphabet letters & spaces in name fields
+  [petNameInput, guardianInput].forEach(field => {
+    if (!field) return;
+    field.addEventListener('input', () => {
+      field.value = field.value.replace(/[^a-zA-Z\s]/g, '');
+      clearFieldError(field);
+    });
+  });
+
+  // Allow only numbers in phone input
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+      clearFieldError(phoneInput);
+    });
+  }
+
+  if (breedAgeInput) {
+    breedAgeInput.addEventListener('input', () => clearFieldError(breedAgeInput));
+  }
+
+  // Helper validation functions
+  function setFieldError(field, errorId) {
+    field.classList.add('input-invalid');
+    const errEl = document.getElementById(errorId);
+    if (errEl) errEl.classList.add('visible');
+  }
+
+  function clearFieldError(field) {
+    field.classList.remove('input-invalid');
+    const errEl = field.parentElement.querySelector('.field-error-msg');
+    if (errEl) errEl.classList.remove('visible');
+  }
+
+  // 6. Form Submission & Step 3 Validation
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    // A. Pet Name (letters only, min 2 chars)
+    const petVal = petNameInput.value.trim();
+    if (!petVal || !/^[A-Za-z\s]{2,40}$/.test(petVal)) {
+      setFieldError(petNameInput, 'errPetName');
+      isValid = false;
+    } else {
+      clearFieldError(petNameInput);
+    }
+
+    // B. Breed & Age (min 3 chars)
+    const breedVal = breedAgeInput.value.trim();
+    if (!breedVal || breedVal.length < 3) {
+      setFieldError(breedAgeInput, 'errBreedAge');
+      isValid = false;
+    } else {
+      clearFieldError(breedAgeInput);
+    }
+
+    // C. Guardian Name (letters only, min 3 chars)
+    const guardianVal = guardianInput.value.trim();
+    if (!guardianVal || !/^[A-Za-z\s]{3,50}$/.test(guardianVal)) {
+      setFieldError(guardianInput, 'errGuardianName');
+      isValid = false;
+    } else {
+      clearFieldError(guardianInput);
+    }
+
+    // D. Phone Number (digits only, 10 to 15 digits)
+    const phoneVal = phoneInput.value.trim();
+    if (!phoneVal || !/^\d{10,15}$/.test(phoneVal)) {
+      setFieldError(phoneInput, 'errPhone');
+      isValid = false;
+    } else {
+      clearFieldError(phoneInput);
+    }
+
+    // If valid, redirect to error.html
+    if (isValid) {
+      window.location.href = 'error.html';
+    } else {
+      const firstInvalid = form.querySelector('.input-invalid');
+      if (firstInvalid) firstInvalid.focus();
+    }
+  });
+
+  // 7. GSAP Entrance Animations
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.fromTo(
       '.gsap-intake-header',
@@ -226,12 +324,21 @@ window.navigateIntakeStep = function(stepNumber) {
   });
 };
 
-// Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   initIntakeConcierge();
 });
 
 
+// Custom Time Slot Cards Selector
+const slotCards = document.querySelectorAll('.custom-slot-card');
+slotCards.forEach(card => {
+  card.addEventListener('click', () => {
+    slotCards.forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const radio = card.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;
+  });
+});
 
 
 
